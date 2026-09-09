@@ -105,6 +105,10 @@ const STYLES = `
     animation: kb-hero-flow-blink .9s steps(1) infinite;
   }
 
+  @media (max-width: 1023px) {
+    .kb-hero-flow-scale { transform: translate(860px, 240px) scale(.46); }
+  }
+
   @keyframes kb-hero-flow-blink {
     0%, 50% { opacity: 1; }
     51%, 100% { opacity: 0; }
@@ -264,7 +268,7 @@ export default function HeroFlowOverlay({ className = '', style }) {
       >
         <title id={titleId}>A question followed by the connected apps working together</title>
 
-        <g transform="translate(1178 20) scale(.85)">
+        <g className="kb-hero-flow-scale" transform="translate(1090 197) scale(.65)">
 
         <g className="kb-hero-flow-scene-ask">
           <rect

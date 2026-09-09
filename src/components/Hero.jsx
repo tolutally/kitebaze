@@ -21,7 +21,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative isolate min-h-[calc(100svh+22rem)] overflow-hidden border-b border-kb-line bg-kb-canvas md:min-h-[calc(100svh+17.5rem)]">
+    <section className="relative isolate min-h-[calc(100svh+30rem)] overflow-hidden border-b border-kb-line bg-kb-canvas md:min-h-[calc(100svh+17.5rem)]">
       <div className="absolute inset-x-0 bottom-16 top-0 overflow-hidden bg-kb-inverse sm:bottom-20">
         <video
           className="pointer-events-none h-full w-full object-cover object-center"
@@ -48,7 +48,7 @@ export default function Hero() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[42%] bg-gradient-to-b from-transparent via-kb-inverse/70 to-kb-inverse"></div>
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100svh+22rem)] w-full max-w-7xl items-end justify-center px-4 pb-0 pt-40 md:min-h-[calc(100svh+17.5rem)] sm:px-8 lg:px-10">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100svh+30rem)] w-full max-w-7xl items-end justify-center px-4 pb-0 pt-40 md:min-h-[calc(100svh+17.5rem)] sm:px-8 lg:px-10">
         <div className="w-full text-center">
           <h1 className="mx-auto whitespace-nowrap font-space-grotesk text-[clamp(0.95rem,4vw,3.5rem)] font-medium leading-none tracking-[-0.035em] text-kb-inverse-text">
             <span>Keep what works. We connect </span>
@@ -62,15 +62,23 @@ export default function Hero() {
             <span className="block">so nobody has to move do things manually anymore.</span>
           </p>
 
-          <div className="mx-auto mt-8 w-full max-w-5xl rounded-[1.75rem] border border-white/25 bg-kb-surface-raised/75 p-4 text-left shadow-[0_24px_70px_rgba(20,15,12,0.3)] backdrop-blur-2xl sm:p-5 lg:p-6">
+          <div className="mx-auto mt-14 w-full max-w-5xl rounded-[1.75rem] border border-white/25 bg-kb-surface-raised/75 p-4 text-left shadow-[0_24px_70px_rgba(20,15,12,0.3)] backdrop-blur-2xl sm:mt-8 sm:p-5 lg:p-6">
             <form onSubmit={handlePromptSubmit} className="flex min-h-14 w-full items-center gap-4 rounded-[1.15rem] bg-kb-surface px-4 py-3 shadow-sm sm:min-h-16 sm:px-5">
+              <input
+                type="text"
+                value={prompt}
+                onChange={(event) => setPrompt(event.target.value)}
+                placeholder="Show us your workflow…"
+                aria-label="Describe your workflow"
+                className="min-w-0 flex-1 bg-transparent font-inter text-sm font-normal text-kb-ink placeholder:text-kb-ink outline-none sm:hidden"
+              />
               <input
                 type="text"
                 value={prompt}
                 onChange={(event) => setPrompt(event.target.value)}
                 placeholder="Show us your workflow. We’ll show you what can run itself…"
                 aria-label="Describe your workflow"
-                className="min-w-0 flex-1 bg-transparent font-inter text-sm font-normal text-kb-ink placeholder:text-kb-ink outline-none sm:text-lg"
+                className="hidden min-w-0 flex-1 bg-transparent font-inter text-sm font-normal text-kb-ink placeholder:text-kb-ink outline-none sm:block sm:text-lg"
               />
               <button
                 type="submit"
