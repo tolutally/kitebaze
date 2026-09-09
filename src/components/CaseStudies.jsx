@@ -5,7 +5,7 @@ export default function CaseStudies() {
       <div className="sm:px-6 lg:px-8 z-10 max-w-7xl mr-auto ml-auto pr-4 pl-4 relative">
         <div className="flex flex-col lg:flex-row gap-10 fade-up-element mb-0 gap-x-10 gap-y-10 items-start justify-between">
           <h2 className="max-w-3xl font-grotesk text-4xl font-medium leading-tight tracking-tight text-kb-ink sm:text-6xl">
-            <span className="text-[#FE4C00]">What we build.</span> In the real world.
+            <span className="text-kb-accent-ink">What we build.</span> In the real world.
           </h2>
         </div>
         <div className="flex flex-col lg:flex-row gap-10 fade-up-element mb-16 gap-x-10 gap-y-10 items-start justify-between">
@@ -66,7 +66,7 @@ export default function CaseStudies() {
             <div className="flex pt-6 items-center justify-between">
               <div className="flex gap-3 items-center">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-kb-line-strong bg-kb-surface-raised">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{ color: 'rgb(254, 76, 0)' }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" className="text-kb-accent">
                     <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
                     <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
                     <path d="M10 9H8"></path>
@@ -91,7 +91,7 @@ export default function CaseStudies() {
             className="group relative flex h-[280px] flex-col justify-between overflow-hidden rounded-3xl border border-kb-inverse-muted/30 bg-kb-inverse bg-[url('/recovered-assets/photo-1764946023990-2780e4905bb5.jpg')] bg-cover bg-center pb-8 pl-8 pr-8 pt-8 text-kb-inverse-text sm:h-[420px]"
           >
             <div className="absolute inset-0 bg-kb-inverse/45 transition-colors duration-500 group-hover:bg-kb-inverse/35"></div>
-            <div className="absolute top-0 right-0 w-64 h-64 bg-[#FE4C00]/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-[#FE4C00]/30 transition-colors duration-500"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-kb-accent/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 group-hover:bg-kb-accent/30 transition-colors duration-500"></div>
             <div className="relative flex items-start justify-between text-kb-inverse-text">
               <span className="text-lg font-medium tracking-tight font-grotesk">Your Workflow</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[24px] h-[24px]" aria-hidden="true" style={{ color: 'rgb(255, 255, 255)' }}>

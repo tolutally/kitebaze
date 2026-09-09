@@ -36,7 +36,7 @@ export default function Footer() {
           <div className="md:col-span-3 lg:col-span-3">
             <h4 className="mb-8 font-inter text-lg font-normal text-kb-ink">Get in touch</h4>
             <p className="mb-8 max-w-[280px] font-inter text-base font-light leading-relaxed text-kb-ink-muted">Your business doesn't need more software.<br />It needs less manual work.</p>
-            <a href="mailto:hello@kitebaze.com" className="inline-flex items-center justify-center rounded-full bg-kb-accent pb-3 pl-6 pr-6 pt-3 text-sm font-medium text-kb-on-accent shadow-[0_8px_24px_rgba(254,76,0,0.2)] transition-all hover:bg-kb-accent-hover hover:shadow-[0_12px_32px_rgba(254,76,0,0.28)]">Email us Here</a>
+            <a href="mailto:hello@kitebaze.com" className="inline-flex items-center justify-center rounded-full bg-kb-accent pb-3 pl-6 pr-6 pt-3 text-sm font-medium text-kb-on-accent shadow-[0_8px_24px_rgba(159,107,78,0.22)] transition-all hover:bg-kb-accent-hover hover:shadow-[0_12px_32px_rgba(159,107,78,0.3)]">Email us Here</a>
           </div>
         </div>
         <div className="flex flex-col items-center justify-between gap-4 border-t border-kb-line pt-8 sm:flex-row">

@@ -2,7 +2,7 @@ export default function ContactForm() {
   return (
     <section className="relative overflow-hidden border-t border-kb-line bg-kb-canvas">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(254,76,0,0.09),transparent_60%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(159,107,78,0.11),transparent_60%)]"></div>
       </div>
 
       <div className="relative mx-auto mt-24 max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
@@ -12,7 +12,7 @@ export default function ContactForm() {
               Start Here
             </div>
             <h1 className="font-space-grotesk text-5xl font-medium leading-[0.95] tracking-tight text-kb-ink lg:text-7xl">
-              Stop being <span className="text-[#FE4C00]">the system.</span>
+              Stop being <span className="text-kb-accent-ink">the system.</span>
             </h1>
             <p className="mt-8 max-w-lg font-inter text-lg font-light leading-relaxed text-kb-ink-soft">
               We’ll diagnose the constraint, identify the highest-leverage opportunity, and map the fastest path to implementation.

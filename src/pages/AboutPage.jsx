@@ -71,7 +71,7 @@ export default function AboutPage() {
         <section className="flex min-h-[640px] items-start justify-center border-b border-kb-line bg-kb-canvas px-6 py-24 sm:py-28">
           <div className="mx-auto max-w-[1420px] text-center">
             <h2 className="mx-auto font-space-grotesk text-[2.7rem] font-normal leading-[1.02] tracking-[-0.045em] sm:text-6xl lg:text-[5.35rem]">
-              AI that holds up in the real<span className="hidden lg:inline"><br /></span><span className="lg:hidden"> </span>world. <span className="text-[#FE4C00]">Built by operators who<span className="hidden lg:inline"><br /></span><span className="lg:hidden"> </span>have been in your seat.</span>
+              AI that holds up in the real<span className="hidden lg:inline"><br /></span><span className="lg:hidden"> </span>world. <span className="text-kb-accent-ink">Built by operators who<span className="hidden lg:inline"><br /></span><span className="lg:hidden"> </span>have been in your seat.</span>
             </h2>
             <p className="mx-auto mt-12 max-w-4xl font-light leading-[1.25] text-kb-ink-soft sm:text-2xl lg:text-[2rem]">We build AI-run operations for operators who want<br className="hidden sm:block" /> the next level without the chaos tax.</p>
           </div>
@@ -80,7 +80,7 @@ export default function AboutPage() {
         <section className="border-b border-kb-line bg-kb-canvas px-5 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto max-w-[1720px]">
             <h2 className="font-space-grotesk text-[3.25rem] font-normal leading-[1.03] tracking-[-0.045em] sm:text-7xl lg:text-[5.4rem]">
-              Stop being the glue.<br /><span className="text-[#FE4C00]">Build the machine.</span>
+              Stop being the glue.<br /><span className="text-kb-accent-ink">Build the machine.</span>
             </h2>
             <p className="mt-10 max-w-[1160px] text-lg font-light leading-[1.65] text-kb-ink-soft sm:text-2xl lg:text-[1.75rem]">Kitebaze builds AI-powered operations that run underneath the business—so execution<br className="hidden xl:block" /> compounds, quality holds, and the business keeps moving when you’re not there to push it.</p>
 
@@ -124,7 +124,7 @@ export default function AboutPage() {
               ))}
             </div>
             <div className="kb-card-shadow mt-10 grid gap-8 rounded-3xl border border-kb-line bg-kb-surface p-8 sm:p-12 lg:grid-cols-[.65fr_1.35fr] lg:gap-16">
-              <div><h3 className="font-space-grotesk text-4xl font-medium text-[#FE4C00]">{active.name}</h3><p className="mt-2 text-kb-ink-muted">{active.role}</p></div>
+              <div><h3 className="font-space-grotesk text-4xl font-medium text-kb-accent-ink">{active.name}</h3><p className="mt-2 text-kb-ink-muted">{active.role}</p></div>
               <p className="text-lg font-light leading-relaxed text-kb-ink-soft sm:text-xl">{active.bio}</p>
             </div>
           </div>

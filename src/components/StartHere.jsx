@@ -19,14 +19,14 @@ export default function StartHere() {
             <Link
               to="/workflow-build"
               onClick={() => { history.scrollRestoration = 'manual'; window.scrollTo(0, 0); }}
-              style={{ boxShadow: '0 0 60px 10px rgba(254,76,0,0.24), 0 0 120px 20px rgba(63,48,36,0.08)', textDecoration: 'none' }}
+              style={{ boxShadow: '0 0 60px 10px rgba(159,107,78,0.22), 0 0 120px 20px rgba(23,25,31,0.08)', textDecoration: 'none' }}
               className="relative z-10 flex h-full w-full flex-col overflow-hidden rounded-3xl bg-kb-inverse pb-8 pl-8 pr-8 pt-8 transition-all duration-300 hover:scale-[1.02] sm:p-12"
             >
               <div className="bg-center bg-[url('/recovered-assets/photo-1595418917831-ef942bd9f9ec.jpg')] bg-cover absolute top-0 right-0 bottom-0 left-0"></div>
               <div className="relative z-10">
                 <div className="flex-grow flex flex-col">
                   <div className="flex items-center gap-3 mb-16">
-                    <p className="leading-tight sm:text-4xl text-2xl font-medium text-[#FE4C00] tracking-tight font-inter">
+                    <p className="leading-tight sm:text-4xl text-2xl font-medium text-kb-accent-light tracking-tight font-inter">
                       Workflow Build
                     </p>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[24px] h-[24px] shrink-0" aria-hidden="true" style={{ color: 'rgb(255, 255, 255)' }}>
@@ -44,11 +44,11 @@ export default function StartHere() {
             <Link
               to="/bottleneck"
               onClick={() => { history.scrollRestoration = 'manual'; window.scrollTo(0, 0); }}
-              style={{ boxShadow: '0 0 60px 10px rgba(254,76,0,0.24), 0 0 120px 20px rgba(63,48,36,0.08)', textDecoration: 'none' }}
+              style={{ boxShadow: '0 0 60px 10px rgba(159,107,78,0.22), 0 0 120px 20px rgba(23,25,31,0.08)', textDecoration: 'none' }}
               className="relative flex h-full flex-col rounded-3xl bg-kb-inverse-soft bg-[url('/recovered-assets/photo-1595418917831-ef942bd9f9ec.jpg')] bg-cover bg-center pb-8 pl-8 pr-8 pt-8 transition-all duration-300 hover:scale-[1.02] sm:p-10"
             >
               <div className="flex items-center gap-3 mb-16">
-                <p className="leading-tight sm:text-4xl text-2xl font-medium text-[#FE4C00] tracking-tight font-inter">
+                <p className="leading-tight sm:text-4xl text-2xl font-medium text-kb-accent-light tracking-tight font-inter">
                   One Bottleneck
                 </p>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[24px] h-[24px] shrink-0" aria-hidden="true" style={{ color: 'rgb(255, 255, 255)' }}>

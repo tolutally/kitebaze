@@ -60,7 +60,7 @@ function CaseImage({ study }) {
   return (
     <div className="kb-card-shadow group relative aspect-[4/3] overflow-hidden rounded-2xl border border-kb-line">
       <img src={study.image} alt="" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(254,76,0,0.12)_0%,transparent_70%)] opacity-30 mix-blend-multiply"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(159,107,78,0.14)_0%,transparent_70%)] opacity-30 mix-blend-multiply"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-kb-canvas/20 via-transparent to-transparent"></div>
     </div>
   );
@@ -70,7 +70,7 @@ export default function CaseStudiesPage() {
   return (
     <>
       <section className="relative z-10 flex min-h-[60dvh] items-center justify-center overflow-hidden bg-kb-canvas px-6 pb-8 pt-24">
-        <div className="absolute inset-0 -z-10" style={{ background: 'radial-gradient(circle at 70% 35%, rgba(254,76,0,0.1), transparent 38%), linear-gradient(180deg, var(--kb-canvas) 0%, var(--kb-surface) 100%)' }}></div>
+        <div className="absolute inset-0 -z-10" style={{ background: 'radial-gradient(circle at 70% 35%, rgba(159,107,78,0.12), transparent 38%), linear-gradient(180deg, var(--kb-canvas) 0%, var(--kb-surface) 100%)' }}></div>
         <div className="pointer-events-none absolute inset-0 -z-10 opacity-40 about-grid"></div>
         <div className="mx-auto mb-16 mt-28 flex w-full max-w-7xl flex-col items-center px-6 text-center">
           <h1 className="mb-6 font-space-grotesk text-5xl font-medium tracking-tight text-kb-ink sm:text-7xl lg:text-8xl">We make scale unfair.</h1>

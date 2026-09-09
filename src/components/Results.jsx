@@ -1,47 +1,102 @@
+const workflowImages = [
+  {
+    src: '/image-man-with-laptop.png',
+    alt: 'An operator surrounded by a manual coordination process',
+  },
+  {
+    src: '/case-study-assets/jobs-done.jpg',
+    alt: 'Work moving between an inbox, spreadsheet, phone, and laptop',
+  },
+  {
+    src: '/case-study-assets/xerox.webp',
+    alt: 'An operator working across a laptop, phone, and office printer',
+  },
+];
+
+const metrics = [
+  {
+    value: '4–6',
+    title: 'Connect the scattered steps',
+    copy: 'Many jobs contain four to six steps that need no decision—someone reads it here, types it there, and moves the same information between tools.',
+    plaque: 'border-kb-line-strong bg-kb-surface-soft text-kb-ink',
+  },
+  {
+    value: '60–80%',
+    title: 'Target the repeatable work',
+    copy: 'We target removing 60–80% of manual steps per workflow—not as a blanket promise. We tell you what is worth automating and what should stay human.',
+    plaque: 'border-kb-accent/30 bg-kb-accent-soft text-kb-accent-ink',
+  },
+  {
+    value: '100%',
+    title: 'Keep consequential actions controlled',
+    copy: 'Every action involving a customer, document, or money waits for your approval. Every run is logged, so speed never comes at the cost of control.',
+    plaque: 'border-kb-accent bg-kb-accent text-kb-on-accent',
+  },
+];
+
+function ImageSet({ duplicate = false }) {
+  return workflowImages.map((image) => (
+    <div
+      key={`${duplicate ? 'duplicate' : 'original'}-${image.src}`}
+      className={`relative h-44 w-[17rem] shrink-0 overflow-hidden rounded-2xl border border-kb-line bg-kb-surface shadow-sm sm:h-56 sm:w-[24rem] lg:h-64 lg:w-[30rem] ${duplicate ? 'results-strip-duplicate' : ''}`}
+      aria-hidden={duplicate || undefined}
+    >
+      <img
+        src={image.src}
+        alt={duplicate ? '' : image.alt}
+        loading="lazy"
+        className="h-full w-full object-cover grayscale-[20%] saturate-[0.8]"
+      />
+      <div className="pointer-events-none absolute inset-0 bg-kb-accent/5"></div>
+    </div>
+  ));
+}
+
 export default function Results() {
   return (
-    <section className="relative z-10 overflow-hidden border-t border-kb-inverse-muted/20 bg-kb-inverse text-kb-inverse-text">
-      <div className="absolute inset-0 z-0">
-        <img
-        src="/recovered-assets/11b56623-2d13-48c7-8d18-f1b905e6be2b_3840w.png"
-          className="w-full h-full object-cover opacity-70"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-kb-inverse/75 via-kb-inverse/10 to-kb-inverse/35"></div>
-      </div>
-      <div className="sm:px-6 lg:px-8 sm:py-32 max-w-max z-10 mr-auto ml-auto pt-24 pr-4 pb-24 pl-4 relative">
-        <div className="fade-up-element mb-12">
-          <h2 className="mb-4 font-space-grotesk text-4xl font-medium tracking-tight text-kb-inverse-text sm:text-6xl">The manual work hiding inside your business.</h2>
-          <p className="text-base font-light text-kb-inverse-muted sm:text-lg">The repeated tasks and handoffs quietly costing your team time.</p>
+    <section className="relative z-10 overflow-hidden border-t border-kb-line bg-kb-canvas px-4 py-24 text-kb-ink sm:px-6 sm:py-32 lg:px-8">
+      <div className="mx-auto max-w-7xl text-center">
+        <div className="fade-up-element">
+          <span className="inline-flex rounded-full bg-kb-accent px-3 py-1 font-inter text-xs font-semibold text-kb-on-accent">
+            How work moves faster
+          </span>
+          <p className="mt-4 font-inter text-sm font-medium text-kb-ink-muted">
+            The manual work hiding inside your business
+          </p>
+          <h2 className="mx-auto mt-3 max-w-4xl font-space-grotesk text-4xl font-medium leading-[0.98] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
+            Stop hopping between scattered tools. That’s where the manual work hides.
+          </h2>
+          <p className="mx-auto mt-6 max-w-3xl font-inter text-base font-light leading-relaxed text-kb-ink-soft sm:text-lg">
+            KiteBaze connects the repeated steps and handoffs quietly costing your team time—then automates only the parts that should run without you.
+          </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-6xl gap-x-4 gap-y-4" data-element-id="aura-empfw44jo23478usw">
-          <div className="rounded-2xl border border-kb-inverse-muted/35 bg-kb-inverse-soft/65 px-6 py-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] backdrop-blur-md transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-black/30 sm:p-8">
-            <div className="text-5xl sm:text-6xl font-bold text-[#FE4C00] tracking-tight font-grotesk mb-4">4-6</div>
-            <p className="mb-1 text-base font-medium leading-tight text-kb-inverse-text">Steps in a job need no decision</p>
-            <p className="text-base font-light leading-tight text-kb-inverse-muted">Someone reads it here and types it there. About three in five steps are just moving information.</p>
+
+        <div className="results-strip-viewport -mx-4 mt-14 sm:-mx-6 lg:-mx-8">
+          <div className="animate-results-strip flex w-max gap-5 px-2">
+            <ImageSet />
+            <ImageSet duplicate />
           </div>
-          <div className="rounded-2xl border border-kb-inverse-muted/35 bg-kb-inverse-soft/65 px-6 py-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)] backdrop-blur-md transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-black/30 sm:p-8">
-            <div className="text-5xl sm:text-6xl font-bold text-[#FE4C00] tracking-tight font-grotesk mb-4">60-80%</div>
-            <p className="text-base leading-tight text-kb-inverse-text">
-              <span className="font-medium text-[#FE4C00]">Manual steps we target removing</span>
-              <span className="font-light text-kb-inverse-muted"> That's the goal we set per workflow, not a promise. We tell you upfront which parts are worth automating and which aren't.</span>
-            </p>
-          </div>
-          <div className="rounded-2xl bg-kb-accent p-6 text-kb-on-accent transition-all duration-300 ease-out hover:scale-105 hover:shadow-2xl hover:shadow-black/25 sm:p-8">
-            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-kb-on-accent">
-              <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path>
-              <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"></path>
-              <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"></path>
-              <path d="M17.599 6.5a3 3 0 0 0 .399-1.375"></path>
-              <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"></path>
-              <path d="M3.477 10.896a4 4 0 0 1 .585-.396"></path>
-              <path d="M19.938 10.5a4 4 0 0 1 .585.396"></path>
-              <path d="M6 18a4 4 0 0 1-1.967-.516"></path>
-              <path d="M19.967 17.484A4 4 0 0 1 18 18"></path>
-            </svg>
-            <span className="mb-4 font-grotesk text-5xl font-bold tracking-tight text-kb-on-accent sm:text-6xl">100%</span>
-            <p className="mb-4 mt-4 text-lg font-semibold leading-tight text-kb-on-accent sm:text-xl">Of consequential actions need your yes</p>
-            <p className="text-sm font-light leading-relaxed text-kb-on-accent/85">Anything touching a customer, a document or money waits for approval. Every run is logged.</p>
-          </div>
+        </div>
+
+        <div className="relative mt-14 grid gap-12 md:grid-cols-3 md:gap-8">
+          <div aria-hidden="true" className="absolute left-[16.666%] right-[16.666%] top-8 hidden border-t border-kb-line-strong md:block"></div>
+          {metrics.map((metric, index) => (
+            <article
+              key={metric.value}
+              className="fade-up-element relative z-10 flex flex-col items-center"
+              style={{ transitionDelay: `${index * 90}ms` }}
+            >
+              <span className={`flex h-16 min-w-28 items-center justify-center rounded-xl border px-4 font-space-grotesk text-2xl font-semibold tracking-tight shadow-sm ${metric.plaque}`}>
+                {metric.value}
+              </span>
+              <h3 className="mt-5 font-space-grotesk text-xl font-medium tracking-tight text-kb-ink">
+                {metric.title}
+              </h3>
+              <p className="mx-auto mt-3 max-w-sm font-inter text-base font-light leading-6 text-kb-ink-soft">
+                {metric.copy}
+              </p>
+            </article>
+          ))}
         </div>
       </div>
     </section>

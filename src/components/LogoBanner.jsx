@@ -34,7 +34,7 @@ function SoftwareSet({ prefix }) {
 export default function LogoBanner() {
   return (
     <section className="relative z-20 overflow-hidden border-t border-kb-line bg-kb-surface-soft py-20">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(254,76,0,0.08),transparent_60%)]"></div>
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(159,107,78,0.1),transparent_60%)]"></div>
       <div className="relative mx-auto mb-10 max-w-7xl px-6 text-center">
         <p className="font-inter text-sm font-medium uppercase tracking-[0.18em] text-kb-accent-ink">Works across your stack</p>
       </div>
