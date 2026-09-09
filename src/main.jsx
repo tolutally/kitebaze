@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import App from './App.jsx';
 import Home from './pages/Home.jsx';
-import AboutPage from './pages/AboutPage.jsx';
 import CaseStudiesPage from './pages/CaseStudiesPage.jsx';
 import WorkflowBuild from './pages/WorkflowBuild.jsx';
 import InHouseAgent from './pages/InHouseAgent.jsx';
@@ -14,8 +13,6 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="about-us" element={<AboutPage />} />
-        <Route path="about" element={<Navigate to="/about-us" replace />} />
         <Route element={<App />}>
           <Route index element={<Home />} />
           <Route path="home" element={<Navigate to="/" replace />} />
