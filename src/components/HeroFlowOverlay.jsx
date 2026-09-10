@@ -1,10 +1,13 @@
 import { useEffect, useId, useState } from 'react';
 
-const ASK = "Who's in Saturday and what do they owe?";
+const ASK_QUESTIONS = [
+  "Who's in Saturday and what do they owe?",
+  'Which invoices are past thirty days?',
+];
 const APPS_EYEBROW = 'Already connected';
 
 const APPS = [
-  { label: 'Scheduling', line: 'Bookings and slots', action: 'Resolving conflicts', outcome: 'Dates confirmed', colour: '#2f70bd', glyph: 'calendar' },
+  { label: 'Practice software', line: 'Calendars and deadlines', action: 'Resolving conflicts', outcome: 'Dates confirmed', colour: '#2f70bd', glyph: 'calendar' },
   { label: 'Accounting', line: 'Invoices and balances', action: 'Matching payments', outcome: 'Amount confirmed', colour: '#27859a', glyph: 'coin' },
   { label: 'Documents', line: 'Contracts and forms', action: 'Checking requirements', outcome: 'Gaps flagged', colour: '#f27d08', glyph: 'file' },
   { label: 'Email', line: 'Threads with clients', action: 'Running follow-ups', outcome: 'Reply captured', colour: '#3f8f5f', glyph: 'send' },
@@ -80,7 +83,8 @@ const STYLES = `
     opacity: 0;
     animation-duration: var(--kb-hero-flow-cycle);
     animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
   .kb-hero-flow-loader-spinner {
     transform-box: fill-box;
@@ -89,12 +93,12 @@ const STYLES = `
   }
 
   .kb-hero-flow-scene-ask {
-    animation: kb-hero-flow-scene-ask var(--kb-hero-flow-cycle) linear infinite;
+    animation: kb-hero-flow-scene-ask var(--kb-hero-flow-cycle) linear 1 forwards;
   }
 
   .kb-hero-flow-scene-apps {
     opacity: 0;
-    animation: kb-hero-flow-scene-apps var(--kb-hero-flow-cycle) linear infinite;
+    animation: kb-hero-flow-scene-apps var(--kb-hero-flow-cycle) linear 1 forwards;
   }
 
   .kb-hero-flow-app {
@@ -204,8 +208,9 @@ function usePrefersReducedMotion() {
   return prefersReducedMotion;
 }
 
-export default function HeroFlowOverlay({ className = '', style }) {
+export default function HeroFlowOverlay({ className = '', style, askIndex = 0 }) {
   const prefersReducedMotion = usePrefersReducedMotion();
+  const ASK = ASK_QUESTIONS[askIndex % ASK_QUESTIONS.length];
   const [typedQuestion, setTypedQuestion] = useState('');
   const [showCaret, setShowCaret] = useState(false);
   const titleId = `kb-hero-flow-title-${useId().replaceAll(':', '')}`;
@@ -222,7 +227,7 @@ export default function HeroFlowOverlay({ className = '', style }) {
     const startedAt = performance.now();
 
     const typeQuestion = (now) => {
-      const elapsed = (now - startedAt) % CYCLE;
+      const elapsed = now - startedAt;
       let characterCount = 0;
 
       if (elapsed >= TIMING.typeStart) {
@@ -268,7 +273,7 @@ export default function HeroFlowOverlay({ className = '', style }) {
       >
         <title id={titleId}>A question followed by the connected apps working together</title>
 
-        <g className="kb-hero-flow-scale" transform="translate(1090 197) scale(.65)">
+        <g className="kb-hero-flow-scale" transform="translate(1090 77) scale(.65)">
 
         <g className="kb-hero-flow-scene-ask">
           <rect

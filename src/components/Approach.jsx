@@ -1,23 +1,21 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const STEPS = [
   {
     title: 'Map the work',
     copy: 'We follow one real job end to end and mark every point where someone copies, checks, chases, waits or has to remember.',
-    offset: 986,
-    rotation: 0,
+    video: '/map_the_work.mp4',
   },
   {
     title: 'Build around reality',
     copy: 'We connect what you already run, around your actual process including the exceptions, the awkward cases and the spreadsheet only one person understands.',
-    offset: 498,
-    rotation: 120,
+    video: '/build_in_reality.mp4',
   },
   {
     title: 'Put routine work on autopilot',
-    copy: 'Confirmations go out. Records update. Deposits get chased. Forms come back. Nothing waits on someone’s memory.',
-    offset: 0,
-    rotation: 240,
+    copy: 'Confirmations go out. Records update. Invoices get chased. Documents come back. Nothing waits on someone’s memory.',
+    video: '/put_work_on_autopilot.mp4',
   },
 ];
 
@@ -26,64 +24,88 @@ export default function Approach() {
   const current = STEPS[activeStep];
 
   return (
-    <section className="approach-section relative overflow-hidden bg-kb-surface-soft" style={{ paddingTop: '7rem', paddingBottom: '7rem' }}>
+    <section id="how-it-works" className="approach-section relative overflow-hidden bg-kb-surface-soft py-16 sm:py-20">
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-        <div className="text-center max-w-4xl mx-auto mb-4">
-          <h2 className="font-space-grotesk text-5xl font-medium leading-[0.95] tracking-tight text-kb-ink md:text-7xl">Our Approach</h2>
-          <p className="mt-6 font-inter text-xl font-light text-kb-ink-soft md:text-2xl">Fix the work. Not just the software.</p>
+        <div className="fade-up-element mx-auto mb-20 max-w-3xl text-center">
+          <span className="inline-flex items-center gap-2 rounded-full bg-kb-inverse px-3.5 py-2 font-inter text-[11px] font-semibold uppercase tracking-[0.16em] text-kb-inverse-text">
+            <span className="h-1.5 w-1.5 rounded-full bg-kb-accent" />
+            OUR APPROACH
+          </span>
+          <h2 className="mt-5 font-space-grotesk text-5xl font-medium leading-[0.95] tracking-tight text-kb-ink md:text-7xl">
+            Fix the <span className="italic text-kb-accent-ink">work</span>. Not just the software.
+          </h2>
         </div>
 
-        <div className="approach-orbit relative mx-auto max-w-5xl flex items-center justify-center" style={{ minHeight: '720px' }}>
-          <div className="absolute z-20 w-[260px] sm:w-[340px] text-center">
-            <h3 id="approach-title" className="font-space-grotesk text-4xl font-medium leading-none tracking-tight text-kb-ink sm:text-5xl">{current.title}</h3>
-            <p id="approach-copy" className="mt-5 font-inter text-base font-light leading-relaxed text-kb-ink-soft sm:text-lg">{current.copy}</p>
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
+          <div className="flex flex-col space-y-3 lg:col-span-5">
+            {STEPS.map((step, index) => {
+              const isActive = activeStep === index;
+              return (
+                <button
+                  key={step.title}
+                  type="button"
+                  onMouseEnter={() => setActiveStep(index)}
+                  onClick={() => setActiveStep(index)}
+                  className={`group relative rounded-[20px] p-8 text-left transition-all duration-300 md:p-10 ${
+                    isActive
+                      ? 'border border-kb-accent/30 bg-gradient-to-br from-kb-surface to-kb-surface-soft shadow-sm'
+                      : 'border border-kb-line bg-transparent hover:border-kb-line-strong hover:bg-kb-surface/60'
+                  }`}
+                >
+                  <div className="flex w-full items-start justify-between">
+                    <h3 className={`text-4xl font-light tracking-tighter transition-colors duration-300 md:text-5xl ${isActive ? 'text-kb-ink' : 'text-kb-ink-muted group-hover:text-kb-ink-soft'}`}>
+                      {step.title}
+                    </h3>
+                    <span className={`ml-2 mt-1 shrink-0 font-mono text-sm font-medium transition-colors ${isActive ? 'text-kb-accent-ink' : 'text-kb-ink-muted/70 group-hover:text-kb-ink-muted'}`}>
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+                </button>
+              );
+            })}
           </div>
 
-          <svg className="absolute w-[380px] h-[380px] sm:w-[620px] sm:h-[620px] max-w-[92vw] max-h-[92vw]" viewBox="0 0 620 620" fill="none">
-            <circle cx="310" cy="310" r="238" stroke="var(--kb-line-strong)" strokeWidth="1"></circle>
-            <circle cx="310" cy="310" r="238" stroke="var(--kb-surface)" strokeWidth="1" strokeDasharray="6 10"></circle>
-            <circle
-              className="approach-progress"
-              cx="310"
-              cy="310"
-              r="238"
-              stroke="var(--kb-accent)"
-              strokeWidth="3"
-              strokeLinecap="round"
-              transform="rotate(-90 310 310)"
-              style={{ strokeDashoffset: current.offset }}
-            ></circle>
-            <circle cx="310" cy="72" r="7" fill="var(--kb-line-strong)"></circle>
-            <circle cx="516" cy="429" r="7" fill="var(--kb-line-strong)"></circle>
-            <circle cx="104" cy="429" r="7" fill="var(--kb-line-strong)"></circle>
-            <g transform="translate(310,310)">
-              <g className="approach-dot" style={{ transform: `rotate(${current.rotation}deg)` }}>
-                <circle cx="0" cy="-238" r="10" fill="var(--kb-accent)"></circle>
-                <circle cx="0" cy="-238" r="20" fill="rgba(159,107,78,0.18)"></circle>
-              </g>
-            </g>
-          </svg>
+          <div className="flex flex-col gap-10 lg:sticky lg:top-24 lg:col-span-7 lg:self-start">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[24px] border border-kb-line bg-kb-inverse">
+              <video
+                key={current.video}
+                className="absolute inset-0 h-full w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+              >
+                <source src={current.video} type="video/mp4" />
+              </video>
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-kb-inverse/50 via-transparent to-transparent" />
+              <span className="pointer-events-none absolute bottom-6 right-8 font-space-grotesk text-[8rem] font-medium leading-none text-kb-inverse-text/10">
+                {String(activeStep + 1).padStart(2, '0')}
+              </span>
+            </div>
 
-          {STEPS.map((step, index) => (
-            <button
-              key={step.title}
-              type="button"
-              className={`approach-step absolute ${
-                index === 0
-                  ? 'top-[3%] left-1/2 -translate-x-1/2'
-                  : index === 1
-                    ? 'bottom-[15%] right-[6%]'
-                    : 'bottom-[15%] left-[6%]'
-              } ${activeStep === index ? 'active' : ''}`}
-              onMouseEnter={() => setActiveStep(index)}
-              onClick={() => setActiveStep(index)}
-              onTouchStart={() => setActiveStep(index)}
-            >
-              <span>{String(index + 1).padStart(2, '0')}</span> {step.title}
-            </button>
-          ))}
+            <div>
+              <h3 className="mb-4 font-space-grotesk text-2xl font-normal tracking-tight text-kb-ink md:text-3xl">
+                {current.title}
+              </h3>
+              <p className="mb-8 font-inter text-lg font-light leading-relaxed text-kb-ink-soft md:text-xl">
+                {current.copy}
+              </p>
+              <Link
+                to="/workflow-build"
+                className="group inline-flex h-10 items-center justify-center rounded-full bg-kb-accent px-6 font-inter text-sm font-medium text-kb-on-accent transition-colors hover:bg-kb-accent-hover"
+              >
+                <span className="mr-2">Book a workflow review</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+

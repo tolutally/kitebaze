@@ -4,13 +4,13 @@ import StopStitching from '../components/StopStitching.jsx';
 import Approach from '../components/Approach.jsx';
 import StartHere from '../components/StartHere.jsx';
 import Results from '../components/Results.jsx';
+import WhoWeWorkWith from '../components/WhoWeWorkWith.jsx';
 import LeverageShift from '../components/LeverageShift.jsx';
+import WhyNotChatGPT from '../components/WhyNotChatGPT.jsx';
 import LogoBanner from '../components/LogoBanner.jsx';
 import CaseStudies from '../components/CaseStudies.jsx';
 import WhyKitebaze from '../components/WhyKitebaze.jsx';
-import Testimonials from '../components/Testimonials.jsx';
-import CTA from '../components/CTA.jsx';
-import BannerImage from '../components/BannerImage.jsx';
+import SecurityTrust from '../components/SecurityTrust.jsx';
 import FAQ from '../components/FAQ.jsx';
 import MarqueeBanner from '../components/MarqueeBanner.jsx';
 
@@ -20,20 +20,20 @@ export default function Home() {
       <Hero />
       <LeverageShift />
       <ScaleBreak />
-      <StopStitching />
+      <WhyNotChatGPT />
       <Approach />
       <StartHere />
       <LogoBanner />
-      <Results />
-      <section className="relative z-10 overflow-hidden border-t border-kb-line bg-kb-canvas pb-24 pt-24">
+      <section className="relative z-10 overflow-hidden border-t border-kb-line bg-kb-canvas pb-16 pt-16">
         <CaseStudies />
-        <WhyKitebaze />
-        <Testimonials />
-        <CTA />
-        <BannerImage />
-        <FAQ />
-        <MarqueeBanner />
       </section>
+      <WhyKitebaze />
+      <Results />
+      <WhoWeWorkWith />
+      <SecurityTrust />
+      <StopStitching />
+      <FAQ />
+      <MarqueeBanner />
     </>
   );
 }

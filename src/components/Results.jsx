@@ -15,21 +15,21 @@ const workflowImages = [
 
 const metrics = [
   {
-    value: '4–6',
-    title: 'Connect the scattered steps',
-    copy: 'Many jobs contain four to six steps that need no decision—someone reads it here, types it there, and moves the same information between tools.',
+    value: '0',
+    title: 'Nothing sits in the middle',
+    copy: "It runs in your accounts. Your scheduling tool, your accounting, your email, under your credentials. There's no Kitebaze platform holding your data.",
     plaque: 'border-kb-line-strong bg-kb-surface-soft text-kb-ink',
   },
   {
-    value: '60–80%',
-    title: 'Target the repeatable work',
-    copy: 'We target removing 60–80% of manual steps per workflow—not as a blanket promise. We tell you what is worth automating and what should stay human.',
+    value: '100%',
+    title: 'Yours, in writing',
+    copy: "The automations, the documentation, the logic. All of it transfers to you when it's built, not when you ask for it.",
     plaque: 'border-kb-accent/30 bg-kb-accent-soft text-kb-accent-ink',
   },
   {
-    value: '100%',
-    title: 'Keep consequential actions controlled',
-    copy: 'Every action involving a customer, document, or money waits for your approval. Every run is logged, so speed never comes at the cost of control.',
+    value: '3',
+    title: 'What we sign',
+    copy: 'An NDA, a data processing agreement, and ownership terms confirming all of the above.',
     plaque: 'border-kb-accent bg-kb-accent text-kb-on-accent',
   },
 ];
@@ -54,20 +54,18 @@ function ImageSet({ duplicate = false }) {
 
 export default function Results() {
   return (
-    <section className="relative z-10 overflow-hidden border-t border-kb-line bg-kb-canvas px-4 py-24 text-kb-ink sm:px-6 sm:py-32 lg:px-8">
+    <section className="relative z-10 overflow-hidden border-t border-kb-line bg-kb-canvas px-4 py-16 text-kb-ink sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-7xl text-center">
         <div className="fade-up-element">
-          <span className="inline-flex rounded-full bg-kb-accent px-3 py-1 font-inter text-xs font-semibold text-kb-on-accent">
-            How work moves faster
+          <span className="fade-up-element inline-flex items-center gap-2 rounded-full bg-kb-accent px-3.5 py-2 font-inter text-[11px] font-semibold uppercase tracking-[0.16em] text-kb-on-accent">
+            <span className="h-1.5 w-1.5 rounded-full bg-kb-accent" />
+            NO LOCK IN
           </span>
-          <p className="mt-4 font-inter text-sm font-medium text-kb-ink-muted">
-            The manual work hiding inside your business
-          </p>
-          <h2 className="mx-auto mt-3 max-w-4xl font-space-grotesk text-4xl font-medium leading-[0.98] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
-            Stop hopping between scattered tools. That’s where the manual work hides.
+          <h2 className="mx-auto mt-4 max-w-4xl font-space-grotesk text-4xl font-medium leading-[0.98] tracking-[-0.04em] sm:text-5xl lg:text-6xl">
+            It's yours. Even if you leave. It runs in your accounts.
           </h2>
           <p className="mx-auto mt-6 max-w-3xl font-inter text-base font-light leading-relaxed text-kb-ink-soft sm:text-lg">
-            KiteBaze connects the repeated steps and handoffs quietly costing your team time—then automates only the parts that should run without you.
+            Your scheduling tool, your accounting, your email. We build inside them, under your credentials. There's no Kitebaze platform in the middle holding your data.
           </p>
         </div>
 

@@ -57,15 +57,21 @@ function StackVisual() {
             <p className="font-inter text-xs font-medium text-kb-ink">How the work moves today</p>
             <span className="rounded-full bg-kb-accent-soft px-2.5 py-1 font-inter text-[10px] font-semibold uppercase tracking-[0.12em] text-kb-accent-ink">By hand</span>
           </div>
-          <svg viewBox="0 0 360 96" className="mt-3 h-24 w-full" fill="none">
-            <path d="M20 58 C68 18, 105 78, 150 43 S237 23, 340 55" stroke="var(--kb-line-strong)" strokeWidth="2" strokeLinecap="round" />
-            <path d="M20 58 C68 18, 105 78, 150 43 S237 23, 340 55" stroke="var(--kb-accent)" strokeWidth="3" strokeLinecap="round" strokeDasharray="48 20" />
-            {[20, 102, 180, 260, 340].map((x, index) => (
-              <g key={x}>
-                <circle cx={x} cy={[58, 48, 35, 35, 55][index]} r="8" fill="var(--kb-surface)" stroke="var(--kb-accent)" strokeWidth="2" />
-                {index < 4 && <circle cx={x + 40} cy={[36, 60, 27, 42][index]} r="3" fill="var(--kb-accent)" />}
-              </g>
-            ))}
+          <svg viewBox="0 0 360 118" className="mt-3 h-28 w-full" fill="none">
+            <path d="M45 44 Q95 8 145 30 T245 52 T345 38" stroke="var(--kb-line-strong)" strokeWidth="2" strokeLinecap="round" />
+            <path d="M45 44 Q95 8 145 30 T245 52 T345 38" stroke="var(--kb-accent)" strokeWidth="3" strokeLinecap="round" strokeDasharray="10 14" />
+            {MANUAL_HANDOFFS.map((handoff, index) => {
+              const x = [45, 145, 245, 345][index];
+              const y = [44, 30, 52, 38][index];
+              return (
+                <g key={handoff.action}>
+                  <circle cx={x} cy={y} r="13" fill="var(--kb-surface)" stroke="var(--kb-accent)" strokeWidth="2" />
+                  <circle cx={x} cy={y - 3.5} r="3.4" fill="var(--kb-accent)" />
+                  <path d={`M${x - 5.5} ${y + 6.5} C${x - 5.5} ${y + 1.5}, ${x - 3} ${y - 0.5}, ${x} ${y - 0.5} S${x + 5.5} ${y + 1.5}, ${x + 5.5} ${y + 6.5}`} stroke="var(--kb-accent)" strokeWidth="2" strokeLinecap="round" />
+                  <text x={x} y={y + 30} textAnchor="middle" fontSize="10" fontFamily="var(--font-inter, Inter, sans-serif)" fontWeight="600" fill="var(--kb-ink-muted)">{handoff.action}</text>
+                </g>
+              );
+            })}
           </svg>
         </div>
       </div>
@@ -114,7 +120,7 @@ function HandoffsVisual() {
 
 export default function LeverageShift() {
   return (
-    <section className="relative z-10 bg-kb-canvas py-24 sm:py-32">
+    <section className="relative z-10 bg-kb-canvas py-16 sm:py-20">
       <div className="relative z-30 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <span className="fade-up-element inline-flex items-center gap-2 rounded-full bg-kb-inverse px-3.5 py-2 font-inter text-[11px] font-semibold uppercase tracking-[0.16em] text-kb-inverse-text">
           <span className="h-1.5 w-1.5 rounded-full bg-kb-accent" />
@@ -123,7 +129,7 @@ export default function LeverageShift() {
 
         <h2 className="typography-reveal mt-5 max-w-5xl font-space-grotesk text-4xl font-normal leading-[1.02] tracking-tight text-kb-ink sm:text-5xl lg:text-6xl">
           <span className="block overflow-hidden pb-1">
-            <span className="reveal-text inline-block">Your tools aren't always the problem.</span>
+            <span className="reveal-text inline-block">Your tools aren't the problem.</span>
           </span>
           <span className="block overflow-hidden pb-1">
             <span className="reveal-text inline-block font-medium text-kb-accent-ink">The gaps between them are.</span>
@@ -152,13 +158,6 @@ export default function LeverageShift() {
             <p className="mt-5 max-w-xl font-inter text-base font-light leading-7 text-kb-ink-soft sm:text-lg">
               The problem is that they don't talk to each other. So people become the integration: they copy, paste, chase, check, re-enter, forward and update.
             </p>
-            <div className="mt-6 flex flex-wrap gap-2" aria-label="Repeated manual actions">
-              {['Copy', 'Paste', 'Chase', 'Check', 'Re-enter', 'Forward', 'Update'].map((action) => (
-                <span key={action} className="rounded-full border border-kb-line bg-kb-surface px-3.5 py-2 font-inter text-sm font-medium text-kb-ink-soft">
-                  {action}
-                </span>
-              ))}
-            </div>
             <p className="mt-7 max-w-xl border-l-2 border-kb-accent pl-5 font-inter text-base font-medium leading-7 text-kb-accent-ink sm:text-lg">
               Every tool you add makes this worse, not better. The tenth system doesn't reduce the coordination work, it creates more of it.
             </p>

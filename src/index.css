@@ -617,6 +617,26 @@ details[open] .accordion-content {
   animation-play-state: paused;
 }
 
+@keyframes securityStripLtr {
+  from { transform: translateX(calc(-50% - 0.5rem)); }
+  to { transform: translateX(0); }
+}
+
+.security-strip-viewport {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.animate-security-strip {
+  animation: securityStripLtr 48s linear infinite;
+  will-change: transform;
+}
+
+.security-strip-viewport:hover .animate-security-strip {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .results-strip-viewport {
     overflow-x: auto;
@@ -629,6 +649,17 @@ details[open] .accordion-content {
   .animate-results-strip { animation: none; scroll-snap-type: x mandatory; }
   .animate-results-strip > div { scroll-snap-align: center; }
   .results-strip-duplicate { display: none; }
+  .security-strip-viewport {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .security-strip-viewport::-webkit-scrollbar { display: none; }
+  .animate-security-strip { animation: none; }
+  .animate-security-strip > div:first-child > div { scroll-snap-align: center; }
+  .security-strip-duplicate { display: none; }
   .animate-software-strip { animation-play-state: paused; }
 }
 

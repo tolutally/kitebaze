@@ -55,7 +55,7 @@ export default function ContactForm() {
                 <textarea rows="4" name="message" placeholder="Tell us where the bottleneck is..." required className="contact-input resize-none" />
               </Field>
 
-              <input type="hidden" name="_subject" value="New KiteBaze project inquiry" />
+              <input type="hidden" name="_subject" value="New Kitebaze project inquiry" />
               <div className="pt-2">
                 <button type="submit" className="inline-flex items-center justify-center rounded-full bg-kb-accent px-10 py-4 font-inter font-medium text-kb-on-accent transition-colors hover:bg-kb-accent-hover">
                   Send Email

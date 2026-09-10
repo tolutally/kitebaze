@@ -9,9 +9,8 @@ export default function Footer() {
           <div className="md:col-span-6 lg:col-span-5">
             <Link to="/" className="flex items-center gap-3 mb-8 w-fit" aria-label="Kitebaze home">
               <LogoMark width={40} height={47} />
-              <span className="flex flex-col font-space-grotesk text-xl font-semibold uppercase leading-[0.82] tracking-tight text-kb-ink">
-                <span>KITE</span>
-                <span>BAZE</span>
+              <span className="font-space-grotesk text-xl font-semibold uppercase leading-none tracking-tight text-kb-ink">
+                KITEBAZE
               </span>
             </Link>
             <div className="flex flex-col gap-6 w-full font-sans mt-2">

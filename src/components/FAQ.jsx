@@ -1,41 +1,41 @@
 const FAQS = [
   {
-    q: 'Is Kitebaze another software platform?',
-    a: 'No. Kitebaze builds automation around your operation. Wherever possible we connect and extend your current tools rather than asking you to move everything.',
-  },
-  {
-    q: 'Do we have to replace our booking system?',
-    a: 'Usually not. If it works for bookings, it stays. The opportunity is normally in connecting everything that happens before and after.',
-  },
-  {
-    q: 'What happens first?',
-    a: 'A Workflow Review. You walk us through the software, spreadsheets, emails, manual steps and workarounds. We identify where automation would be worth it.',
-  },
-  {
-    q: 'Can we start with one small problem?',
-    a: 'Yes, and it is often the best way. We automate one repeated bottleneck, put it into real use, and expand only when it makes sense.',
-  },
-  {
-    q: 'Do we need someone technical?',
-    a: 'No. Integrations and implementation are our job. Showing us how the business really works is yours.',
-  },
-  {
     q: "What about our clients' personal information?",
-    a: 'It is one of the first things we design around: least-privilege connections, only the data the workflow needs, audit trails, human approval and Canadian-hosted infrastructure where it matters.',
+    a: "It's one of the first things we design around: least-privilege connections, only the data the workflow needs, audit trails, human approval on anything consequential, and Canadian-hosted infrastructure where it matters. Kitebaze is led by a privacy professional who works on information access and privacy programs in the public sector.",
   },
   {
     q: 'What happens when something changes?',
-    a: 'We build systems meant to be maintained and adjusted, with monitoring so you hear from us when something breaks — not from a client who missed a confirmation.',
+    a: 'We build systems meant to be maintained and adjusted, with monitoring so you hear from us when something breaks — not from a client who never got their confirmation.',
+  },
+  {
+    q: 'Is Kitebaze another software platform?',
+    a: 'No. We build automation around your operation. Wherever possible we connect and extend your current tools rather than asking you to move everything.',
+  },
+  {
+    q: 'Do we have to replace our practice software?',
+    a: "Usually not. If it works for matters and files, it stays. The opportunity is normally in connecting everything that happens before and after it. If a tool genuinely is the bottleneck, we'll say so.",
+  },
+  {
+    q: 'What happens first?',
+    a: 'A workflow review. You walk us through the software, spreadsheets, emails, manual steps and workarounds. We identify where automation would actually be worth it.',
+  },
+  {
+    q: 'Can we start with one small problem?',
+    a: "Yes, and it's often the best way. We automate one repeated bottleneck, put it into real use, and expand only when it makes sense.",
+  },
+  {
+    q: 'Do we need someone technical?',
+    a: 'No. Integrations and implementation are our job. Showing us how the practice really works is yours.',
   },
   {
     q: 'Who is Kitebaze for?',
-    a: 'Owner-led and growing service businesses where too much still moves by hand — booked services, clinics, studios, programs, cohorts and field operations.',
+    a: "Small professional practices, typically 2 to 20 people — legal, accounting, insurance, clinics, consulting, advisory and similar. If your client work moves through several systems and someone moves it by hand, that's the problem we solve. We also work with other service businesses that have the same problem; ask us.",
   },
 ];
 
 export default function FAQ() {
   return (
-    <section className="relative z-40 bg-kb-canvas pb-24 pt-8 sm:pt-12">
+    <section className="relative z-40 bg-kb-canvas pb-16 pt-8 sm:pt-10">
       <div className="sm:px-6 lg:px-8 max-w-6xl mr-auto ml-auto pr-4 pl-4">
         <div className="fade-up-element text-center mb-16">
           <img
@@ -44,7 +44,7 @@ export default function FAQ() {
             className="w-[4.2rem] sm:w-[4.8rem] h-auto mx-auto mb-6 animate-bounce"
           />
           <h2 className="mb-4 font-inter text-3xl font-medium tracking-tight text-kb-ink sm:text-4xl">Frequently Asked Questions</h2>
-          <p className="text-base font-light text-kb-ink-muted sm:text-xl">Answers about bookings, automation and privacy.</p>
+          <p className="text-base font-light text-kb-ink-muted sm:text-xl">Answers about your systems, automation and privacy.</p>
         </div>
         <div className="divide-y divide-kb-line border-y border-kb-line">
           {FAQS.map((item) => (

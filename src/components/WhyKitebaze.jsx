@@ -1,11 +1,15 @@
 export default function WhyKitebaze() {
   return (
-    <section className="border-t border-kb-line bg-kb-canvas pb-24 pt-24">
+    <section className="border-t border-kb-line bg-kb-canvas pb-16 pt-16">
       <div className="sm:px-6 lg:px-8 max-w-7xl mr-auto ml-auto pr-4 pl-4">
         <div className="fade-up-element flex flex-col sm:flex-row sm:items-end gap-6 z-40 mb-16 relative gap-x-6 gap-y-6 items-start justify-between">
           <div>
-            <h2 className="mb-4 font-grotesk text-4xl font-medium tracking-tight text-kb-ink sm:text-6xl">Why Kitebaze?</h2>
-            <p className="text-base font-light text-kb-ink-muted sm:text-xl">Businesses where the client list is the business. Outcomes over theory.</p>
+            <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-kb-inverse px-3.5 py-2 font-inter text-[11px] font-semibold uppercase tracking-[0.16em] text-kb-inverse-text">
+              <span className="h-1.5 w-1.5 rounded-full bg-kb-accent" />
+              Why Kitebaze
+            </span>
+            <h2 className="mb-4 mt-4 font-grotesk text-4xl font-medium tracking-tight text-kb-ink sm:text-6xl">Not a platform. Not a consultancy.</h2>
+            <p className="text-base font-light text-kb-ink-muted sm:text-xl">We build inside the software you already run, and stay to keep it working.</p>
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
@@ -29,7 +33,7 @@ export default function WhyKitebaze() {
           </div>
           <div className="fade-up-element group relative min-h-[400px] overflow-hidden rounded-3xl border border-kb-line lg:min-h-full">
             <img
-              src="/recovered-assets/8d348428-4a26-439e-9abe-73272d1bc0a8_1600w.png"
+              src="/public/why-kitebaze2.jpg"
               alt="Vintage and Modern Cars in Residential Garage"
               className="w-full h-full object-cover absolute inset-0 transition-transform duration-1000 group-hover:scale-105"
             />

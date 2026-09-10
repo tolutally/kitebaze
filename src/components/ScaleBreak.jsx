@@ -25,7 +25,7 @@ export default function ScaleBreak() {
   return (
     <section
       ref={sectionRef}
-      className={`scale-break-section relative border-b border-kb-line bg-kb-canvas pb-0 pt-24 sm:pb-0 sm:pt-24 ${animateNow ? 'animate-now' : ''}`}
+      className={`scale-break-section relative border-b border-kb-line bg-kb-canvas pb-0 pt-16 sm:pb-0 sm:pt-16 ${animateNow ? 'animate-now' : ''}`}
     >
       <div className="text-center max-w-7xl mr-auto mb-4 ml-auto">
         <h2 className="mb-6 mt-6 font-space-grotesk text-4xl font-medium tracking-tight text-kb-ink md:text-6xl">
