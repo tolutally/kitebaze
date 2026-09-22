@@ -63,7 +63,7 @@ export default function CaseStudies() {
             </Link>
           ))}
           <Link
-            to="/case-studies"
+            to="/book-workflow-review"
             className="fade-up-element group relative flex h-[240px] flex-col justify-between overflow-hidden rounded-3xl border border-kb-inverse-muted/30 bg-kb-inverse/70 bg-[url('/recovered-assets/photo-1764946023990-2780e4905bb5.jpg')] bg-cover bg-center p-6 text-kb-inverse-text backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 sm:h-[300px]"
             style={{ transitionDelay: '320ms' }}
           >

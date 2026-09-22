@@ -25,3 +25,7 @@ npm run preview
 ```
 
 The optimized output is generated in `dist/`.
+
+## Workflow review calendar
+
+The `/book-workflow-review` page embeds the `kitebaze/30min` Cal event using `@calcom/embed-react`.

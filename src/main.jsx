@@ -7,6 +7,8 @@ import CaseStudiesPage from './pages/CaseStudiesPage.jsx';
 import WorkflowBuild from './pages/WorkflowBuild.jsx';
 import InHouseAgent from './pages/InHouseAgent.jsx';
 import ContactForm from './pages/ContactForm.jsx';
+import BookWorkflowReview from './pages/BookWorkflowReview.jsx';
+import Diagnostics from './pages/Diagnostics.jsx';
 import './index.css';
 
 createRoot(document.getElementById('root')).render(
@@ -21,6 +23,8 @@ createRoot(document.getElementById('root')).render(
           <Route path="bottleneck" element={<InHouseAgent />} />
           <Route path="in-house-agent" element={<Navigate to="/bottleneck" replace />} />
           <Route path="contact-form" element={<ContactForm />} />
+          <Route path="book-workflow-review" element={<BookWorkflowReview />} />
+          <Route path="diagnostics" element={<Diagnostics />} />
         </Route>
       </Routes>
     </BrowserRouter>

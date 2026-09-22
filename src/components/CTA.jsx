@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
+
 export default function CTA() {
   return (
     <div className="sm:px-6 lg:px-8 z-10 text-center max-w-7xl mr-auto ml-auto pr-4 pl-4 relative">
       <div className="fade-up-element flex flex-col sm:flex-row gap-x-4 gap-y-4 items-center justify-center">
-        <a href="https://calendly.com/kindling-solutions/kindling-solutions" target="_blank" rel="noopener noreferrer" className="inline-flex w-fit items-center justify-center rounded-full bg-kb-accent pb-3.5 pl-8 pr-8 pt-3.5 font-inter text-sm font-medium text-kb-on-accent transition-colors hover:bg-kb-accent-hover sm:w-auto">Show Us Your Workflow</a>
+        <Link to="/book-workflow-review" className="inline-flex w-fit items-center justify-center rounded-full bg-kb-accent pb-3.5 pl-8 pr-8 pt-3.5 font-inter text-sm font-medium text-kb-on-accent transition-colors hover:bg-kb-accent-hover sm:w-auto">Show Us Your Workflow</Link>
       </div>
       <p className="typography-reveal mb-12 ml-auto mr-auto max-w-5xl text-center text-base leading-relaxed text-kb-ink-soft sm:text-2xl">
         <span className="overflow-hidden inline-block align-bottom -mb-1 font-inter max-w-6xl pt-0 pb-0">

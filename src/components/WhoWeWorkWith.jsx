@@ -94,7 +94,7 @@ export default function WhoWeWorkWith() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="fade-up-element mx-auto mt-14 flex flex-col items-center text-center">
           <Link
-            to="/contact-form"
+            to="/book-workflow-review"
             className="inline-flex items-center justify-center rounded-full bg-kb-accent px-7 py-3.5 font-inter text-sm font-medium text-kb-on-accent transition-colors hover:bg-kb-accent-hover"
           >
             Get in Touch

@@ -40,7 +40,7 @@ export default function FAQ() {
         <div className="fade-up-element text-center mb-16">
           <img
           src="/recovered-assets/0547f70f-43a3-4916-98fd-dab34ad57238_320w.png"
-            alt="Orange Message Bubble Icon"
+            alt="Message Bubble Icon"
             className="w-[4.2rem] sm:w-[4.8rem] h-auto mx-auto mb-6 animate-bounce"
           />
           <h2 className="mb-4 font-inter text-3xl font-medium tracking-tight text-kb-ink sm:text-4xl">Frequently Asked Questions</h2>

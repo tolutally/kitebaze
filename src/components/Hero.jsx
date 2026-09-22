@@ -3,23 +3,29 @@ import { Link } from 'react-router-dom';
 import HeroFlowOverlay from './HeroFlowOverlay.jsx';
 
 const startingPoints = [
-  { label: 'Build my workflow', to: '/workflow-build' },
-  { label: 'Fix one bottleneck', to: '/bottleneck' },
-  { label: 'See case studies', to: '/case-studies' },
-  { label: 'Talk to Kitebaze', to: '/contact-form' },
+  { label: 'I keep chasing leads', to: '/book-workflow-review' },
+  { label: 'I do too much admin', to: '/book-workflow-review' },
+  { label: 'Follow-ups get missed', to: '/book-workflow-review' },
+  { label: "My tools don't talk", to: '/book-workflow-review' },
 ];
 
 export default function Hero() {
-  const phrase = "what's missing";
+  const phrase = "slowing you down.";
   const [prompt, setPrompt] = useState('');
   const [videoLoopKey, setVideoLoopKey] = useState(0);
   const videoRef = useRef(null);
 
   const handlePromptSubmit = (event) => {
     event.preventDefault();
-    if (!prompt.trim()) return;
-    // TODO: wire up to Botpress (e.g. open webchat and send this message)
-    setPrompt('');
+    const message = prompt.trim();
+    if (!message) return;
+
+    const session = typeof window.crypto?.randomUUID === 'function'
+      ? window.crypto.randomUUID()
+      : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    const search = new URLSearchParams({ message, session });
+
+    window.location.assign(`/diagnostics?${search.toString()}`);
   };
 
   // restart the overlay animation only when the video actually loops, not on its own timer
@@ -66,11 +72,11 @@ export default function Hero() {
       <div className="relative z-10 mx-auto flex min-h-[calc(100svh+30rem)] w-full max-w-7xl items-end justify-center px-4 pb-0 pt-40 md:min-h-[calc(100svh+17.5rem)] sm:px-8 lg:px-10">
         <div className="w-full text-center">
           <p className="mx-auto mb-4 font-inter text-sm font-semibold uppercase tracking-[0.16em] text-kb-accent-light">
-            We build it. Then we keep it running.
+            AI THAT GETS WORK DONE
           </p>
 
           <h1 className="mx-auto whitespace-nowrap font-space-grotesk text-[clamp(0.95rem,4vw,3.5rem)] font-medium leading-none tracking-[-0.035em] text-kb-inverse-text">
-            <span>Keep what works. We connect </span>
+            <span>Put AI to work on the work </span>
             <span className="relative inline-flex items-center bg-kb-accent px-[0.2em] py-[0.08em] text-kb-on-accent">
               {phrase}
             </span>
@@ -78,7 +84,7 @@ export default function Hero() {
           </h1>
 
           <p className="mx-auto mt-7 max-w-6xl text-center font-inter text-sm font-light leading-relaxed text-kb-inverse-text/85 sm:text-base md:text-lg">
-            Your scheduling, accounting, documents and email already work — they just don’t talk to each other. We connect what you already pay for and take the manual work out from between them.
+           Kitebaze finds the repetitive work eating up your team's time, then builds AI to handle it from start to finish. Tell us what's slowing you down and see what AI could take on.
           </p>
 
           <div className="mx-auto mt-14 w-full max-w-5xl sm:mt-8">
@@ -115,7 +121,7 @@ export default function Hero() {
               <nav aria-label="Ways to get started" className="mt-3 flex flex-wrap gap-2.5 sm:gap-3">
                 {startingPoints.map((item) => (
                   <Link
-                    key={item.to}
+                    key={item.label}
                     to={item.to}
                     className="group inline-flex min-h-11 flex-1 items-center justify-between gap-3 whitespace-nowrap rounded-full bg-kb-surface/80 px-4 py-2 font-inter text-sm font-normal text-kb-ink transition-colors hover:bg-kb-surface sm:flex-none sm:px-5"
                   >

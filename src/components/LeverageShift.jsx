@@ -89,8 +89,8 @@ function HandoffsVisual() {
       <div aria-hidden="true">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <p className="font-inter text-sm font-semibold text-kb-ink">Manual handoffs</p>
-            <p className="mt-1 font-inter text-xs text-kb-ink-muted">The work between the software</p>
+            <p className="font-inter text-sm font-semibold text-kb-ink">The work left to you</p>
+            <p className="mt-1 font-inter text-xs text-kb-ink-muted">What still needs a person</p>
           </div>
           <span className="flex h-9 w-9 items-center justify-center rounded-full bg-kb-inverse text-kb-inverse-text">
             <ArrowIcon />
@@ -140,7 +140,7 @@ export default function LeverageShift() {
           <div className="leverage-intro-copy fade-up-element flex flex-col justify-center px-2 py-6 sm:px-4 lg:px-8">
             <p className="font-space-grotesk text-3xl font-medium leading-[1.05] tracking-tight text-kb-ink sm:text-4xl">You already have the software.</p>
             <p className="mt-5 max-w-xl font-inter text-base font-light leading-7 text-kb-ink-soft sm:text-lg">
-              Most growing service businesses don't need another subscription. You already have a scheduling system, an inbox, forms, a calendar, spreadsheets and accounting.
+              Most businesses don't need another tool. <strong className="font-medium text-kb-ink">The problem is all the work your team still has to do between the ones you already use.</strong>
             </p>
             <div className="mt-6 flex flex-wrap gap-2" aria-label="Existing business tools">
               {STACK_TOOLS.map((tool) => (
@@ -154,12 +154,12 @@ export default function LeverageShift() {
           <StackVisual />
 
           <div className="leverage-manual-copy fade-up-element flex flex-col justify-center px-2 py-6 sm:px-4 lg:px-8">
-            <p className="font-space-grotesk text-3xl font-medium leading-[1.05] tracking-tight text-kb-ink sm:text-4xl">People become the integration.</p>
+            <p className="font-space-grotesk text-3xl font-medium leading-[1.05] tracking-tight text-kb-ink sm:text-4xl">Your team fills the gaps.</p>
             <p className="mt-5 max-w-xl font-inter text-base font-light leading-7 text-kb-ink-soft sm:text-lg">
-              The problem is that they don't talk to each other. So people become the integration: they copy, paste, chase, check, re-enter, forward and update.
+              When your tools stop, someone has to take over. <strong className="font-medium text-kb-ink">Copy the details. Check the calendar. Send the follow-up. Update the spreadsheet. Chase the customer. Repeat.</strong>
             </p>
             <p className="mt-7 max-w-xl border-l-2 border-kb-accent pl-5 font-inter text-base font-medium leading-7 text-kb-accent-ink sm:text-lg">
-              Every tool you add makes this worse, not better. The tenth system doesn't reduce the coordination work, it creates more of it.
+              The software does its job. Your team is still left doing the work between it.
             </p>
           </div>
 

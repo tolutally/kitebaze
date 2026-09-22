@@ -120,6 +120,10 @@ body {
   box-shadow: var(--kb-card-shadow-hover);
 }
 
+.kb-diagnostic-chat button[aria-label="Close Chatbot Button"] {
+  display: none;
+}
+
 .video-background-container {
   opacity: 0;
   transition: opacity 240ms ease;

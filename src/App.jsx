@@ -7,13 +7,17 @@ import Footer from './components/Footer.jsx';
 
 export default function App() {
   useScrollReveal();
-  const { hash } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (!hash) return;
-    const target = document.querySelector(hash);
-    target?.scrollIntoView({ behavior: 'smooth' });
-  }, [hash]);
+    if (hash) {
+      const target = document.querySelector(hash);
+      target?.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [pathname, hash]);
 
   return (
     <>

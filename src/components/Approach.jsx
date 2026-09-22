@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 const STEPS = [
   {
     title: 'Map the work',
-    copy: 'We follow one real job end to end and mark every point where someone copies, checks, chases, waits or has to remember.',
+    copy: 'We follow one real job from start to finish and find every point where someone has to copy, check, chase, wait or remember what happens next.',
     video: '/map_the_work.mp4',
   },
   {
-    title: 'Build around reality',
-    copy: 'We connect what you already run, around your actual process including the exceptions, the awkward cases and the spreadsheet only one person understands.',
+    title: 'Build around how you actually work',
+    copy: 'We build around the tools and processes you already use, including the exceptions, awkward cases and that spreadsheet only one person understands.',
     video: '/build_in_reality.mp4',
   },
   {
-    title: 'Put routine work on autopilot',
-    copy: 'Confirmations go out. Records update. Invoices get chased. Documents come back. Nothing waits on someone’s memory.',
+    title: 'Take the routine work off your plate',
+    copy: 'Confirmations go out. Records stay updated. Invoices get chased. Documents come back. Your team steps in when they’re actually needed.',
     video: '/put_work_on_autopilot.mp4',
   },
 ];
@@ -92,7 +92,7 @@ export default function Approach() {
                 {current.copy}
               </p>
               <Link
-                to="/workflow-build"
+                to="/book-workflow-review"
                 className="group inline-flex h-10 items-center justify-center rounded-full bg-kb-accent px-6 font-inter text-sm font-medium text-kb-on-accent transition-colors hover:bg-kb-accent-hover"
               >
                 <span className="mr-2">Book a workflow review</span>
@@ -108,4 +108,3 @@ export default function Approach() {
     </section>
   );
 }
-

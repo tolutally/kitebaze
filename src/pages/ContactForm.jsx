@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function ContactForm() {
   return (
     <section className="relative overflow-hidden border-t border-kb-line bg-kb-canvas">
@@ -21,18 +23,16 @@ export default function ContactForm() {
             <div className="mt-12">
               <p className="max-w-lg font-inter text-xl leading-relaxed text-kb-ink-soft">Want to chat right away?</p>
               <div className="mt-4 space-y-3 font-inter text-sm text-kb-ink-muted">
-                <p>• 30-minute strategy call</p>
+                <p>• 30-minute workflow review</p>
                 <p>• No obligation</p>
                 <p className="pb-6">• Clear next steps</p>
               </div>
-              <a
-                href="https://calendly.com/kindling-solutions/kindling-solutions"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/book-workflow-review"
                 className="inline-flex items-center justify-center rounded-full bg-kb-accent px-8 py-4 font-inter font-medium text-kb-on-accent transition-colors hover:bg-kb-accent-hover"
               >
-                Book A Call
-              </a>
+                Book a Workflow Review
+              </Link>
             </div>
           </div>
 

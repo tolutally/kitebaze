@@ -1,22 +1,24 @@
+import { Link } from 'react-router-dom';
+
 const CHATGPT_POINTS = [
   {
     title: 'You probably should.',
-    copy: "Drafting a message, cleaning up an email, summarising a thread. A $20 subscription does that well and you don't need us for it. What it can't do is work when you're not typing.",
+    copy: "For writing an email, summarizing a document, brainstorming or getting an answer, ChatGPT is great. If that's all you need, you probably don't need us.",
     icon: 'grid',
   },
   {
-    title: "It won't notice on its own.",
-    copy: "ChatGPT won't notice a booking came in, pull the details, create the record, send the confirmation, chase the form that never came back and flag the invoice that's three weeks late — while you're with a client. That gap isn't intelligence. It's plumbing.",
+    title: 'But you still have to show up.',
+    copy: "ChatGPT waits for you to ask. It doesn't notice the new enquiry, check what happened, follow up tomorrow, update your records and keep the work moving while you're busy.",
     icon: 'handoff',
   },
   {
-    title: 'The hard part was never the AI.',
-    copy: "It's the connection between your scheduling tool and your accounting. It's the exception nobody documents — the client who always pays late, the job that needs two visits, the form your regulator requires.",
+    title: "The work doesn't live in one chat.",
+    copy: "It moves between your inbox, calendar, forms, spreadsheets, accounting software and customers. That's where the manual work piles up.",
     icon: 'repeat',
   },
   {
-    title: 'You can build it yourself.',
-    copy: "Some people should. If you have someone in-house who enjoys this and has the time, do that — it's cheaper. Hire us when you'd rather own the outcome than the maintenance.",
+    title: "That's where Kitebaze comes in.",
+    copy: "We build around the way your business actually works, so repetitive work gets handled in the background and you step in when you're needed. Could you build this yourself? Absolutely. Kitebaze is for businesses that would rather have the work handled than build and maintain the machinery behind it.",
     icon: 'person',
   },
 ];
@@ -75,17 +77,15 @@ export default function WhyNotChatGPT() {
             </span>
           </h2>
           <p className="fade-up-element mx-auto mt-5 max-w-2xl font-inter text-base font-light leading-7 text-kb-ink-muted sm:text-lg">
-            A subscription answers questions. A system does the job.
+            ChatGPT helps when you ask. Kitebaze keeps the work moving when you don't.
           </p>
           <div className="fade-up-element mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a
-              href="https://calendly.com/kindling-solutions/kindling-solutions"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/book-workflow-review"
               className="inline-flex w-full items-center justify-center rounded-xl bg-kb-inverse px-7 py-4 font-inter text-sm font-semibold text-kb-inverse-text shadow-[0_16px_36px_rgba(33,28,24,0.13)] transition-colors hover:bg-kb-inverse-soft sm:w-auto"
             >
               Show Us Your Workflow
-            </a>
+            </Link>
           </div>
         </div>
 

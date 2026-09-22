@@ -94,8 +94,8 @@ export default function CaseStudiesPage() {
         <div className="pointer-events-none absolute inset-0 opacity-30 about-grid"></div>
         <div className="relative mx-auto max-w-4xl">
           <h2 className="font-space-grotesk text-4xl font-medium tracking-tight text-kb-ink sm:text-6xl">Ready to transform your business?</h2>
-          <p className="mx-auto mt-6 max-w-2xl font-inter text-lg font-light text-kb-ink-soft sm:text-xl">Book a free strategy call today and discover how AI can help you scale.</p>
-          <Link to="/contact-form" className="mt-10 inline-flex items-center justify-center rounded-full bg-kb-accent px-8 py-3.5 font-inter text-sm font-medium text-kb-on-accent transition-colors hover:bg-kb-accent-hover">Book a Strategy Call</Link>
+          <p className="mx-auto mt-6 max-w-2xl font-inter text-lg font-light text-kb-ink-soft sm:text-xl">Book a free workflow review today and discover how AI can help you scale.</p>
+          <Link to="/book-workflow-review" className="mt-10 inline-flex items-center justify-center rounded-full bg-kb-accent px-8 py-3.5 font-inter text-sm font-medium text-kb-on-accent transition-colors hover:bg-kb-accent-hover">Book a Workflow Review</Link>
         </div>
       </section>
     </>

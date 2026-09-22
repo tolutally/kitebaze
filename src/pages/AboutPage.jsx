@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header.jsx';
 import Footer from '../components/Footer.jsx';
 
@@ -64,7 +65,7 @@ export default function AboutPage() {
           <div className="relative z-10 max-w-5xl mx-auto px-6 pt-28 text-center">
             <h1 className="font-space-grotesk text-6xl sm:text-7xl lg:text-8xl font-medium tracking-tight">The Spark.</h1>
             <p className="mx-auto mt-6 max-w-4xl text-lg font-light leading-relaxed text-kb-inverse-text/80 sm:text-2xl">Before the build, there’s a spark: the moment you admit the current way won’t scale. Here’s what we’re doing about it—and who we are.</p>
-            <a href="https://calendly.com/kindling-solutions/kindling-solutions" className="mt-9 inline-flex items-center justify-center rounded-full bg-kb-accent px-8 py-3.5 text-sm font-medium text-kb-on-accent transition-colors hover:bg-kb-accent-hover">Book a Call</a>
+            <Link to="/book-workflow-review" className="mt-9 inline-flex items-center justify-center rounded-full bg-kb-accent px-8 py-3.5 text-sm font-medium text-kb-on-accent transition-colors hover:bg-kb-accent-hover">Book a Workflow Review</Link>
           </div>
         </section>
 

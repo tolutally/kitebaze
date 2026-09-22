@@ -24,8 +24,8 @@ const process = [
   ['Roll Out', 'Train the team and lock it in as the operating rhythm.'],
 ];
 
-function CallButton({ dark = false, children = 'Book a Call' }) {
-  return <Link to="/contact-form" className={`inline-flex w-fit items-center justify-center rounded-full px-8 py-3.5 font-inter text-sm font-medium transition-colors ${dark ? 'bg-kb-inverse text-kb-inverse-text hover:bg-kb-inverse-soft' : 'bg-kb-accent text-kb-on-accent hover:bg-kb-accent-hover'}`}>{children}</Link>;
+function CallButton({ dark = false, children = 'Book a Workflow Review' }) {
+  return <Link to="/book-workflow-review" className={`inline-flex w-fit items-center justify-center rounded-full px-8 py-3.5 font-inter text-sm font-medium transition-colors ${dark ? 'bg-kb-inverse text-kb-inverse-text hover:bg-kb-inverse-soft' : 'bg-kb-accent text-kb-on-accent hover:bg-kb-accent-hover'}`}>{children}</Link>;
 }
 
 export default function WorkflowBuild() {
@@ -73,7 +73,7 @@ export default function WorkflowBuild() {
 
       <section className="relative border-t border-kb-line bg-kb-canvas"><div className="absolute right-0 top-0 hidden h-[85%] w-1/2 bg-kb-accent md:block"></div><div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div className="grid md:grid-cols-2"><div className="bg-kb-canvas py-20 md:py-32 md:pr-12"><h2 className="font-space-grotesk text-5xl font-medium leading-[1.1] tracking-tight text-kb-ink sm:text-6xl lg:text-7xl">What your business looks like on the other side.</h2></div><div className="-mx-4 bg-kb-accent px-6 py-16 text-kb-on-accent sm:-mx-6 md:mx-0 md:bg-transparent md:py-32 md:pl-16"><h2 className="mb-8 font-space-grotesk text-5xl font-medium leading-[1.1] tracking-tight text-kb-on-accent">This isn’t about efficiency. It’s about what your business becomes capable of.</h2><ul className="space-y-2">{["Output goes up, headcount doesn’t", 'Key people stop being bottlenecks.', 'You scale for a fraction of the cost.', 'You see what’s coming before anyone else.'].map(item => <li key={item} className="flex items-center gap-4 font-inter text-lg font-light text-kb-on-accent"><span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-kb-on-accent/30 bg-kb-on-accent/15">✓</span>{item}</li>)}</ul></div></div><div className="relative z-20 pb-24"><div className="relative aspect-[2.5/1] overflow-hidden rounded-3xl shadow-[0_24px_70px_rgba(63,48,36,0.16)]"><img src="/workflow-assets/operations-bg.png" alt="" className="h-full w-full object-cover" /><div className="absolute inset-0 bg-kb-inverse/25"></div></div></div></div></section>
 
-      <section className="bg-kb-accent py-32 text-center text-kb-on-accent"><div className="mx-auto max-w-4xl px-4"><h2 className="font-space-grotesk text-5xl font-medium tracking-tight text-kb-on-accent sm:text-7xl">Ready to transform your business?</h2><p className="mx-auto mb-10 mt-6 max-w-2xl text-lg font-light text-kb-on-accent/80 sm:text-xl">Book a free strategy call today and discover how AI can help you scale.</p><CallButton dark>Book a Strategy Call</CallButton></div></section>
+      <section className="bg-kb-accent py-32 text-center text-kb-on-accent"><div className="mx-auto max-w-4xl px-4"><h2 className="font-space-grotesk text-5xl font-medium tracking-tight text-kb-on-accent sm:text-7xl">Ready to transform your business?</h2><p className="mx-auto mb-10 mt-6 max-w-2xl text-lg font-light text-kb-on-accent/80 sm:text-xl">Book a free workflow review today and discover how AI can help you scale.</p><CallButton dark>Book a Workflow Review</CallButton></div></section>
     </>
   );
 }
