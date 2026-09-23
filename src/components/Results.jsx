@@ -1,6 +1,6 @@
 const workflowImages = [
   {
-    src: '/image-man-with-laptop.png',
+    src: '/image-man-with-laptop.jpg',
     alt: 'An operator surrounded by a manual coordination process',
   },
   {

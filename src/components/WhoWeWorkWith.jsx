@@ -70,10 +70,12 @@ export default function WhoWeWorkWith() {
                 src={sector.image}
                 alt=""
                 aria-hidden="true"
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-kb-inverse via-kb-inverse/40 to-kb-inverse/10" />
-              <div className="pointer-events-none absolute bottom-0 left-0 z-20 p-8">
+              <div className={`pointer-events-none absolute bottom-0 left-0 z-20 p-8 transition-all duration-300 ease-out group-hover:translate-y-3 group-hover:opacity-0 ${isActive ? 'translate-y-3 opacity-0' : 'translate-y-0 opacity-100'}`}>
                 <h3 className="font-space-grotesk text-4xl font-medium uppercase tracking-tight text-kb-inverse-text lg:text-5xl">{sector.title}</h3>
               </div>
               <div className={`absolute inset-y-0 right-0 z-10 flex w-[70%] flex-col justify-start border-l border-kb-inverse-text/10 bg-kb-inverse-soft/90 p-8 pt-10 backdrop-blur-md transition-transform duration-500 ease-out group-hover:translate-x-0 md:w-[60%] ${isActive ? 'translate-x-0' : 'translate-x-full'}`}>

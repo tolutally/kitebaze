@@ -8,7 +8,7 @@ export default function BackgroundVideo() {
         WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)',
       }}
     >
-      <img src="/recovered-assets/11b56623-2d13-48c7-8d18-f1b905e6be2b_3840w.png" alt="" className="w-full h-full object-cover" />
+      <img src="/recovered-assets/11b56623-2d13-48c7-8d18-f1b905e6be2b_3840w.jpg" alt="" className="w-full h-full object-cover" />
     </div>
   );
 }

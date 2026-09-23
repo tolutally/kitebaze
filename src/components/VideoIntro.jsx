@@ -2,7 +2,7 @@ export default function VideoIntro() {
   return (
     <section className="relative flex min-h-[400px] items-center overflow-hidden bg-kb-inverse lg:min-h-[800px]">
       <img
-        src="/image-man-with-laptop.png"
+        src="/image-man-with-laptop.jpg"
         alt=""
         className="absolute inset-0 w-full h-full object-cover opacity-90"
         style={{ objectPosition: '30% 55%' }}

@@ -124,6 +124,115 @@ body {
   display: none;
 }
 
+.chatgpt-section-grid {
+  background-image:
+    linear-gradient(to right, var(--kb-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--kb-grid-line) 1px, transparent 1px);
+  background-size: 1.35rem 1.35rem;
+}
+
+.chatgpt-visual-grid {
+  background-image:
+    linear-gradient(to right, var(--kb-grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--kb-grid-line) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.chatgpt-mobile-carousel {
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  transition: height 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.chatgpt-mobile-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.chatgpt-carousel-slide {
+  scroll-snap-stop: always;
+}
+
+.case-studies-mobile-carousel {
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.case-studies-mobile-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.case-study-carousel-slide {
+  scroll-snap-stop: always;
+}
+
+@keyframes useCaseFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes useCasePulse {
+  0%,
+  100% {
+    filter: brightness(1);
+    transform: scale(1);
+  }
+  50% {
+    filter: brightness(1.12);
+    transform: scale(1.035);
+  }
+}
+
+@keyframes useCaseFlowSignal {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(420%);
+  }
+}
+
+.use-case-float {
+  animation: useCaseFloat 5s ease-in-out infinite;
+}
+
+.use-case-pulse {
+  animation: useCasePulse 2.8s ease-in-out infinite;
+}
+
+.use-case-flow-signal {
+  animation: useCaseFlowSignal 3.2s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .chatgpt-mobile-carousel {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chatgpt-mobile-carousel {
+    scroll-behavior: auto;
+    transition: none;
+  }
+
+  .case-studies-mobile-carousel {
+    scroll-behavior: auto;
+  }
+
+  .use-case-float,
+  .use-case-pulse,
+  .use-case-flow-signal {
+    animation: none;
+  }
+}
+
 .video-background-container {
   opacity: 0;
   transition: opacity 240ms ease;
@@ -138,11 +247,11 @@ body {
   outline-offset: 4px;
 }
 
-@font-face { font-family: 'Inter'; src: url('/fonts/inter.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Space Grotesk'; src: url('/fonts/space-grotesk.ttf') format('truetype'); font-weight: 300 700; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Montserrat'; src: url('/fonts/montserrat.ttf') format('truetype'); font-weight: 100 900; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Plus Jakarta Sans'; src: url('/fonts/plus-jakarta-sans.ttf') format('truetype'); font-weight: 200 800; font-style: normal; font-display: swap; }
-@font-face { font-family: 'Playfair Display'; src: url('/fonts/playfair-display.ttf') format('truetype'); font-weight: 400 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Inter'; src: url('/fonts/inter.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Space Grotesk'; src: url('/fonts/space-grotesk.woff2') format('woff2'); font-weight: 300 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Montserrat'; src: url('/fonts/montserrat.woff2') format('woff2'); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Plus Jakarta Sans'; src: url('/fonts/plus-jakarta-sans.woff2') format('woff2'); font-weight: 200 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Playfair Display'; src: url('/fonts/playfair-display.woff2') format('woff2'); font-weight: 400 900; font-style: normal; font-display: swap; }
 
 .font-inter { font-family: 'Inter', sans-serif !important; }
 .font-space-grotesk, .font-grotesk { font-family: 'Space Grotesk', sans-serif !important; }

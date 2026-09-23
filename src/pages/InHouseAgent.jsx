@@ -40,7 +40,7 @@ export default function InHouseAgent() {
   return (
     <>
       <section className="relative min-h-[800px] overflow-hidden bg-kb-inverse pt-32 text-kb-inverse-text">
-        <img src="/in-house-assets/hero.png" alt="" className="absolute inset-0 h-full w-full object-cover object-right sm:object-center" />
+        <img src="/in-house-assets/hero.jpg" alt="" className="absolute inset-0 h-full w-full object-cover object-right sm:object-center" />
         <div className="absolute inset-0 bg-kb-inverse/55"></div>
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-kb-canvas via-kb-canvas/55 to-transparent"></div>
         <div className="relative mx-auto mt-20 flex w-full max-w-7xl flex-col items-center px-6 text-center sm:mt-28">
@@ -89,7 +89,7 @@ export default function InHouseAgent() {
           </div>
           <div className="group relative h-[260px] lg:col-span-5 lg:h-auto lg:min-h-[400px]">
             <div className="absolute inset-0 overflow-hidden rounded-[2rem] border border-kb-inverse-muted/25 bg-kb-inverse-soft shadow-2xl">
-              <img src="/in-house-assets/agent-landscape.png" alt="Sci-fi landscape" className="absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-luminosity transition-transform duration-[2s] group-hover:scale-110" />
+              <img src="/in-house-assets/agent-landscape.jpg" alt="Sci-fi landscape" className="absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-luminosity transition-transform duration-[2s] group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-kb-inverse/60 via-transparent to-transparent"></div>
               <div className="absolute inset-0 p-8"><span className="inline-flex items-center gap-2 rounded-full border border-kb-inverse-muted/25 bg-kb-inverse/55 px-3 py-1.5 font-inter text-[10px] font-semibold uppercase tracking-wide text-kb-inverse-text backdrop-blur-sm"><span className="h-2 w-2 rounded-full bg-kb-accent shadow-[0_0_10px_rgba(159,107,78,0.65)]"></span>Live Agent</span></div>
             </div>

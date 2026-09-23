@@ -25,10 +25,10 @@ export default function ScaleBreak() {
   return (
     <section
       ref={sectionRef}
-      className={`scale-break-section relative border-b border-kb-line bg-kb-canvas pb-0 pt-16 sm:pb-0 sm:pt-16 ${animateNow ? 'animate-now' : ''}`}
+      className={`scale-break-section relative overflow-hidden border-b border-kb-line bg-kb-canvas pb-0 pt-6 sm:pb-0 sm:pt-8 ${animateNow ? 'animate-now' : ''}`}
     >
-      <div className="text-center max-w-7xl mr-auto mb-4 ml-auto">
-        <h2 className="mb-6 mt-6 font-space-grotesk text-4xl font-medium tracking-tight text-kb-ink md:text-6xl">
+      <div className="mx-auto mb-4 max-w-7xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 className="mb-6 mt-0 font-space-grotesk text-4xl font-medium tracking-tight text-kb-ink md:text-6xl">
           Everything works. The work still
           <span className="inline-flex align-bottom text-kb-accent-ink mx-1 relative">
             <span className="invisible" aria-hidden="true">waits</span>

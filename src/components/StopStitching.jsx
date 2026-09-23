@@ -12,7 +12,7 @@ export default function StopStitching() {
             <div className="absolute inset-0 rounded-full bg-kb-accent/20 blur-xl animate-pulse"></div>
             <div className="relative z-10 animate-[pulse_3s_ease-in-out_infinite]">
               <img
-              src="/recovered-assets/f965d3f0-25ae-426e-8843-d393473e2223_320w.png"
+              src="/kitebase-icon-stone.png"
                 alt="Custom Icon"
                 className="drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] w-[80px] h-[80px] object-contain"
                 style={{ width: '80px', height: '80px' }}

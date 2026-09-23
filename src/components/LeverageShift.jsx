@@ -25,9 +25,9 @@ function ArrowIcon() {
 function StackVisual() {
   return (
     <div
-      className="leverage-stack-visual fade-up-element kb-card-shadow rounded-2xl border border-kb-line bg-kb-surface p-5 sm:p-6"
+      className="leverage-stack-visual fade-up-element kb-card-shadow min-w-0 rounded-2xl border border-kb-line bg-kb-surface p-4 sm:p-6"
       role="img"
-      aria-label="Six existing business tools separated by manual handoffs"
+      aria-label="Six existing business tools that still rely on manual handoffs"
     >
       <div aria-hidden="true">
         <div className="flex items-start justify-between gap-4">
@@ -41,18 +41,18 @@ function StackVisual() {
           </span>
         </div>
 
-        <div className="mt-7 grid grid-cols-2 gap-3 sm:grid-cols-3">
+        <div className="mt-5 grid grid-cols-3 gap-2 sm:mt-7 sm:gap-3">
           {STACK_TOOLS.map((tool) => (
-            <div key={tool.label} className="rounded-xl border border-kb-line/80 bg-kb-canvas p-3.5">
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-kb-accent-soft font-space-grotesk text-[10px] font-semibold tracking-wide text-kb-accent-ink">
+            <div key={tool.label} className="min-w-0 rounded-xl border border-kb-line/80 bg-kb-canvas p-2.5 sm:p-3.5">
+              <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-kb-accent-soft font-space-grotesk text-[9px] font-semibold tracking-wide text-kb-accent-ink sm:h-8 sm:w-8 sm:text-[10px]">
                 {tool.mark}
               </span>
-              <p className="mt-3 font-inter text-xs font-medium text-kb-ink">{tool.label}</p>
+              <p className="mt-2 font-inter text-[10px] font-medium leading-tight text-kb-ink sm:mt-3 sm:text-xs">{tool.label}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-5 rounded-2xl border border-kb-line/80 bg-kb-canvas p-4 sm:p-5">
+        <div className="mt-5 hidden rounded-2xl border border-kb-line/80 bg-kb-canvas p-4 sm:block sm:p-5">
           <div className="flex items-center justify-between gap-4">
             <p className="font-inter text-xs font-medium text-kb-ink">How the work moves today</p>
             <span className="rounded-full bg-kb-accent-soft px-2.5 py-1 font-inter text-[10px] font-semibold uppercase tracking-[0.12em] text-kb-accent-ink">By hand</span>
@@ -82,7 +82,7 @@ function StackVisual() {
 function HandoffsVisual() {
   return (
     <div
-      className="leverage-handoffs-visual fade-up-element kb-card-shadow rounded-2xl border border-kb-line bg-kb-surface p-5 sm:p-6"
+      className="leverage-handoffs-visual fade-up-element kb-card-shadow min-w-0 rounded-2xl border border-kb-line bg-kb-surface p-4 sm:p-6"
       role="img"
       aria-label="Examples of information being manually copied, re-entered, forwarded and chased between tools"
     >
@@ -97,19 +97,17 @@ function HandoffsVisual() {
           </span>
         </div>
 
-        <div className="mt-6 space-y-3">
+        <div className="mt-5 space-y-2 sm:mt-6 sm:space-y-3">
           {MANUAL_HANDOFFS.map((handoff, index) => (
-            <div key={`${handoff.from}-${handoff.to}`} className="flex items-center justify-between gap-3 rounded-xl border border-kb-line/80 bg-kb-canvas p-3.5 sm:p-4">
-              <div className="flex min-w-0 items-center gap-3">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-kb-surface font-space-grotesk text-xs font-semibold text-kb-ink shadow-sm">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <div className="min-w-0">
-                  <p className="truncate font-inter text-sm font-medium text-kb-ink">{handoff.from} <span className="text-kb-ink-muted">→</span> {handoff.to}</p>
-                  <p className="mt-0.5 font-inter text-[11px] text-kb-ink-muted">Waiting on a person</p>
-                </div>
+            <div key={`${handoff.from}-${handoff.to}`} className="grid grid-cols-[auto_minmax(0,1fr)] items-center gap-x-3 gap-y-2 rounded-xl border border-kb-line/80 bg-kb-canvas p-3 sm:flex sm:justify-between sm:p-4">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-kb-surface font-space-grotesk text-xs font-semibold text-kb-ink shadow-sm">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div className="min-w-0">
+                <p className="font-inter text-sm font-medium leading-snug text-kb-ink sm:truncate">{handoff.from} <span className="text-kb-ink-muted">→</span> {handoff.to}</p>
+                <p className="mt-0.5 font-inter text-[11px] text-kb-ink-muted">Waiting on a person</p>
               </div>
-              <span className="shrink-0 rounded-full bg-kb-accent-soft px-3 py-1.5 font-inter text-[11px] font-semibold text-kb-accent-ink">{handoff.action}</span>
+              <span className="col-start-2 w-fit shrink-0 rounded-full bg-kb-accent-soft px-3 py-1.5 font-inter text-[11px] font-semibold text-kb-accent-ink">{handoff.action}</span>
             </div>
           ))}
         </div>
@@ -120,7 +118,7 @@ function HandoffsVisual() {
 
 export default function LeverageShift() {
   return (
-    <section className="relative z-10 bg-kb-canvas py-16 sm:py-20">
+    <section className="relative z-10 overflow-hidden bg-kb-canvas pb-4 pt-14 sm:pb-8 sm:pt-20">
       <div className="relative z-30 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <span className="fade-up-element inline-flex items-center gap-2 rounded-full bg-kb-inverse px-3.5 py-2 font-inter text-[11px] font-semibold uppercase tracking-[0.16em] text-kb-inverse-text">
           <span className="h-1.5 w-1.5 rounded-full bg-kb-accent" />
@@ -136,13 +134,13 @@ export default function LeverageShift() {
           </span>
         </h2>
 
-        <div className="mt-10 grid gap-6 rounded-[2rem] border border-kb-line bg-kb-surface-raised p-4 sm:p-6 lg:grid-cols-2 lg:gap-8 lg:p-8">
-          <div className="leverage-intro-copy fade-up-element flex flex-col justify-center px-2 py-6 sm:px-4 lg:px-8">
-            <p className="font-space-grotesk text-3xl font-medium leading-[1.05] tracking-tight text-kb-ink sm:text-4xl">You already have the software.</p>
-            <p className="mt-5 max-w-xl font-inter text-base font-light leading-7 text-kb-ink-soft sm:text-lg">
+        <div className="mt-8 grid min-w-0 gap-5 sm:mt-10 sm:gap-6 sm:rounded-[2rem] sm:border sm:border-kb-line sm:bg-kb-surface-raised sm:p-6 lg:grid-cols-2 lg:gap-8 lg:p-8">
+          <div className="leverage-intro-copy fade-up-element flex min-w-0 flex-col justify-center px-1 py-2 sm:px-4 sm:py-6 lg:px-8">
+            <p className="font-space-grotesk text-[1.75rem] font-medium leading-[1.05] tracking-tight text-kb-ink sm:text-4xl">You already have the software.</p>
+            <p className="mt-4 max-w-xl font-inter text-base font-light leading-6 text-kb-ink-soft sm:mt-5 sm:text-lg sm:leading-7">
               Most businesses don't need another tool. <strong className="font-medium text-kb-ink">The problem is all the work your team still has to do between the ones you already use.</strong>
             </p>
-            <div className="mt-6 flex flex-wrap gap-2" aria-label="Existing business tools">
+            <div className="mt-6 hidden flex-wrap gap-2 sm:flex" aria-label="Existing business tools">
               {STACK_TOOLS.map((tool) => (
                 <span key={tool.label} className="rounded-full border border-kb-line bg-kb-surface px-4 py-2 font-inter text-sm font-medium text-kb-ink-soft">
                   {tool.label}
@@ -153,12 +151,12 @@ export default function LeverageShift() {
 
           <StackVisual />
 
-          <div className="leverage-manual-copy fade-up-element flex flex-col justify-center px-2 py-6 sm:px-4 lg:px-8">
-            <p className="font-space-grotesk text-3xl font-medium leading-[1.05] tracking-tight text-kb-ink sm:text-4xl">Your team fills the gaps.</p>
-            <p className="mt-5 max-w-xl font-inter text-base font-light leading-7 text-kb-ink-soft sm:text-lg">
+          <div className="leverage-manual-copy fade-up-element flex min-w-0 flex-col justify-center px-1 py-2 sm:px-4 sm:py-6 lg:px-8">
+            <p className="font-space-grotesk text-[1.75rem] font-medium leading-[1.05] tracking-tight text-kb-ink sm:text-4xl">Your team fills the gaps.</p>
+            <p className="mt-4 max-w-xl font-inter text-base font-light leading-6 text-kb-ink-soft sm:mt-5 sm:text-lg sm:leading-7">
               When your tools stop, someone has to take over. <strong className="font-medium text-kb-ink">Copy the details. Check the calendar. Send the follow-up. Update the spreadsheet. Chase the customer. Repeat.</strong>
             </p>
-            <p className="mt-7 max-w-xl border-l-2 border-kb-accent pl-5 font-inter text-base font-medium leading-7 text-kb-accent-ink sm:text-lg">
+            <p className="mt-5 max-w-xl border-l-2 border-kb-accent pl-4 font-inter text-base font-medium leading-6 text-kb-accent-ink sm:mt-7 sm:pl-5 sm:text-lg sm:leading-7">
               The software does its job. Your team is still left doing the work between it.
             </p>
           </div>

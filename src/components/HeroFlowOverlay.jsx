@@ -403,7 +403,14 @@ export default function HeroFlowOverlay({ className = '', style, askIndex = 0 })
                     style={{ animationName: `kb-hero-flow-agent-ready-${index}` }}
                   >
                     <circle cx={ACTION.x + 27} cy={y} r="13" fill="var(--kb-hero-flow-accent)" />
-                    <text x={ACTION.x + 27} y={y + 5} textAnchor="middle" fontSize="14" fontWeight="700" fill="var(--kb-hero-flow-ink)">K</text>
+                    <image
+                      href="/kitebaze-icon.png"
+                      x={ACTION.x + 27 - 9}
+                      y={y - 9}
+                      width="18"
+                      height="18"
+                      preserveAspectRatio="xMidYMid meet"
+                    />
                   </g>
                   <text x={ACTION.x + 50} y={y + 6} className="kb-hero-flow-action-label">
                     {app.action}

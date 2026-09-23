@@ -2,6 +2,18 @@ import { useEffect, useRef, useState } from 'react';
 
 const BOTPRESS_INJECT_URL = 'https://cdn.botpress.cloud/webchat/v5.0/inject.js';
 const CLIENT_ID = '86f91ef7-25a5-4f1c-81de-a5c65b897846';
+const PARKING_ID = 'kb-botpress-parking';
+
+function getBotpressParkingHost() {
+  let parkingHost = document.getElementById(PARKING_ID);
+  if (parkingHost) return parkingHost;
+
+  parkingHost = document.createElement('div');
+  parkingHost.id = PARKING_ID;
+  parkingHost.hidden = true;
+  document.body.appendChild(parkingHost);
+  return parkingHost;
+}
 
 function loadBotpress() {
   if (window.botpress) return Promise.resolve();
@@ -43,6 +55,7 @@ export default function DiagnosticChatEmbed({ initialMessage, sessionKey }) {
   useEffect(() => {
     let disposed = false;
     let chatObserver;
+    let revealRequested = false;
     const unsubscribers = [];
     const storageKey = `kitebaze-diagnostic-${sessionKey}`;
     const sentKey = `${storageKey}-message-sent`;
@@ -97,7 +110,8 @@ export default function DiagnosticChatEmbed({ initialMessage, sessionKey }) {
 
     const showChat = () => {
       if (disposed) return;
-      embedChatInFrame();
+      revealRequested = true;
+      if (!embedChatInFrame()) return;
       chatReadyRef.current = true;
       setChatStatus('ready');
     };
@@ -146,7 +160,11 @@ export default function DiagnosticChatEmbed({ initialMessage, sessionKey }) {
         if (disposed || !window.botpress) return;
 
         chatObserver = new MutationObserver(() => {
-          embedChatInFrame();
+          const embedded = embedChatInFrame();
+          if (embedded && revealRequested && !chatReadyRef.current) {
+            chatReadyRef.current = true;
+            setChatStatus('ready');
+          }
         });
         chatObserver.observe(document.body, { childList: true, subtree: true });
 
@@ -210,8 +228,7 @@ export default function DiagnosticChatEmbed({ initialMessage, sessionKey }) {
       const frame = document.querySelector('#kb-botpress-frame');
       const chatContainer = document.querySelector('.bpChatContainer');
       if (frame && chatContainer?.parentElement === frame) {
-        window.botpress?.close?.();
-        document.body.appendChild(chatContainer);
+        getBotpressParkingHost().appendChild(chatContainer);
       }
     };
   }, [initialMessage, sessionKey]);
