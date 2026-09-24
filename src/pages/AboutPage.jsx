@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header.jsx';
-import Footer from '../components/Footer.jsx';
 
 const beliefs = [
   {
@@ -57,9 +55,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-kb-canvas text-kb-ink">
-      <Header />
-      <main>
-        <section className="about-hero relative flex min-h-[585px] items-center justify-center overflow-hidden border-b border-kb-line text-kb-inverse-text">
+      <section className="about-hero relative flex min-h-[585px] items-center justify-center overflow-hidden border-b border-kb-line text-kb-inverse-text">
           <img src="/about-assets/station-hero.jpg" alt="Grand Central station" className="absolute inset-0 h-full w-full object-cover grayscale" />
           <div className="absolute inset-0 bg-gradient-to-t from-kb-inverse/90 via-kb-inverse/30 to-kb-inverse/55"></div>
           <div className="relative z-10 max-w-5xl mx-auto px-6 pt-28 text-center">
@@ -67,18 +63,18 @@ export default function AboutPage() {
             <p className="mx-auto mt-6 max-w-4xl text-lg font-light leading-relaxed text-kb-inverse-text/80 sm:text-2xl">Before the build, there’s a spark: the moment you admit the current way won’t scale. Here’s what we’re doing about it—and who we are.</p>
             <Link to="/book-workflow-review" className="mt-9 inline-flex items-center justify-center rounded-full bg-kb-accent px-8 py-3.5 text-sm font-medium text-kb-on-accent transition-colors hover:bg-kb-accent-hover">Book a Workflow Review</Link>
           </div>
-        </section>
+      </section>
 
-        <section className="flex min-h-[640px] items-start justify-center border-b border-kb-line bg-kb-canvas px-6 py-24 sm:py-28">
+      <section className="flex min-h-[640px] items-start justify-center border-b border-kb-line bg-kb-canvas px-6 py-24 sm:py-28">
           <div className="mx-auto max-w-[1420px] text-center">
             <h2 className="mx-auto font-space-grotesk text-[2.7rem] font-normal leading-[1.02] tracking-[-0.045em] sm:text-6xl lg:text-[5.35rem]">
               AI that holds up in the real<span className="hidden lg:inline"><br /></span><span className="lg:hidden"> </span>world. <span className="text-kb-accent-ink">Built by operators who<span className="hidden lg:inline"><br /></span><span className="lg:hidden"> </span>have been in your seat.</span>
             </h2>
             <p className="mx-auto mt-12 max-w-4xl font-light leading-[1.25] text-kb-ink-soft sm:text-2xl lg:text-[2rem]">We build AI-run operations for operators who want<br className="hidden sm:block" /> the next level without the chaos tax.</p>
           </div>
-        </section>
+      </section>
 
-        <section className="border-b border-kb-line bg-kb-canvas px-5 py-20 sm:px-8 sm:py-28">
+      <section className="border-b border-kb-line bg-kb-canvas px-5 py-20 sm:px-8 sm:py-28">
           <div className="mx-auto max-w-[1720px]">
             <h2 className="font-space-grotesk text-[3.25rem] font-normal leading-[1.03] tracking-[-0.045em] sm:text-7xl lg:text-[5.4rem]">
               Stop being the glue.<br /><span className="text-kb-accent-ink">Build the machine.</span>
@@ -109,9 +105,9 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </section>
+      </section>
 
-        <section className="border-b border-kb-line bg-kb-surface-soft px-6 py-28 sm:py-36">
+      <section className="border-b border-kb-line bg-kb-surface-soft px-6 py-28 sm:py-36">
           <div className="max-w-7xl mx-auto">
             <h2 className="font-space-grotesk text-5xl sm:text-7xl font-medium tracking-tight">Built by Operators.</h2>
             <p className="mt-5 max-w-3xl text-lg font-light text-kb-ink-soft sm:text-2xl">Led by the people who’ve scaled businesses—and can actually install what they recommend.</p>
@@ -129,9 +125,7 @@ export default function AboutPage() {
               <p className="text-lg font-light leading-relaxed text-kb-ink-soft sm:text-xl">{active.bio}</p>
             </div>
           </div>
-        </section>
-      </main>
-      <Footer />
+      </section>
     </div>
   );
 }

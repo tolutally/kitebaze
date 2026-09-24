@@ -1,5 +1,37 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/about", "destination": "/about-us", "permanent": true },
+    { "source": "/workflow", "destination": "/workflow-build", "permanent": true },
+    { "source": "/in-house-agent", "destination": "/bottleneck", "permanent": true },
+    { "source": "/workflow-discovery", "destination": "/book-workflow-review", "permanent": true },
+    { "source": "/contact-form", "destination": "/contact", "permanent": true },
+    { "source": "/terms-of-use", "destination": "/terms-of-service", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/llms.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "X-Robots-Tag", "value": "noindex, follow" }
+      ]
+    },
+    {
+      "source": "/llms-full.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+        { "key": "X-Robots-Tag", "value": "noindex, follow" }
+      ]
+    },
+    {
+      "source": "/llms-pages/:path*",
+      "headers": [
+        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
+        { "key": "X-Robots-Tag", "value": "noindex, follow" }
+      ]
+    }
   ]
 }

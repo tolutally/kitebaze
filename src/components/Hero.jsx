@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import HeroFlowOverlay from './HeroFlowOverlay.jsx';
 
 const startingPoints = [
@@ -10,7 +10,8 @@ const startingPoints = [
 ];
 
 export default function Hero() {
-  const phrase = "slowing you down.";
+  const navigate = useNavigate();
+  const phrase = 'off your plate';
   const [prompt, setPrompt] = useState('');
   const [videoLoopKey, setVideoLoopKey] = useState(0);
   const videoRef = useRef(null);
@@ -23,9 +24,14 @@ export default function Hero() {
     const session = typeof window.crypto?.randomUUID === 'function'
       ? window.crypto.randomUUID()
       : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-    const search = new URLSearchParams({ message, session });
 
-    window.location.assign(`/diagnostics?${search.toString()}`);
+    try {
+      window.sessionStorage.setItem('kitebaze-diagnostic-entry', JSON.stringify({ message, session }));
+    } catch {
+      // Router state keeps the prompt out of URLs even when browser storage is unavailable.
+    }
+
+    navigate('/diagnostics', { state: { diagnosticEntry: { message, session } } });
   };
 
   // restart the overlay animation only when the video actually loops, not on its own timer
@@ -72,19 +78,19 @@ export default function Hero() {
       <div className="relative z-10 mx-auto flex min-h-[calc(100svh+30rem)] w-full max-w-7xl items-end justify-center px-4 pb-0 pt-40 md:min-h-[calc(100svh+17.5rem)] sm:px-8 lg:px-10">
         <div className="w-full text-center">
           <p className="mx-auto mb-4 font-inter text-sm font-semibold uppercase tracking-[0.16em] text-kb-accent-light">
-            AI THAT GETS WORK DONE
+            LESS BUSYWORK. MORE ROOM TO MOVE.
           </p>
 
-          <h1 className="mx-auto whitespace-nowrap font-space-grotesk text-[clamp(0.95rem,4vw,3.5rem)] font-medium leading-none tracking-[-0.035em] text-kb-inverse-text">
-            <span>Put AI to work on the work </span>
-            <span className="relative inline-flex items-center bg-kb-accent px-[0.2em] py-[0.08em] text-kb-on-accent">
+          <h1 className="mx-auto max-w-full font-space-grotesk text-[clamp(1.3rem,6.4vw,2.25rem)] font-medium leading-[1.08] tracking-[-0.035em] text-kb-inverse-text md:whitespace-nowrap md:text-[clamp(1.9rem,4vw,3.5rem)]">
+            <span className="block md:inline">Get the work slowing you down</span>{' '}
+            <span className="relative mt-2 inline-flex max-w-full items-center bg-kb-accent px-[0.2em] py-[0.08em] text-kb-on-accent md:mt-0">
               {phrase}
             </span>
             <span>.</span>
           </h1>
 
-          <p className="mx-auto mt-7 max-w-6xl text-center font-inter text-sm font-light leading-relaxed text-kb-inverse-text/85 sm:text-base md:text-lg">
-           Kitebaze finds the repetitive work eating up your team's time, then builds AI to handle it from start to finish. Tell us what's slowing you down and see what AI could take on.
+          <p className="mx-auto mt-6 max-w-3xl px-1 text-center font-inter text-sm font-light leading-relaxed text-kb-inverse-text/85 sm:mt-7 sm:px-0 sm:text-base md:text-lg">
+           Show us the work that takes too much time, attention or chasing. Kitebaze builds around how your business already works so more of it gets handled without you.
           </p>
 
           <div className="mx-auto mt-14 w-full max-w-5xl sm:mt-8">

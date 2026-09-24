@@ -1,3 +1,19 @@
+# AI search and user-requested retrieval
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+Allow: /
+
+# Google uses one token for Gemini training and grounded retrieval.
+User-agent: Google-Extended
+Allow: /
+
+# Training crawlers with separate search/retrieval controls.
+User-agent: GPTBot
+User-agent: ClaudeBot
+Disallow: /
+
 User-agent: *
 Allow: /
 

@@ -1,3 +1,5 @@
+<!-- Internal source document. Do not publish this file directly. -->
+
 # Kitebaze Work Diagnostic Knowledge Base
 
 ## 1. What Kitebaze Does

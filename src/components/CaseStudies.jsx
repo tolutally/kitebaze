@@ -21,7 +21,7 @@ const PATTERNS = [
     visual: 'follow-up',
   },
   {
-    href: '/case-studies#documents',
+    href: '/case-studies#jobs-done',
     title: 'Documents → Data',
     copy: 'Receipts, PDFs, forms and email threads read and routed into the systems that need them.',
     visual: 'documents',

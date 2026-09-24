@@ -1,0 +1,858 @@
+# Kitebaze site reference
+
+> Expanded, text-first reference for the canonical public pages on kitebaze.com.
+
+Publisher: Kitebaze
+Website: https://kitebaze.com/
+Language: en-CA
+Contact: support@kitebaze.com
+
+This file summarizes public website content for retrieval and citation. Where a case study reports a result, it is identified as a page-reported outcome. Technical crawler preferences are published in robots.txt; access, automated collection, and reuse remain subject to the Terms of Use.
+
+## Home
+
+Canonical URL: https://kitebaze.com/
+
+Kitebaze designs and maintains practical AI and workflow automation around the tools your team already uses, so repetitive work keeps moving.
+
+Kitebaze finds the repetitive work slowing a business down, redesigns the workflow around the software already in use, and builds the automation that keeps the work moving.
+
+The work is practical and operator-led: connect existing tools, remove manual handoffs, preserve human review where judgment matters, and keep improving the system after launch.
+
+## About Kitebaze
+
+Canonical URL: https://kitebaze.com/about-us
+
+Meet the operators behind Kitebaze and learn how we design practical AI and workflow systems that hold up in real businesses.
+
+Kitebaze is operator-led. The company maps how work actually moves before choosing tools or automations, then builds systems designed to hold up outside a demo.
+
+Kitebaze was co-founded by Jason Katz and Leigh Buckley. Their work connects operations, technology, people, and implementation.
+
+## Case Studies
+
+Canonical URL: https://kitebaze.com/case-studies
+
+See how Kitebaze improved billing, case management, field documentation and patient flow with practical workflow automation.
+
+The case studies cover IT-service billing and installation tracking, estate and probate case management, driver-document intake and dispatch, and patient waiting-room flow.
+
+Page-reported outcomes include faster month-end invoice preparation, less manual email entry, cleaner case visibility, centralized driver communications, and improved staff utilization.
+
+## Workflow Build
+
+Canonical URL: https://kitebaze.com/workflow-build
+
+Redesign connected workflows, handoffs, controls and visibility so work moves reliably across your business.
+
+Workflow Build is for work that crosses multiple people, teams, or systems and cannot be improved by fixing one isolated task.
+
+The engagement can include an operating blueprint, connected workflows, clear handoffs, built-in checks, live visibility, documentation, training, and staged rollout.
+
+## Fix One Bottleneck
+
+Canonical URL: https://kitebaze.com/bottleneck
+
+Map one recurring workflow end to end and remove the repetitive copying, checking, chasing and follow-up.
+
+Bottleneck is a focused starting point for one recurring job that is delayed, dropped, or dependent on someone copying, checking, chasing, or reminding.
+
+Kitebaze maps the workflow, finds the friction, defines the guardrails and success measure, then removes repetitive steps and proves the result before expanding.
+
+## Book a Workflow Review
+
+Canonical URL: https://kitebaze.com/book-workflow-review
+
+Book a free 30-minute review to identify manual bottlenecks, automation opportunities and the best first build.
+
+The free 30-minute workflow review is a no-obligation Google Meet focused on one real workflow.
+
+The conversation covers how the work runs today, recurring bottlenecks, practical automation opportunities, and whether one bottleneck or a broader Workflow Build is the right place to begin.
+
+## Free Workflow Diagnostic
+
+Canonical URL: https://kitebaze.com/diagnostics
+
+Describe a manual task and get a free diagnostic showing where automation could remove bottlenecks and repetitive work.
+
+The interactive workflow diagnostic asks a few follow-up questions about a repetitive task and helps identify what could run without constant manual intervention.
+
+## Contact Kitebaze
+
+Canonical URL: https://kitebaze.com/contact
+
+Tell Kitebaze where work is getting stuck, share your workflow challenge or book a free workflow review.
+
+Use the contact form to describe a workflow challenge, or book a free Workflow Review for a live conversation.
+
+Kitebaze lists a Calgary, Alberta, Canada contact address. General enquiries can be sent to support@kitebaze.com.
+
+## Responsible Automation
+
+Canonical URL: https://kitebaze.com/responsible-automation
+
+Explore the seven principles Kitebaze uses to design trustworthy workflows, automations and connected systems.
+
+Kitebaze uses seven principles when designing and deploying systems: Human Control, Security, Privacy, Reliability, Transparency, Accountability, and AI Use.
+
+The technology follows the problem. Automation should remove unnecessary work while keeping people involved where judgment, approval, or escalation matters.
+
+## Privacy Policy
+
+Canonical URL: https://kitebaze.com/privacy-policy
+
+Learn how Kitebaze collects, uses, shares, stores and protects personal information.
+
+The Privacy Policy explains how Kitebaze handles personal information across its website, client relationships, and configured workflows or services.
+
+## Terms of Use
+
+Canonical URL: https://kitebaze.com/terms-of-service
+
+Read the terms governing access to and use of the Kitebaze website.
+
+The Terms of Use govern access to kitebaze.com and the pages, materials, forms, tools, and content available through the website.
+
+## Vulnerability Disclosure Policy
+
+Canonical URL: https://kitebaze.com/vulnerability-disclosure
+
+Learn how to responsibly report a suspected security vulnerability affecting a Kitebaze-operated system.
+
+The Vulnerability Disclosure Policy explains scope, testing boundaries, reporting expectations, and safe-harbor conditions for good-faith security research.
+
+## Full public legal text
+
+### Privacy Policy
+
+**Last updated: September 24, 2026**
+
+Kitebaze (“Kitebaze,” “we,” “us,” or “our”) helps businesses improve how work gets done by redesigning workflows, connecting existing tools, automating repetitive tasks, and supporting the systems we build.
+
+This Privacy Policy explains how we collect, use, disclose, store, and protect personal information when you:
+
+* visit **kitebaze.com**;
+* contact us or book a consultation;
+* become a Kitebaze client;
+* communicate with us;
+* use a workflow, automation, form, assistant, integration, or other solution we configure or operate; or
+* otherwise interact with our services.
+
+Because Kitebaze often works with systems and information belonging to our clients, our role can vary.
+
+For information we collect directly for our own business purposes, such as website inquiries, client contacts, and billing information, Kitebaze is responsible for that information.
+
+When we process information through a system or workflow on behalf of a client, the client generally determines why that information is being used and Kitebaze processes it to provide the agreed service.
+
+#### 1. Information We Collect
+
+##### Information you provide directly
+
+We may collect information you choose to give us, including:
+
+* your name;
+* email address;
+* telephone number;
+* company name;
+* job title or role;
+* information submitted through forms;
+* consultation or project details;
+* support requests;
+* billing and transaction information; and
+* information contained in emails, messages, documents, meetings, or other communications with us.
+
+We only ask for information that is reasonably necessary for the interaction or service.
+
+##### Website and technical information
+
+When you visit our website, certain information may be collected automatically, including:
+
+* IP address;
+* browser and device information;
+* operating system;
+* pages visited;
+* referring pages or websites;
+* approximate location derived from technical information;
+* dates and times of visits; and
+* interactions with our website.
+
+We may use cookies, analytics tools, and similar technologies to understand how our website is being used and to improve it.
+
+#### 2. Information We Process While Working With Clients
+
+Kitebaze builds around the systems and processes a business already uses.
+
+Depending on the engagement, this can mean working with information contained in:
+
+* email and inboxes;
+* spreadsheets;
+* CRM systems;
+* accounting or invoicing software;
+* calendars;
+* forms;
+* customer-support systems;
+* messaging platforms;
+* project-management systems;
+* payment or billing systems;
+* documents and file storage;
+* scheduling tools; and
+* other business systems selected by the client.
+
+As a result, a Kitebaze workflow may process personal information relating to a client's customers, prospects, employees, contractors, suppliers, or other business contacts.
+
+Examples may include names, email addresses, telephone numbers, appointment details, correspondence, invoices, customer records, service information, documents, and other information required for the workflow.
+
+The exact information processed depends on the workflow being built and the systems involved.
+
+We aim to process only the information reasonably required to make that workflow work.
+
+#### 3. How We Use Information
+
+We may use personal information to:
+
+* respond to inquiries;
+* provide consultations and workflow reviews;
+* understand a business process or bottleneck;
+* design and implement workflows;
+* connect systems and applications;
+* operate automations;
+* configure forms, notifications, reminders, and communications;
+* update records across connected systems;
+* provide support and maintenance;
+* troubleshoot problems;
+* manage our relationship with clients;
+* process payments and administer contracts;
+* improve the reliability and quality of our services;
+* maintain the security of our systems;
+* prevent misuse, fraud, or unauthorized activity;
+* meet legal, regulatory, tax, and accounting requirements; and
+* communicate with you about Kitebaze where permitted by law.
+
+We will not intentionally use personal information for purposes that are materially different from those for which it was collected without an appropriate legal basis or, where required, additional consent.
+
+#### 4. Connected Tools and Third-Party Services
+
+Kitebaze does not require every client to replace the software they already use.
+
+Our work frequently involves connecting or configuring third-party products selected by us or by the client.
+
+These may include hosting providers, cloud platforms, email systems, automation tools, CRM platforms, accounting software, communications services, analytics providers, form tools, databases, and other business applications.
+
+When a workflow requires information to move between those services, information may be transmitted to or processed by the relevant providers.
+
+Each third-party provider may also process information according to its own terms, privacy policy, and contractual relationship with Kitebaze or the client.
+
+We evaluate the systems involved in each engagement and aim to limit access and data movement to what is reasonably required for the workflow.
+
+#### 5. AI and Automated Processing
+
+Some Kitebaze workflows may use artificial intelligence or machine-learning services when those tools are appropriate for the work being performed.
+
+For example, this may include helping a workflow interpret documents, categorize information, extract information from text, prepare draft content, route requests, or process unstructured business information.
+
+Where an external AI service is used, information needed to perform that task may be transmitted to the relevant provider.
+
+The use of AI depends on the particular workflow. Kitebaze does not assume that every process requires AI and may instead use conventional automation or integrations where they are more appropriate.
+
+We design workflows so that decisions, exceptions, approvals, or judgment that should remain with a person can remain under human control.
+
+#### 6. Client Responsibilities
+
+Clients are responsible for ensuring that they have the appropriate authority, consent, or other lawful basis to provide Kitebaze with access to personal information used in their workflows.
+
+Clients are also responsible for determining which employees, contractors, systems, and information Kitebaze should be permitted to access.
+
+Where Kitebaze processes personal information on behalf of a client, we use that information to provide the agreed services and according to the applicable agreement with that client.
+
+#### 7. How We Share Information
+
+We may disclose personal information to service providers where reasonably necessary to operate Kitebaze or provide our services.
+
+These may include providers that assist with:
+
+* cloud hosting;
+* databases and storage;
+* automation infrastructure;
+* communications;
+* analytics;
+* payment processing;
+* accounting;
+* customer support;
+* security;
+* artificial intelligence services; and
+* other technology required for a client's workflow.
+
+We may also disclose information:
+
+* where you or the relevant client directs us to;
+* where necessary to complete a requested service;
+* to professional advisers such as lawyers, accountants, or insurers;
+* where required by law, regulation, subpoena, court order, or other lawful process;
+* where reasonably necessary to protect Kitebaze, our clients, users, or others from fraud, misuse, security threats, or harm; or
+* in connection with a merger, acquisition, financing, restructuring, sale, or transfer of all or part of our business.
+
+Kitebaze does not sell personal information as part of our business model.
+
+#### 8. International Processing and Data Location
+
+Kitebaze is based in Canada, but some of the technology providers used by Kitebaze or our clients may operate infrastructure in other countries.
+
+As a result, personal information may be transferred to, stored in, or processed in jurisdictions outside your province or outside Canada.
+
+Information processed in another jurisdiction may be subject to the laws of that jurisdiction.
+
+Where appropriate, we consider data location, security, contractual protections, and the nature of the information when selecting or configuring providers.
+
+#### 9. Security
+
+We use reasonable administrative, technical, and organizational safeguards appropriate to the nature of the information we handle.
+
+These may include measures such as:
+
+* access controls;
+* authentication;
+* limiting access to people who require it;
+* encrypted connections;
+* secure cloud infrastructure;
+* system permissions;
+* credential management;
+* monitoring and logging;
+* backups where appropriate; and
+* limiting the information collected or retained.
+
+No internet-based system or method of electronic storage can be guaranteed to be completely secure.
+
+Clients should not provide Kitebaze with access to information that is unnecessary for the agreed workflow.
+
+#### 10. Data Retention
+
+We retain personal information only for as long as reasonably necessary for the purposes for which it was collected, to provide our services, to meet contractual obligations, or to satisfy legal, accounting, security, or regulatory requirements.
+
+Retention periods may vary depending on:
+
+* the type of information;
+* the client engagement;
+* the system in which the information is stored;
+* contractual requirements;
+* legal requirements; and
+* whether the information is required for security, dispute resolution, or recordkeeping.
+
+When information is no longer reasonably required, we may delete, anonymize, or securely dispose of it.
+
+Information contained in a client's own systems may remain subject to that client's retention policies even after Kitebaze's engagement ends.
+
+#### 11. Cookies and Analytics
+
+Our website may use cookies and similar technologies to operate properly, remember preferences, measure website performance, and understand how visitors use the site.
+
+You may be able to control or disable cookies through your browser.
+
+Disabling certain cookies may affect how parts of the website function.
+
+Where required by applicable law, we will request consent before using non-essential cookies or similar technologies.
+
+#### 12. Marketing Communications
+
+If you request information from us, become a client, or otherwise provide appropriate consent, we may send you communications about Kitebaze services, updates, or related information.
+
+We comply with applicable requirements governing commercial electronic communications.
+
+You can unsubscribe from promotional emails using the unsubscribe option included in the message or by contacting us.
+
+We may still send communications that are necessary to provide services, administer an account, respond to a request, or manage an existing client relationship.
+
+#### 13. Access, Correction and Privacy Requests
+
+Depending on applicable law and the circumstances, you may have rights relating to personal information about you, including the ability to:
+
+* request access to your personal information;
+* ask us to correct inaccurate information;
+* withdraw consent where processing is based on consent;
+* ask questions about how your information is used or disclosed; or
+* request deletion of certain information where applicable.
+
+Some requests may be limited where we are legally or contractually required to retain information.
+
+If the information is being processed by Kitebaze on behalf of one of our clients, we may direct your request to that client because they control the underlying business relationship and information.
+
+We may need to verify your identity before completing a privacy request.
+
+#### 14. Children's Privacy
+
+Kitebaze's website and services are designed for businesses and are not directed to children.
+
+We do not knowingly collect personal information directly from children through our website for the purpose of offering Kitebaze services to them.
+
+If a client's workflow involves information relating to minors, the client is responsible for ensuring that the information can lawfully be provided and processed.
+
+#### 15. Changes to This Privacy Policy
+
+We may update this Privacy Policy as Kitebaze, our services, our technology, or applicable requirements change.
+
+When we make changes, we will update the “Last updated” date at the top of this page.
+
+If a change materially affects how we handle personal information, we may provide additional notice where appropriate.
+
+#### 16. Contact Us
+
+Questions, requests, or concerns about this Privacy Policy or Kitebaze's handling of personal information can be directed to:
+
+**Kitebaze**
+Website: **kitebaze.com**
+Email: **[privacy@kitebaze.com](mailto:privacy@kitebaze.com)**
+
+If your concern relates to information Kitebaze processes for one of our clients, please identify the relevant business or service when contacting us so we can determine the appropriate way to handle your request.
+
+### Terms of Use
+
+**Last updated: September 24, 2026**
+
+These Terms of Use (“Terms”) govern your access to and use of **kitebaze.com** and any pages, materials, forms, tools, or other content made available through the website.
+
+The website is operated by **Kitebaze** (“Kitebaze,” “we,” “us,” or “our”).
+
+By accessing or using this website, you agree to these Terms. If you do not agree with them, please do not use the website.
+
+#### 1. About Kitebaze
+
+Kitebaze helps businesses improve how work gets done.
+
+We identify operational bottlenecks, redesign workflows, connect existing software, automate repetitive work, and build systems around the way a business actually operates.
+
+Information presented on this website describes our services generally. Specific project scope, deliverables, pricing, responsibilities, timelines, support arrangements, and other commercial terms are agreed separately with each client.
+
+#### 2. Website Use
+
+You may use the Kitebaze website for lawful business and informational purposes.
+
+You agree not to:
+
+* use the website for unlawful, fraudulent, or abusive purposes;
+* attempt to gain unauthorized access to the website, its infrastructure, accounts, systems, or data;
+* interfere with or disrupt the operation or security of the website;
+* introduce malware, malicious code, or other harmful material;
+* scrape, crawl, copy, or collect website content at scale without our permission;
+* use automated systems in a way that places an unreasonable load on our infrastructure;
+* impersonate Kitebaze or falsely suggest that Kitebaze endorses or is affiliated with you;
+* remove copyright, trademark, or other ownership notices from our materials; or
+* use Kitebaze content or branding in a misleading or unlawful manner.
+
+We may restrict or block access where we reasonably believe the website is being misused.
+
+#### 3. Website Content
+
+The content on the Kitebaze website is provided for general information about our business and services.
+
+It may include:
+
+* descriptions of our services;
+* workflow examples;
+* case studies;
+* illustrations;
+* process diagrams;
+* articles;
+* templates;
+* screenshots;
+* videos;
+* demonstrations; and
+* other educational or promotional materials.
+
+Website content is not a guarantee that a particular workflow, automation, integration, result, saving, or business outcome will be appropriate or achievable for your organization.
+
+Every business operates differently. Recommendations and solutions depend on the systems, processes, information, constraints, and requirements discovered during an engagement.
+
+#### 4. No Automatic Client Relationship
+
+Visiting our website, completing a form, requesting information, booking a call, or communicating with Kitebaze does not by itself create a client relationship.
+
+A client relationship begins only when Kitebaze and the client agree to an engagement through an accepted proposal, statement of work, service agreement, order form, or another written agreement.
+
+We are not obligated to accept every project or inquiry submitted through the website.
+
+#### 5. Client Agreements
+
+Projects performed by Kitebaze may be governed by additional agreements covering matters such as:
+
+* project scope;
+* deliverables;
+* responsibilities;
+* fees;
+* payment terms;
+* access to client systems;
+* intellectual property;
+* confidentiality;
+* data handling;
+* third-party software;
+* support;
+* maintenance;
+* change requests;
+* project termination; and
+* limitations of liability.
+
+If these Terms conflict with a signed client agreement, proposal, statement of work, or other agreement between Kitebaze and a client regarding a specific engagement, the terms of that agreement will apply to that engagement.
+
+#### 6. Information You Submit
+
+You may provide information to Kitebaze through website forms, email, consultations, project inquiries, or other communications.
+
+You are responsible for ensuring that information you submit is accurate and that you have the right to provide it.
+
+Please do not submit confidential information, passwords, production credentials, sensitive customer information, or unnecessary personal information through general website forms.
+
+Where confidential or system-level information is required for a project, Kitebaze will work with the client to establish an appropriate method for providing access.
+
+Personal information submitted through the website is handled in accordance with our **Privacy Policy**.
+
+#### 7. Intellectual Property
+
+Unless otherwise stated, the Kitebaze website and its original content, branding, designs, graphics, written materials, diagrams, videos, and other website materials are owned by or licensed to Kitebaze and are protected by applicable intellectual-property laws.
+
+You may view and use website materials for your own internal informational purposes.
+
+You may not, without our permission:
+
+* reproduce substantial portions of the website;
+* sell or commercially redistribute our materials;
+* present Kitebaze materials as your own;
+* remove ownership or attribution notices;
+* use our trademarks or branding in a way that suggests an unauthorized relationship with Kitebaze; or
+* create misleading copies of our website or services.
+
+Nothing in these Terms transfers ownership of Kitebaze intellectual property to you.
+
+Intellectual-property rights relating to work created for a client are governed by the applicable client agreement.
+
+#### 8. Third-Party Tools and Services
+
+Kitebaze works in an ecosystem of third-party business software.
+
+Our website may reference, demonstrate, integrate with, or link to third-party products and services.
+
+These may include automation platforms, cloud services, AI providers, CRM systems, accounting tools, communication services, project-management platforms, databases, payment providers, scheduling systems, and other business applications.
+
+Unless expressly stated otherwise, references to a third-party product do not mean Kitebaze owns, controls, sponsors, or is formally affiliated with that provider.
+
+Third-party services are governed by their own terms, pricing, availability, security practices, privacy policies, and technical limitations.
+
+Kitebaze is not responsible for changes made by third-party providers, including changes to:
+
+* pricing;
+* APIs;
+* integrations;
+* functionality;
+* usage limits;
+* availability;
+* policies; or
+* terms of service.
+
+Where such a change affects a client implementation, we may recommend modifications to the workflow or solution.
+
+#### 9. Demonstrations and Examples
+
+Kitebaze may show demonstrations, prototypes, sample workflows, example automations, mockups, estimated outcomes, or illustrations of how work could be improved.
+
+These are intended to demonstrate possibilities.
+
+They should not be treated as a guarantee that identical functionality or results can be achieved in every business or technical environment.
+
+Actual solutions depend on factors such as:
+
+* the client's existing systems;
+* available integrations and APIs;
+* data quality;
+* third-party platform limitations;
+* internal processes;
+* permissions;
+* security requirements; and
+* project scope.
+
+#### 10. AI and Automated Systems
+
+Some examples, demonstrations, or solutions discussed on the website may involve artificial intelligence or automated decision-support tools.
+
+AI is one tool Kitebaze may use where appropriate. Not every solution requires AI.
+
+AI-generated or automatically processed information can contain errors and may require human review depending on the task.
+
+Businesses remain responsible for determining when human oversight, approval, professional judgment, or additional controls are appropriate for their operations.
+
+Specific responsibilities for AI-enabled workflows delivered to clients may be addressed in the applicable project agreement.
+
+#### 11. Third-Party Links
+
+Our website may contain links to websites, software, resources, or services operated by third parties.
+
+We provide these links for convenience or reference.
+
+We do not control those third parties and are not responsible for their websites, content, availability, privacy practices, security, products, or services.
+
+Your use of a third-party service is subject to that provider's own terms and policies.
+
+#### 12. Website Availability
+
+We try to keep the Kitebaze website accurate and available, but we do not guarantee uninterrupted access.
+
+We may modify, update, suspend, remove, or discontinue any portion of the website at any time.
+
+We may also update descriptions of services, processes, capabilities, and other website content as Kitebaze evolves.
+
+#### 13. No Professional Advice
+
+Unless expressly agreed as part of a professional engagement, information on the Kitebaze website does not constitute legal, accounting, tax, cybersecurity, regulatory, financial, employment, or other regulated professional advice.
+
+Businesses should obtain appropriate professional advice when their decisions require it.
+
+#### 14. Disclaimer
+
+The Kitebaze website and its content are provided on an **“as is” and “as available”** basis.
+
+To the extent permitted by applicable law, Kitebaze makes no warranties, express or implied, regarding the operation of the website or the completeness, reliability, availability, or accuracy of its content.
+
+We do not guarantee that the website will always be available, error-free, secure, or free from harmful components.
+
+This disclaimer relates to the website.
+
+Any warranties, service commitments, or obligations relating to work Kitebaze performs for a client will be governed by the applicable client agreement.
+
+#### 15. Limitation of Liability
+
+To the extent permitted by applicable law, Kitebaze will not be liable for indirect, incidental, special, consequential, exemplary, or punitive damages resulting from your use of, or inability to use, the website.
+
+This includes losses relating to profits, revenue, opportunities, business interruption, or data arising solely from use of the website or reliance on general website content.
+
+Nothing in these Terms excludes liability that cannot legally be excluded or limited.
+
+Liability relating to paid Kitebaze services is governed separately by the agreement applicable to those services.
+
+#### 16. Privacy
+
+Our collection and handling of personal information through the website is described in the Kitebaze **Privacy Policy**.
+
+By using the website, you acknowledge that personal information may be handled as described in that policy.
+
+#### 17. Changes to These Terms
+
+We may update these Terms from time to time as Kitebaze, our website, or applicable requirements change.
+
+The current version will be posted on this website with an updated “Last updated” date.
+
+Your continued use of the website after updated Terms are posted means that your subsequent use of the website is subject to the updated Terms.
+
+#### 18. Governing Law
+
+These Terms and your use of the Kitebaze website are governed by the laws of the **Province of Alberta** and the federal laws of Canada applicable within Alberta, without regard to conflict-of-law principles.
+
+Subject to any rights that cannot legally be limited, disputes concerning these Terms or use of the website will be subject to the jurisdiction of the courts of Alberta.
+
+#### 19. Severability
+
+If any provision of these Terms is found to be invalid, illegal, or unenforceable, that provision will be limited or removed only to the extent necessary.
+
+The remaining provisions will continue in effect.
+
+#### 20. No Waiver
+
+If Kitebaze does not immediately enforce a provision of these Terms, that does not mean we have waived our right to enforce it later.
+
+#### 21. Entire Agreement for Website Use
+
+These Terms, together with our Privacy Policy, constitute the agreement between you and Kitebaze concerning general use of the Kitebaze website.
+
+They do not replace a proposal, statement of work, service agreement, confidentiality agreement, or other contract entered into separately with Kitebaze.
+
+#### 22. Contact
+
+Questions about these Terms can be directed to:
+
+**Kitebaze**
+Website: **kitebaze.com**
+Email: **[legal@kitebaze.com](mailto:legal@kitebaze.com)**
+
+### Vulnerability Disclosure Policy
+
+**Last updated: September 24, 2026**
+
+Kitebaze takes the security of our website, systems, and client solutions seriously.
+
+If you believe you have discovered a security vulnerability in a system operated by Kitebaze, we appreciate responsible disclosure so we can investigate and address the issue.
+
+This Vulnerability Disclosure Policy explains how to report security issues and the rules that apply when conducting security research involving Kitebaze systems.
+
+#### 1. Our Expectations
+
+When investigating or reporting a potential vulnerability, please:
+
+* **Act in good faith.** Test only to the extent necessary to identify and demonstrate the issue.
+* **Respect privacy.** Do not access, modify, download, delete, or expose information belonging to another person or business.
+* **Avoid disruption.** Do not interfere with the availability or normal operation of our website, systems, or services.
+* **Do not exploit vulnerabilities beyond what is necessary to demonstrate them.**
+* **Report vulnerabilities promptly.**
+* **Keep vulnerability details confidential** until Kitebaze has had a reasonable opportunity to investigate and address the issue.
+
+If you encounter sensitive information while testing, stop testing and notify us.
+
+#### 2. Scope
+
+This policy applies only to systems that are owned, operated, or directly controlled by Kitebaze.
+
+This may include:
+
+* **kitebaze.com**;
+* Kitebaze-operated web applications;
+* public-facing tools or demonstrations operated by Kitebaze;
+* APIs or endpoints operated directly by Kitebaze; and
+* infrastructure that Kitebaze explicitly identifies as being within scope.
+
+If you are unsure whether a system is operated by Kitebaze, contact us before testing it.
+
+#### 3. Client and Third-Party Systems
+
+Kitebaze builds workflows around software and systems used by our clients.
+
+Those systems may be operated by third parties such as cloud providers, CRM platforms, email providers, automation tools, AI providers, accounting systems, communications platforms, or other software vendors.
+
+**This policy does not authorize security testing of:**
+
+* systems owned or operated by a Kitebaze client;
+* client websites, accounts, databases, or infrastructure;
+* third-party products or platforms integrated with a Kitebaze workflow;
+* services provided by external vendors; or
+* systems that Kitebaze does not directly control.
+
+The fact that a third-party system is connected to, linked from, or used by Kitebaze does not give permission to test that system.
+
+Security issues involving a third-party service should generally be reported to that provider under its own vulnerability-disclosure process.
+
+If you discover an issue in a Kitebaze implementation that you believe exposes a client or third-party system, please report the issue to Kitebaze without attempting further access.
+
+#### 4. Prohibited Testing
+
+The following activities are not permitted under this policy:
+
+* denial-of-service or distributed denial-of-service attacks;
+* attempts to overwhelm systems with traffic or requests;
+* destructive testing;
+* deleting, modifying, or corrupting information;
+* accessing another person's account or information;
+* downloading or extracting information that is not your own;
+* social engineering, phishing, or impersonation;
+* testing employees, contractors, clients, or suppliers without permission;
+* physical security testing;
+* malware deployment;
+* ransomware or extortion;
+* credential stuffing or testing credentials obtained from third-party breaches;
+* attempts to obtain passwords, authentication tokens, or other credentials belonging to another person;
+* intentionally maintaining persistent access to Kitebaze systems; or
+* any activity that violates applicable law.
+
+Automated vulnerability scanning that creates excessive traffic, disruption, or risk is also prohibited unless Kitebaze has provided prior written authorization.
+
+#### 5. What to Report
+
+We are particularly interested in vulnerabilities that could reasonably affect the confidentiality, integrity, or availability of Kitebaze systems or information.
+
+Examples may include:
+
+* authentication or authorization vulnerabilities;
+* unauthorized access to accounts or information;
+* exposure of sensitive information;
+* injection vulnerabilities;
+* serious cross-site scripting vulnerabilities;
+* insecure API endpoints;
+* privilege escalation;
+* security configuration issues that create a meaningful risk;
+* vulnerabilities that allow unauthorized actions to be performed; and
+* weaknesses that could compromise Kitebaze-controlled infrastructure.
+
+Please avoid submitting purely theoretical issues that cannot reasonably be exploited.
+
+#### 6. Vulnerabilities Generally Not Considered Security Issues
+
+Unless they create a meaningful security impact, the following may not require action:
+
+* missing security headers without an exploitable vulnerability;
+* low-impact clickjacking;
+* self-XSS;
+* issues requiring physical access to a user's device;
+* vulnerabilities that exist only in obsolete browsers or unsupported software;
+* software-version disclosure;
+* rate-limiting observations that do not create a meaningful security risk;
+* DNS or email configuration recommendations without a demonstrated impact;
+* automated scanner results without validation;
+* general security-hardening suggestions; and
+* reports based only on publicly available information.
+
+We may still review these reports, but they may not be treated as vulnerabilities.
+
+#### 7. How to Report a Vulnerability
+
+Please send suspected security vulnerabilities to:
+
+**[security@kitebaze.com](mailto:security@kitebaze.com)**
+
+Your report should include, where possible:
+
+* a description of the vulnerability;
+* the affected URL, endpoint, or system;
+* steps required to reproduce the issue;
+* screenshots, logs, or other supporting evidence;
+* the potential security impact;
+* any relevant technical details; and
+* your contact information if you would like us to respond.
+
+Please do not include unnecessary personal information or sensitive data belonging to other people in your report.
+
+#### 8. What Happens After You Report
+
+Kitebaze will review reports submitted under this policy and determine whether the issue affects a system within scope.
+
+Where appropriate, we may:
+
+* acknowledge the report;
+* request additional information;
+* reproduce and assess the issue;
+* take steps to reduce or eliminate the vulnerability; and
+* inform you when the issue has been addressed.
+
+We cannot guarantee a particular resolution time because vulnerabilities can vary significantly in complexity, risk, and dependency on third-party systems.
+
+#### 9. Safe Harbor
+
+Kitebaze supports good-faith security research conducted in accordance with this policy.
+
+If you:
+
+* act in good faith;
+* stay within the scope of this policy;
+* avoid accessing or harming other people's information;
+* do not disrupt our systems;
+* do not exploit a vulnerability beyond what is reasonably necessary to demonstrate it; and
+* promptly report the vulnerability to us,
+
+Kitebaze will not initiate legal action against you solely for that research.
+
+This safe harbor does not apply to conduct that is unlawful, destructive, extortionate, intentionally harmful, or outside the scope of this policy.
+
+If you are uncertain whether a proposed action is permitted, contact us before proceeding.
+
+#### 10. Rewards
+
+Kitebaze does not currently operate a bug-bounty or vulnerability-reward program.
+
+Submitting a vulnerability does not create an entitlement to payment, compensation, employment, or other reward.
+
+If we introduce a formal reward program in the future, its terms will be published separately.
+
+#### 11. Changes to This Policy
+
+We may update this Vulnerability Disclosure Policy as Kitebaze's systems, services, and security practices evolve.
+
+The current version will be published with an updated “Last updated” date.
+
+#### 12. Contact
+
+Security vulnerabilities should be reported to:
+
+**Kitebaze**
+Website: **kitebaze.com**
+Email: **[security@kitebaze.com](mailto:security@kitebaze.com)**

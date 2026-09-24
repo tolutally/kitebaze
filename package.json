@@ -5,7 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite --force",
+    "prebuild": "node scripts/generate-crawl-files.mjs",
     "build": "vite build",
+    "postbuild": "node scripts/generate-route-shells.mjs",
+    "generate:crawl": "node scripts/generate-crawl-files.mjs",
+    "check:seo": "node scripts/validate-crawl.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

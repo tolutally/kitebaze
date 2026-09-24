@@ -167,6 +167,20 @@ body {
   scroll-snap-stop: always;
 }
 
+.bottleneck-mobile-carousel {
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+.bottleneck-mobile-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.bottleneck-carousel-slide {
+  scroll-snap-stop: always;
+}
+
 @keyframes useCaseFloat {
   0%,
   100% {
@@ -223,6 +237,10 @@ body {
   }
 
   .case-studies-mobile-carousel {
+    scroll-behavior: auto;
+  }
+
+  .bottleneck-mobile-carousel {
     scroll-behavior: auto;
   }
 
@@ -315,6 +333,76 @@ details[open] .accordion-content {
 .fade-up-element.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.bottleneck-service-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--kb-inverse-soft);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.14);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s ease;
+  transition-delay: var(--bottleneck-delay, 0ms);
+}
+
+.bottleneck-service-card.fade-up-element {
+  transform: scale(0.92) translateY(24px);
+}
+
+.bottleneck-service-card.fade-up-element.is-visible {
+  transform: scale(1) translateY(0);
+}
+
+.bottleneck-service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(155deg, rgba(159, 107, 78, 0.5), rgba(159, 107, 78, 0.04) 48%, rgba(255, 255, 255, 0.08));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.62;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+
+.bottleneck-service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 15% 0%, rgba(159, 107, 78, 0.12), transparent 58%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+
+.bottleneck-service-card.is-visible:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.3);
+  transition-delay: 0ms;
+}
+
+.bottleneck-service-card:hover::before {
+  opacity: 1;
+}
+
+.bottleneck-service-card:hover::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bottleneck-service-card,
+  .bottleneck-service-card.fade-up-element,
+  .bottleneck-service-card.fade-up-element.is-visible,
+  .bottleneck-service-card.is-visible:hover {
+    transform: none;
+    transition: none;
+  }
 }
 
 .testimonial-inner {
@@ -787,6 +875,33 @@ details[open] .accordion-content {
   background-clip: text;
   color: transparent;
   animation: workflowShimmer 3s ease-in-out infinite;
+}
+
+@keyframes workflowRailPulse {
+  0% {
+    transform: translateY(-120%);
+    opacity: 0;
+  }
+  12%,
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(1400%);
+    opacity: 0;
+  }
+}
+
+.workflow-rail-pulse {
+  animation: workflowRailPulse 4.5s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .workflow-rail-pulse {
+    animation: none;
+    opacity: 0.7;
+    transform: translateY(450%);
+  }
 }
 
 .contact-input {

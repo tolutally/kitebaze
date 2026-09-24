@@ -1,11 +1,24 @@
 import { useRef } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import DiagnosticChatEmbed from '../components/DiagnosticChatEmbed.jsx';
 
 export default function Diagnostics() {
+  const { state } = useLocation();
   const [searchParams] = useSearchParams();
-  const initialMessage = (searchParams.get('message') || '').trim();
-  const requestedSession = (searchParams.get('session') || '').trim();
+  const transferredEntryRef = useRef(undefined);
+
+  if (transferredEntryRef.current === undefined) {
+    try {
+      transferredEntryRef.current = JSON.parse(window.sessionStorage.getItem('kitebaze-diagnostic-entry') || 'null');
+    } catch {
+      transferredEntryRef.current = null;
+    }
+  }
+
+  const transferredEntry = transferredEntryRef.current;
+  const navigationEntry = state?.diagnosticEntry;
+  const initialMessage = (searchParams.get('message') || navigationEntry?.message || transferredEntry?.message || '').trim();
+  const requestedSession = (searchParams.get('session') || navigationEntry?.session || transferredEntry?.session || '').trim();
   const fallbackSessionRef = useRef(
     typeof window.crypto?.randomUUID === 'function'
       ? window.crypto.randomUUID()

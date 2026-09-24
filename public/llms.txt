@@ -1,0 +1,39 @@
+# Kitebaze
+
+> Kitebaze designs and maintains practical AI and workflow automation around the tools a business already uses, so repetitive work keeps moving without constant manual intervention.
+
+Kitebaze is an operator-led workflow automation company with a Calgary, Alberta contact address. Start with Fix One Bottleneck for a focused recurring problem, or Workflow Build when connected work crosses multiple people, teams, or systems.
+
+Technical crawler preferences are published in [robots.txt](https://kitebaze.com/robots.txt). Access, automated collection, and reuse remain subject to the [Terms of Use](https://kitebaze.com/terms-of-service).
+
+## Core pages
+
+- [Home](https://kitebaze.com/llms-pages/home.md): Kitebaze designs and maintains practical AI and workflow automation around the tools your team already uses, so repetitive work keeps moving.
+
+## Services
+
+- [Workflow Build](https://kitebaze.com/llms-pages/workflow-build.md): Redesign connected workflows, handoffs, controls and visibility so work moves reliably across your business.
+- [Fix One Bottleneck](https://kitebaze.com/llms-pages/bottleneck.md): Map one recurring workflow end to end and remove the repetitive copying, checking, chasing and follow-up.
+
+## Resources
+
+- [Case Studies](https://kitebaze.com/llms-pages/case-studies.md): See how Kitebaze improved billing, case management, field documentation and patient flow with practical workflow automation.
+- [Book a Workflow Review](https://kitebaze.com/llms-pages/book-workflow-review.md): Book a free 30-minute review to identify manual bottlenecks, automation opportunities and the best first build.
+- [Free Workflow Diagnostic](https://kitebaze.com/llms-pages/diagnostics.md): Describe a manual task and get a free diagnostic showing where automation could remove bottlenecks and repetitive work.
+
+## Company
+
+- [About Kitebaze](https://kitebaze.com/llms-pages/about-us.md): Meet the operators behind Kitebaze and learn how we design practical AI and workflow systems that hold up in real businesses.
+- [Contact Kitebaze](https://kitebaze.com/llms-pages/contact.md): Tell Kitebaze where work is getting stuck, share your workflow challenge or book a free workflow review.
+
+## Trust and policies
+
+- [Responsible Automation](https://kitebaze.com/llms-pages/responsible-automation.md): Explore the seven principles Kitebaze uses to design trustworthy workflows, automations and connected systems.
+- [Privacy Policy](https://kitebaze.com/llms-pages/privacy-policy.md): Learn how Kitebaze collects, uses, shares, stores and protects personal information.
+- [Terms of Use](https://kitebaze.com/llms-pages/terms-of-service.md): Read the terms governing access to and use of the Kitebaze website.
+- [Vulnerability Disclosure Policy](https://kitebaze.com/llms-pages/vulnerability-disclosure.md): Learn how to responsibly report a suspected security vulnerability affecting a Kitebaze-operated system.
+
+## Optional
+
+- [Expanded site reference](https://kitebaze.com/llms-full.txt): Longer page summaries plus the complete public legal documents.
+- [XML sitemap](https://kitebaze.com/sitemap.xml): Canonical, indexable website URLs.

@@ -1,0 +1,53 @@
+{
+  "id": "/",
+  "name": "Kitebaze — AI & Workflow Automation",
+  "short_name": "Kitebaze",
+  "description": "Kitebaze builds practical AI and workflow automation around the tools your business already uses.",
+  "lang": "en-CA",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#faf8f1",
+  "theme_color": "#9f6b4e",
+  "categories": [
+    "business",
+    "productivity"
+  ],
+  "icons": [
+    {
+      "src": "/kitebaze-favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/kitebaze-favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Book a Workflow Review",
+      "short_name": "Book a Review",
+      "description": "Choose a time for a 30-minute workflow review.",
+      "url": "/book-workflow-review"
+    },
+    {
+      "name": "Fix One Bottleneck",
+      "short_name": "One Bottleneck",
+      "description": "Start with one recurring workflow bottleneck.",
+      "url": "/bottleneck"
+    },
+    {
+      "name": "Workflow Build",
+      "short_name": "Workflow Build",
+      "description": "Explore connected workflow redesign for your business.",
+      "url": "/workflow-build"
+    }
+  ],
+  "prefer_related_applications": false
+}
