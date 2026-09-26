@@ -4,7 +4,7 @@
 
 Canonical webpage: [https://kitebaze.com/privacy-policy](https://kitebaze.com/privacy-policy)
 
-Last updated: 2026-09-24
+Last updated: 2026-09-26
 
 ## Page summary
 

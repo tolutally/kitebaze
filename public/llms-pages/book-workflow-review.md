@@ -1,10 +1,10 @@
 # Book a Workflow Review
 
-> Book a free 30-minute review to identify manual bottlenecks, automation opportunities and the best first build.
+> Book a free workflow review with Kitebaze. Show us the work slowing your business down and we'll map how it runs today, where it gets stuck and what could work better.
 
 Canonical webpage: [https://kitebaze.com/book-workflow-review](https://kitebaze.com/book-workflow-review)
 
-Last updated: 2026-09-24
+Last updated: 2026-09-26
 
 ## Page summary
 

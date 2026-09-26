@@ -9,7 +9,7 @@ export const SITE = Object.freeze({
   email: 'support@kitebaze.com',
 });
 
-const LAST_MODIFIED = '2026-09-24';
+const LAST_MODIFIED = '2026-09-26';
 
 export const PUBLIC_ROUTES = Object.freeze([
   {
@@ -17,8 +17,8 @@ export const PUBLIC_ROUTES = Object.freeze([
     label: 'Home',
     section: 'Core pages',
     schemaType: 'WebPage',
-    title: 'Workflow Automation for Growing Businesses | Kitebaze',
-    description: 'Kitebaze designs and maintains practical AI and workflow automation around the tools your team already uses, so repetitive work keeps moving.',
+    title: 'Kitebaze | Let the Work Run Without You',
+    description: 'Kitebaze helps Canadian businesses take time-consuming work off their teams. We build around how your business already works, so more gets handled without you.',
     lastModified: LAST_MODIFIED,
     crawlText: [
       'Kitebaze finds the repetitive work slowing a business down, redesigns the workflow around the software already in use, and builds the automation that keeps the work moving.',
@@ -57,8 +57,8 @@ export const PUBLIC_ROUTES = Object.freeze([
     section: 'Services',
     schemaType: 'WebPage',
     serviceType: 'Connected workflow design and automation',
-    title: 'Workflow Build & Process Automation | Kitebaze',
-    description: 'Redesign connected workflows, handoffs, controls and visibility so work moves reliably across your business.',
+    title: 'Workflow Build | Let the Work Run | Kitebaze',
+    description: 'Kitebaze builds around your existing tools and processes so work keeps moving without constant checking, chasing, handoffs or someone remembering what comes next.',
     lastModified: LAST_MODIFIED,
     crawlText: [
       'Workflow Build is for work that crosses multiple people, teams, or systems and cannot be improved by fixing one isolated task.',
@@ -71,8 +71,8 @@ export const PUBLIC_ROUTES = Object.freeze([
     section: 'Services',
     schemaType: 'WebPage',
     serviceType: 'Single-workflow bottleneck improvement',
-    title: 'Fix One Workflow Bottleneck | Kitebaze',
-    description: 'Map one recurring workflow end to end and remove the repetitive copying, checking, chasing and follow-up.',
+    title: 'Bottleneck Fix | Take Work Off Your Team | Kitebaze',
+    description: 'One part of your business taking too much time or attention? Kitebaze fixes operational bottlenecks for Canadian businesses around the way they already work.',
     lastModified: LAST_MODIFIED,
     crawlText: [
       'Bottleneck is a focused starting point for one recurring job that is delayed, dropped, or dependent on someone copying, checking, chasing, or reminding.',
@@ -86,7 +86,7 @@ export const PUBLIC_ROUTES = Object.freeze([
     schemaType: 'WebPage',
     serviceType: 'Workflow review',
     title: 'Book a Free Workflow Review | Kitebaze',
-    description: 'Book a free 30-minute review to identify manual bottlenecks, automation opportunities and the best first build.',
+    description: "Book a free workflow review with Kitebaze. Show us the work slowing your business down and we'll map how it runs today, where it gets stuck and what could work better.",
     lastModified: LAST_MODIFIED,
     crawlText: [
       'The free 30-minute workflow review is a no-obligation Google Meet focused on one real workflow.',

@@ -1,10 +1,10 @@
 # Home
 
-> Kitebaze designs and maintains practical AI and workflow automation around the tools your team already uses, so repetitive work keeps moving.
+> Kitebaze helps Canadian businesses take time-consuming work off their teams. We build around how your business already works, so more gets handled without you.
 
 Canonical webpage: [https://kitebaze.com/](https://kitebaze.com/)
 
-Last updated: 2026-09-24
+Last updated: 2026-09-26
 
 ## Page summary
 

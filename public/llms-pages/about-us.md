@@ -4,7 +4,7 @@
 
 Canonical webpage: [https://kitebaze.com/about-us](https://kitebaze.com/about-us)
 
-Last updated: 2026-09-24
+Last updated: 2026-09-26
 
 ## Page summary
 

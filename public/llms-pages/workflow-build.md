@@ -1,10 +1,10 @@
 # Workflow Build
 
-> Redesign connected workflows, handoffs, controls and visibility so work moves reliably across your business.
+> Kitebaze builds around your existing tools and processes so work keeps moving without constant checking, chasing, handoffs or someone remembering what comes next.
 
 Canonical webpage: [https://kitebaze.com/workflow-build](https://kitebaze.com/workflow-build)
 
-Last updated: 2026-09-24
+Last updated: 2026-09-26
 
 ## Page summary
 
@@ -14,4 +14,4 @@ The engagement can include an operating blueprint, connected workflows, clear ha
 
 ## Related pages
 
-- [Fix One Bottleneck](https://kitebaze.com/llms-pages/bottleneck.md): Map one recurring workflow end to end and remove the repetitive copying, checking, chasing and follow-up.
+- [Fix One Bottleneck](https://kitebaze.com/llms-pages/bottleneck.md): One part of your business taking too much time or attention? Kitebaze fixes operational bottlenecks for Canadian businesses around the way they already work.

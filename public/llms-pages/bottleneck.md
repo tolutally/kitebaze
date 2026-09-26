@@ -1,10 +1,10 @@
 # Fix One Bottleneck
 
-> Map one recurring workflow end to end and remove the repetitive copying, checking, chasing and follow-up.
+> One part of your business taking too much time or attention? Kitebaze fixes operational bottlenecks for Canadian businesses around the way they already work.
 
 Canonical webpage: [https://kitebaze.com/bottleneck](https://kitebaze.com/bottleneck)
 
-Last updated: 2026-09-24
+Last updated: 2026-09-26
 
 ## Page summary
 
@@ -14,4 +14,4 @@ Kitebaze maps the workflow, finds the friction, defines the guardrails and succe
 
 ## Related pages
 
-- [Workflow Build](https://kitebaze.com/llms-pages/workflow-build.md): Redesign connected workflows, handoffs, controls and visibility so work moves reliably across your business.
+- [Workflow Build](https://kitebaze.com/llms-pages/workflow-build.md): Kitebaze builds around your existing tools and processes so work keeps moving without constant checking, chasing, handoffs or someone remembering what comes next.

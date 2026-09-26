@@ -4,7 +4,7 @@
 
 Canonical webpage: [https://kitebaze.com/terms-of-service](https://kitebaze.com/terms-of-service)
 
-Last updated: 2026-09-24
+Last updated: 2026-09-26
 
 ## Page summary
 
