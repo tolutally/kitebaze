@@ -13,4 +13,4 @@ The interactive workflow diagnostic asks a few follow-up questions about a repet
 ## Related pages
 
 - [Case Studies](https://kitebaze.com/llms-pages/case-studies.md): See how Kitebaze improved billing, case management, field documentation and patient flow with practical workflow automation.
-- [Book a Workflow Review](https://kitebaze.com/llms-pages/book-workflow-review.md): Book a free workflow review with Kitebaze. Show us the work slowing your business down and we'll map how it runs today, where it gets stuck and what could work better.
+- [Book a Workflow Review](https://kitebaze.com/llms-pages/book-workflow-review.md): Book a free workflow review with Kitebaze. Show us the work slowing your business down, where it gets stuck and what could work better.

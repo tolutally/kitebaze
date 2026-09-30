@@ -1,6 +1,6 @@
 # Privacy Policy
 
-> Learn how Kitebaze collects, uses, shares, stores and protects personal information.
+> Learn how Kitebaze collects, uses, shares, stores and protects personal information across its website, client relationships and services.
 
 Canonical webpage: [https://kitebaze.com/privacy-policy](https://kitebaze.com/privacy-policy)
 
@@ -293,5 +293,5 @@ If your concern relates to information Kitebaze processes for one of our clients
 ## Related pages
 
 - [Responsible Automation](https://kitebaze.com/llms-pages/responsible-automation.md): Explore the seven principles Kitebaze uses to design trustworthy workflows, automations and connected systems.
-- [Terms of Use](https://kitebaze.com/llms-pages/terms-of-service.md): Read the terms governing access to and use of the Kitebaze website.
+- [Terms of Use](https://kitebaze.com/llms-pages/terms-of-service.md): Read the terms governing access to and use of the Kitebaze website, including its pages, materials, forms, tools and online content.
 - [Vulnerability Disclosure Policy](https://kitebaze.com/llms-pages/vulnerability-disclosure.md): Learn how to responsibly report a suspected security vulnerability affecting a Kitebaze-operated system.

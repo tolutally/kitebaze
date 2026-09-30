@@ -8,6 +8,12 @@ import {
   getRouteMarkdownPath,
   getRouteMarkdownUrl,
 } from '../src/seo/siteMetadata.js';
+import {
+  INDEXNOW_HOST,
+  INDEXNOW_KEY,
+  INDEXNOW_KEY_FILENAME,
+  INDEXNOW_KEY_LOCATION,
+} from './indexnow-config.mjs';
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const projectRoot = join(scriptDirectory, '..');
@@ -34,6 +40,8 @@ const robots = read(join(publicDirectory, 'robots.txt'));
 const indexSource = read(join(projectRoot, 'index.html'));
 const vercel = JSON.parse(read(join(projectRoot, 'vercel.json')));
 const manifest = JSON.parse(read(join(publicDirectory, 'site.webmanifest')));
+const indexNowPublicKeyPath = join(publicDirectory, INDEXNOW_KEY_FILENAME);
+const indexNowDistKeyPath = join(distDirectory, INDEXNOW_KEY_FILENAME);
 
 for (const route of PUBLIC_ROUTES) {
   const filename = route.path === '/' ? 'index.html' : `${route.path.slice(1)}.html`;
@@ -41,6 +49,10 @@ for (const route of PUBLIC_ROUTES) {
   const canonicalUrl = getCanonicalUrl(route.path);
   const markdownPath = join(publicDirectory, getRouteMarkdownPath(route.path).slice(1));
   const markdownUrl = getRouteMarkdownUrl(route.path);
+
+  if (route.description.length < 100 || route.description.length > 160) {
+    failures.push(`Meta description length is outside 100-160 characters: ${route.path} (${route.description.length})`);
+  }
 
   if (!existsSync(shellPath)) {
     failures.push(`Missing route shell: ${filename}`);
@@ -72,9 +84,18 @@ for (const [alias, canonicalPath] of Object.entries(ROUTE_ALIASES)) {
 if (!robots.includes('Sitemap: https://kitebaze.com/sitemap.xml')) failures.push('robots.txt does not advertise the sitemap');
 if (!robots.includes('User-agent: OAI-SearchBot')) failures.push('robots.txt does not address OAI-SearchBot');
 if (!robots.includes('User-agent: Claude-SearchBot')) failures.push('robots.txt does not address Claude-SearchBot');
+for (const bot of ['GPTBot', 'ClaudeBot', 'Google-Extended']) {
+  if (!robots.includes(`User-agent: ${bot}`)) failures.push(`robots.txt does not address ${bot}`);
+}
+if (robots.includes('Disallow: /')) failures.push('robots.txt contains a site-wide crawler block despite the public crawl policy');
 if (!indexSource.includes('rel="describedby" type="text/markdown" href="/llms.txt"')) failures.push('HTML does not advertise llms.txt');
 if (!existsSync(join(distDirectory, '404.html')) || !read(join(distDirectory, '404.html')).includes('noindex, nofollow')) failures.push('Missing noindex 404 shell');
 if (manifest.start_url !== '/' || manifest.scope !== '/') failures.push('Manifest start_url or scope is incorrect');
+if (!/^[A-Za-z0-9-]{8,128}$/.test(INDEXNOW_KEY)) failures.push('IndexNow key does not match protocol requirements');
+if (INDEXNOW_HOST !== 'kitebaze.com') failures.push(`IndexNow host is incorrect: ${INDEXNOW_HOST}`);
+if (INDEXNOW_KEY_LOCATION !== `https://kitebaze.com/${INDEXNOW_KEY_FILENAME}`) failures.push('IndexNow key location is incorrect');
+if (!existsSync(indexNowPublicKeyPath) || read(indexNowPublicKeyPath).trim() !== INDEXNOW_KEY) failures.push('Missing or incorrect public IndexNow key file');
+if (!existsSync(indexNowDistKeyPath) || read(indexNowDistKeyPath).trim() !== INDEXNOW_KEY) failures.push('Missing or incorrect built IndexNow key file');
 
 const markdownFiles = readdirSync(join(publicDirectory, 'llms-pages')).filter((filename) => filename.endsWith('.md'));
 if (markdownFiles.length !== PUBLIC_ROUTES.length) failures.push(`Found ${markdownFiles.length} page Markdown files; expected ${PUBLIC_ROUTES.length}`);
@@ -91,4 +112,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Validated ${PUBLIC_ROUTES.length} canonical routes, ${Object.keys(ROUTE_ALIASES).length} redirects, crawl files, metadata, and route shells.`);
+console.log(`Validated ${PUBLIC_ROUTES.length} canonical routes, ${Object.keys(ROUTE_ALIASES).length} redirects, crawl files, metadata, route shells, and IndexNow ownership.`);

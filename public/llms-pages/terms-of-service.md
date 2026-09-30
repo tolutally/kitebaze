@@ -1,6 +1,6 @@
 # Terms of Use
 
-> Read the terms governing access to and use of the Kitebaze website.
+> Read the terms governing access to and use of the Kitebaze website, including its pages, materials, forms, tools and online content.
 
 Canonical webpage: [https://kitebaze.com/terms-of-service](https://kitebaze.com/terms-of-service)
 
@@ -278,5 +278,5 @@ Email: **[legal@kitebaze.com](mailto:legal@kitebaze.com)**
 ## Related pages
 
 - [Responsible Automation](https://kitebaze.com/llms-pages/responsible-automation.md): Explore the seven principles Kitebaze uses to design trustworthy workflows, automations and connected systems.
-- [Privacy Policy](https://kitebaze.com/llms-pages/privacy-policy.md): Learn how Kitebaze collects, uses, shares, stores and protects personal information.
+- [Privacy Policy](https://kitebaze.com/llms-pages/privacy-policy.md): Learn how Kitebaze collects, uses, shares, stores and protects personal information across its website, client relationships and services.
 - [Vulnerability Disclosure Policy](https://kitebaze.com/llms-pages/vulnerability-disclosure.md): Learn how to responsibly report a suspected security vulnerability affecting a Kitebaze-operated system.

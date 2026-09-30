@@ -6,6 +6,7 @@ import StartHere from '../components/StartHere.jsx';
 import Results from '../components/Results.jsx';
 import WhoWeWorkWith from '../components/WhoWeWorkWith.jsx';
 import LeverageShift from '../components/LeverageShift.jsx';
+import BusinessFit from '../components/BusinessFit.jsx';
 import WhyNotChatGPT from '../components/WhyNotChatGPT.jsx';
 import LogoBanner from '../components/LogoBanner.jsx';
 import CaseStudies from '../components/CaseStudies.jsx';
@@ -20,6 +21,7 @@ export default function Home() {
       <Hero />
       <LeverageShift />
       <ScaleBreak />
+      <BusinessFit />
       <WhyNotChatGPT />
       <Approach />
       <StartHere />

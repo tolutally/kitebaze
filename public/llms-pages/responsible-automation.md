@@ -14,6 +14,6 @@ The technology follows the problem. Automation should remove unnecessary work wh
 
 ## Related pages
 
-- [Privacy Policy](https://kitebaze.com/llms-pages/privacy-policy.md): Learn how Kitebaze collects, uses, shares, stores and protects personal information.
-- [Terms of Use](https://kitebaze.com/llms-pages/terms-of-service.md): Read the terms governing access to and use of the Kitebaze website.
+- [Privacy Policy](https://kitebaze.com/llms-pages/privacy-policy.md): Learn how Kitebaze collects, uses, shares, stores and protects personal information across its website, client relationships and services.
+- [Terms of Use](https://kitebaze.com/llms-pages/terms-of-service.md): Read the terms governing access to and use of the Kitebaze website, including its pages, materials, forms, tools and online content.
 - [Vulnerability Disclosure Policy](https://kitebaze.com/llms-pages/vulnerability-disclosure.md): Learn how to responsibly report a suspected security vulnerability affecting a Kitebaze-operated system.

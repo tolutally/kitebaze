@@ -1,6 +1,6 @@
 # Workflow Build
 
-> Kitebaze builds around your existing tools and processes so work keeps moving without constant checking, chasing, handoffs or someone remembering what comes next.
+> Kitebaze builds around your existing tools and processes so work keeps moving without constant checking, chasing or manual handoffs.
 
 Canonical webpage: [https://kitebaze.com/workflow-build](https://kitebaze.com/workflow-build)
 

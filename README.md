@@ -37,6 +37,34 @@ Validate the complete route and crawl surface after a build:
 npm run check:seo
 ```
 
+## IndexNow
+
+The production site publishes its IndexNow ownership key at:
+
+`https://kitebaze.com/f72e1baa78d90fa50003b80fbcae34c7.txt`
+
+After Vercel reports a successful deployment from `main`, the GitHub Actions workflow in `.github/workflows/indexnow.yml` verifies that key on the live domain and submits all canonical routes to the shared IndexNow endpoint. The workflow can also be started manually from GitHub Actions.
+
+Validate the payload locally without making a request:
+
+```bash
+npm run indexnow:check
+```
+
+Submit every canonical route after the production key is live:
+
+```bash
+npm run indexnow:submit
+```
+
+Submit only selected changed or removed URLs by passing absolute or root-relative URLs:
+
+```bash
+npm run indexnow:submit -- /workflow-build /old-page
+```
+
+HTTP 200 and 202 responses mean the URLs were received, not that indexing is guaranteed. Confirm submissions and crawl status in the IndexNow section of Bing Webmaster Tools.
+
 ## Workflow review calendar
 
 The `/book-workflow-review` page embeds the `kitebaze/30min` Cal event using `@calcom/embed-react`.

@@ -14,5 +14,5 @@ Page-reported outcomes include faster month-end invoice preparation, less manual
 
 ## Related pages
 
-- [Book a Workflow Review](https://kitebaze.com/llms-pages/book-workflow-review.md): Book a free workflow review with Kitebaze. Show us the work slowing your business down and we'll map how it runs today, where it gets stuck and what could work better.
+- [Book a Workflow Review](https://kitebaze.com/llms-pages/book-workflow-review.md): Book a free workflow review with Kitebaze. Show us the work slowing your business down, where it gets stuck and what could work better.
 - [Free Workflow Diagnostic](https://kitebaze.com/llms-pages/diagnostics.md): Describe a manual task and get a free diagnostic showing where automation could remove bottlenecks and repetitive work.

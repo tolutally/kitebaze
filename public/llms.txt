@@ -12,13 +12,13 @@ Technical crawler preferences are published in [robots.txt](https://kitebaze.com
 
 ## Services
 
-- [Workflow Build](https://kitebaze.com/llms-pages/workflow-build.md): Kitebaze builds around your existing tools and processes so work keeps moving without constant checking, chasing, handoffs or someone remembering what comes next.
+- [Workflow Build](https://kitebaze.com/llms-pages/workflow-build.md): Kitebaze builds around your existing tools and processes so work keeps moving without constant checking, chasing or manual handoffs.
 - [Fix One Bottleneck](https://kitebaze.com/llms-pages/bottleneck.md): One part of your business taking too much time or attention? Kitebaze fixes operational bottlenecks for Canadian businesses around the way they already work.
 
 ## Resources
 
 - [Case Studies](https://kitebaze.com/llms-pages/case-studies.md): See how Kitebaze improved billing, case management, field documentation and patient flow with practical workflow automation.
-- [Book a Workflow Review](https://kitebaze.com/llms-pages/book-workflow-review.md): Book a free workflow review with Kitebaze. Show us the work slowing your business down and we'll map how it runs today, where it gets stuck and what could work better.
+- [Book a Workflow Review](https://kitebaze.com/llms-pages/book-workflow-review.md): Book a free workflow review with Kitebaze. Show us the work slowing your business down, where it gets stuck and what could work better.
 - [Free Workflow Diagnostic](https://kitebaze.com/llms-pages/diagnostics.md): Describe a manual task and get a free diagnostic showing where automation could remove bottlenecks and repetitive work.
 
 ## Company
@@ -29,8 +29,8 @@ Technical crawler preferences are published in [robots.txt](https://kitebaze.com
 ## Trust and policies
 
 - [Responsible Automation](https://kitebaze.com/llms-pages/responsible-automation.md): Explore the seven principles Kitebaze uses to design trustworthy workflows, automations and connected systems.
-- [Privacy Policy](https://kitebaze.com/llms-pages/privacy-policy.md): Learn how Kitebaze collects, uses, shares, stores and protects personal information.
-- [Terms of Use](https://kitebaze.com/llms-pages/terms-of-service.md): Read the terms governing access to and use of the Kitebaze website.
+- [Privacy Policy](https://kitebaze.com/llms-pages/privacy-policy.md): Learn how Kitebaze collects, uses, shares, stores and protects personal information across its website, client relationships and services.
+- [Terms of Use](https://kitebaze.com/llms-pages/terms-of-service.md): Read the terms governing access to and use of the Kitebaze website, including its pages, materials, forms, tools and online content.
 - [Vulnerability Disclosure Policy](https://kitebaze.com/llms-pages/vulnerability-disclosure.md): Learn how to responsibly report a suspected security vulnerability affecting a Kitebaze-operated system.
 
 ## Optional

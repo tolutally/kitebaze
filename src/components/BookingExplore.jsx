@@ -6,7 +6,7 @@ const EXPLORE_LINKS = [
     title: 'Analyze where to start',
     copy: 'Compare the two ways to begin and find the one that fits the work slowing you down.',
     action: 'Find your starting point',
-    to: '/#start-here',
+    to: '/diagnostics',
   },
   {
     label: 'Proof',

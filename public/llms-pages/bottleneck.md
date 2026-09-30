@@ -14,4 +14,4 @@ Kitebaze maps the workflow, finds the friction, defines the guardrails and succe
 
 ## Related pages
 
-- [Workflow Build](https://kitebaze.com/llms-pages/workflow-build.md): Kitebaze builds around your existing tools and processes so work keeps moving without constant checking, chasing, handoffs or someone remembering what comes next.
+- [Workflow Build](https://kitebaze.com/llms-pages/workflow-build.md): Kitebaze builds around your existing tools and processes so work keeps moving without constant checking, chasing or manual handoffs.
