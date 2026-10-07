@@ -213,9 +213,9 @@ export default function WorkflowBuild() {
       </section>
 
       <section className="relative overflow-hidden border-t border-kb-line bg-kb-canvas py-24">
-        <img src="/workflow-assets/operations-bg.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-[0.25] [mask-image:linear-gradient(to_right,transparent_15%,black_55%)]" />
+        <img src="/workflow-assets/operations-bg.jpg" alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover opacity-[0.25] [mask-image:linear-gradient(to_right,transparent_15%,black_55%)]" />
         <div className="absolute inset-y-0 left-0 w-full bg-gradient-to-r from-kb-canvas via-kb-canvas/95 to-transparent md:w-[65%]"></div>
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div className="max-w-2xl"><Eyebrow>Why Kitebaze</Eyebrow><h2 className="mb-6 font-space-grotesk text-4xl font-medium leading-tight tracking-tight text-kb-ink sm:text-6xl">Built around the work. Not the software.</h2><p className="mb-10 font-inter text-lg font-light leading-relaxed text-kb-ink-soft">We do not begin with a tool or a list of automations. We begin with how the work actually moves through your business, then build the simplest system that makes it run better.</p><ul className="mb-10 space-y-4">{['Operator-led', 'Custom fit', 'Results measured'].map(item => <li key={item} className="flex items-center gap-4 font-inter text-lg font-extralight text-kb-ink"><img src="/workflow-assets/check.png" alt="" className="h-6 w-6" />{item}</li>)}</ul><CallButton /></div></div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><div className="max-w-2xl"><Eyebrow>Why Kitebaze</Eyebrow><h2 className="mb-6 font-space-grotesk text-4xl font-medium leading-tight tracking-tight text-kb-ink sm:text-6xl">Built around the work. Not the software.</h2><p className="mb-10 font-inter text-lg font-light leading-relaxed text-kb-ink-soft">We do not begin with a tool or a list of automations. We begin with how the work actually moves through your business, then build the simplest system that makes it run better.</p><ul className="mb-10 space-y-4">{['Operator-led', 'Custom fit', 'Results measured'].map(item => <li key={item} className="flex items-center gap-4 font-inter text-lg font-extralight text-kb-ink"><img src="/workflow-assets/check.png" alt="" loading="lazy" decoding="async" className="h-6 w-6" />{item}</li>)}</ul><CallButton /></div></div>
       </section>
 
       <section className="border-t border-kb-line bg-kb-surface-soft py-24">
@@ -223,7 +223,7 @@ export default function WorkflowBuild() {
           <div className="mb-16 grid gap-10 text-center sm:grid-cols-3">{[['70+', 'Projects Completed'], ['99%', 'Satisfaction Rate'], ['≤ 7 Months', 'Pays For Itself']].map(([value, label]) => <div key={label}><p className="font-space-grotesk text-5xl font-medium text-kb-accent-ink sm:text-6xl">{value}</p><p className="mt-2 font-inter text-kb-ink-muted">{label}</p></div>)}</div>
           <div className="mb-12"><Eyebrow>Community</Eyebrow><h2 className="font-space-grotesk text-4xl font-medium tracking-tight text-kb-ink sm:text-6xl">Loved by leaders.<br />Trusted by teams.</h2><p className="mt-5 font-inter font-light text-kb-ink-muted">Real use. Real outcomes. No theater.</p></div>
           <div className="kb-card-shadow relative flex flex-col items-center overflow-hidden rounded-3xl border border-kb-line bg-kb-surface p-6 md:p-12 lg:flex-row lg:gap-16">
-            <div className="w-full lg:w-[45%]"><div className="mx-auto aspect-square max-w-[320px] overflow-hidden rounded-[2rem] bg-kb-surface-raised p-2"><img src="/workflow-assets/ryan-estes.jpg" alt="Ryan Estes" className="h-full w-full rounded-[1.8rem] object-cover" /></div></div>
+            <div className="w-full lg:w-[45%]"><div className="mx-auto aspect-square max-w-[320px] overflow-hidden rounded-[2rem] bg-kb-surface-raised p-2"><img src="/workflow-assets/ryan-estes.jpg" alt="Ryan Estes" loading="lazy" decoding="async" className="h-full w-full rounded-[1.8rem] object-cover" /></div></div>
             <div className="w-full px-2 py-8 lg:w-[55%]"><div className="mb-6 flex items-center justify-between"><span className="text-5xl text-kb-accent-ink">“</span><a href="https://www.youtube.com/watch?v=JEUYBVIHG1s" target="_blank" rel="noreferrer" className="hidden rounded-full bg-kb-accent px-6 py-3.5 font-inter text-sm font-medium text-kb-on-accent transition-colors hover:bg-kb-accent-hover">View Testimonial</a></div><blockquote className="pb-8 font-space-grotesk text-3xl font-normal leading-tight tracking-tight text-kb-ink sm:text-4xl">If you’re looking to build a machine around your offer, these are the guys for you.</blockquote><div className="border-t border-kb-line pt-8"><h3 className="font-space-grotesk text-xl font-medium text-kb-ink">Ryan Estes</h3><p className="mt-2 font-inter font-light text-kb-ink-muted">Owner, Inbox Alchemy</p></div></div>
           </div>
         </div>
@@ -323,7 +323,7 @@ function CeilingSequence() {
   return (
     <section ref={sectionRef} className="relative h-auto border-t border-kb-line bg-kb-canvas sm:h-[320vh]">
       <div className="relative overflow-hidden px-5 py-20 sm:sticky sm:top-0 sm:h-screen sm:px-8 sm:py-0">
-        <img src="/workflow-assets/operations-bg.jpg" alt="" className="absolute inset-0 h-full w-full object-cover grayscale opacity-55" />
+        <img src="/workflow-assets/operations-bg.jpg" alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover grayscale opacity-55" />
         <div className="absolute inset-0 bg-kb-canvas/30"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-kb-canvas/35 via-transparent to-kb-canvas/85"></div>
         <div className="relative z-10 mx-auto h-full max-w-[1800px]">

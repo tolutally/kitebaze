@@ -29,7 +29,7 @@ export default function Testimonials() {
                   <div className="lg:col-span-4 flex flex-col h-full">
                     <div className="flex flex-col sm:flex-row lg:flex-col items-start sm:items-center lg:items-start gap-6 sm:gap-8">
                       <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-full border border-kb-line-strong sm:h-28 sm:w-28">
-                        <img src="/recovered-assets/e0c9e981-4181-4858-920f-e00abb098e87_320w.jpg" alt="Chris Stevenson" className="w-full h-full object-cover grayscale" />
+                        <img src="/recovered-assets/e0c9e981-4181-4858-920f-e00abb098e87_320w.jpg" alt="Chris Stevenson" loading="lazy" decoding="async" className="w-full h-full object-cover grayscale" />
                       </div>
                       <div className="flex flex-col gap-1">
                         <h3 className="sm:text-4xl leading-none text-2xl font-medium text-kb-accent-ink tracking-tight font-grotesk">Chris Stevenson</h3>
@@ -61,7 +61,7 @@ export default function Testimonials() {
                   </p>
                   <div className="mt-10 flex items-center gap-x-4 gap-y-4 border-t border-kb-line pt-6">
                     <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-full border border-kb-line-strong bg-kb-surface-raised">
-                      <img src="/recovered-assets/0dcdd895-28af-4d5d-87be-b6281ddcffd2_320w.png" alt="Steve Urbanski" className="opacity-80 w-full h-full object-cover grayscale" />
+                      <img src="/recovered-assets/0dcdd895-28af-4d5d-87be-b6281ddcffd2_320w.png" alt="Steve Urbanski" loading="lazy" decoding="async" className="opacity-80 w-full h-full object-cover grayscale" />
                     </div>
                     <div>
                       <h3 className="mb-1 font-grotesk text-base font-normal tracking-tight text-kb-ink transition-colors group-hover:text-kb-accent-ink">Steve Urbanski</h3>
@@ -81,7 +81,7 @@ export default function Testimonials() {
                   </p>
                   <div className="mt-10 flex items-center gap-4 border-t border-kb-line pt-6">
                     <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-full border border-kb-line-strong bg-kb-surface-raised">
-                      <img src="/recovered-assets/b1005be2-22ee-4d22-a288-9eafac19a3a7_320w.png" alt="Peter Straub" className="opacity-80 w-full h-full object-cover grayscale" />
+                      <img src="/recovered-assets/b1005be2-22ee-4d22-a288-9eafac19a3a7_320w.png" alt="Peter Straub" loading="lazy" decoding="async" className="opacity-80 w-full h-full object-cover grayscale" />
                     </div>
                     <div>
                       <h3 className="mb-1 font-grotesk text-base font-normal tracking-tight text-kb-ink transition-colors group-hover:text-kb-accent-ink">Peter Straub</h3>

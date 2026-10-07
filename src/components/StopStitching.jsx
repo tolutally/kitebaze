@@ -14,6 +14,8 @@ export default function StopStitching() {
               <img
               src="/kitebase-icon-stone.png"
                 alt="Custom Icon"
+                loading="lazy"
+                decoding="async"
                 className="drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] w-[80px] h-[80px] object-contain"
                 style={{ width: '80px', height: '80px' }}
               />

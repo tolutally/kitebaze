@@ -97,7 +97,7 @@ export default function LegalDocumentPage({
   return (
     <>
       <section className="relative min-h-[500px] overflow-hidden bg-kb-inverse pb-44 pt-44 text-kb-inverse-text sm:min-h-[560px] sm:pb-52 sm:pt-52">
-        <img src="/privacy-assets/privacy-hero.png" alt="" className="absolute inset-0 h-full w-full object-cover object-center" />
+        <img src="/privacy-assets/privacy-hero.jpg" alt="" fetchpriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover object-center" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/35 to-black/5"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-black/10"></div>
         <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-8">

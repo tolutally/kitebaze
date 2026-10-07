@@ -51,6 +51,29 @@ function StepButton({ step, index, isActive, isMobile, onSelect }) {
 }
 
 function StepDetail({ step, index, mobile = false }) {
+  const frameRef = useRef(null);
+  // Defer the (relatively heavy) video download until this card is actually near the viewport.
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  useEffect(() => {
+    const node = frameRef.current;
+    if (!node) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setShouldLoad(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { rootMargin: '300px' },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
       id={mobile ? `approach-mobile-panel-${index}` : 'approach-desktop-panel'}
@@ -58,18 +81,20 @@ function StepDetail({ step, index, mobile = false }) {
       aria-labelledby={`approach-step-${index}`}
       className={mobile ? 'pb-6 pt-4' : 'flex flex-col gap-10'}
     >
-      <div className={`relative aspect-[16/10] w-full overflow-hidden border border-kb-line bg-kb-inverse ${mobile ? 'rounded-[20px]' : 'rounded-[24px]'}`}>
-        <video
-          key={step.video}
-          className="absolute inset-0 h-full w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-        >
-          <source src={step.video} type="video/mp4" />
-        </video>
+      <div ref={frameRef} className={`relative aspect-[16/10] w-full overflow-hidden border border-kb-line bg-kb-inverse ${mobile ? 'rounded-[20px]' : 'rounded-[24px]'}`}>
+        {shouldLoad && (
+          <video
+            key={step.video}
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+          >
+            <source src={step.video} type="video/mp4" />
+          </video>
+        )}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-kb-inverse/50 via-transparent to-transparent" />
         <span className={`pointer-events-none absolute font-space-grotesk font-medium leading-none text-kb-inverse-text/10 ${mobile ? 'bottom-4 right-5 text-[5rem]' : 'bottom-6 right-8 text-[8rem]'}`}>
           {String(index + 1).padStart(2, '0')}

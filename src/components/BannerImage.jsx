@@ -6,6 +6,8 @@ export default function BannerImage() {
           <img
             src="/recovered-assets/c18e3593-27b3-4df7-82f6-35fdb9b26ebb_1600w.png"
             alt="Ignite Whats Next Keyboard Keys Banner"
+            loading="lazy"
+            decoding="async"
             className="w-full h-auto object-cover"
           />
         </div>

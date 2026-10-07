@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="mb-12 grid grid-cols-2 gap-x-8 gap-y-10 md:mb-16 md:grid-cols-12 md:gap-x-8">
           <div className="col-span-2 md:col-span-5">
             <Link to="/" className="flex w-fit items-center" aria-label="Kitebaze home">
-              <img src="/kitebaze-logo-stone.png" alt="Kitebaze" className="h-auto w-[190px] max-w-full sm:w-[240px] lg:w-[290px]" />
+              <img src="/kitebaze-logo-stone.png" alt="Kitebaze" loading="lazy" decoding="async" className="h-auto w-[190px] max-w-full sm:w-[240px] lg:w-[290px]" />
             </Link>
             <div className="mt-5 flex w-full flex-col gap-6 font-sans sm:mt-6">
               <p className="max-w-md font-inter text-base font-light leading-relaxed text-white/65">Useful ways to automate the work behind your business.</p>

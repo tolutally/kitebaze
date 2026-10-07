@@ -39,7 +39,7 @@ function CaseCopy({ study }) {
   return (
     <div className="flex flex-col">
       <div className="flex items-center gap-3 pb-4">
-        <img src={study.logo} alt={study.company} className="h-10 w-10 rounded-full border border-kb-line-strong object-cover grayscale" />
+        <img src={study.logo} alt={study.company} loading="lazy" decoding="async" className="h-10 w-10 rounded-full border border-kb-line-strong object-cover grayscale" />
         <div className="font-space-grotesk text-base font-medium leading-none text-kb-ink">{study.company}</div>
       </div>
       <h2 className="mb-5 max-w-[30rem] font-inter text-2xl font-normal leading-tight tracking-[-0.02em] text-kb-ink lg:text-[1.75rem]">{study.title}</h2>
@@ -59,7 +59,7 @@ function CaseCopy({ study }) {
 function CaseImage({ study }) {
   return (
     <div className="kb-card-shadow group relative aspect-[4/3] overflow-hidden rounded-2xl border border-kb-line">
-      <img src={study.image} alt="" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+      <img src={study.image} alt="" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(159,107,78,0.14)_0%,transparent_70%)] opacity-30 mix-blend-multiply"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-kb-canvas/20 via-transparent to-transparent"></div>
     </div>

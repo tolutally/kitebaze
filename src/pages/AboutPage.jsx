@@ -56,7 +56,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-kb-canvas text-kb-ink">
       <section className="about-hero relative flex min-h-[585px] items-center justify-center overflow-hidden border-b border-kb-line text-kb-inverse-text">
-          <img src="/about-assets/station-hero.jpg" alt="Grand Central station" className="absolute inset-0 h-full w-full object-cover grayscale" />
+          <img src="/about-assets/station-hero.jpg" alt="Grand Central station" fetchpriority="high" decoding="async" className="absolute inset-0 h-full w-full object-cover grayscale" />
           <div className="absolute inset-0 bg-gradient-to-t from-kb-inverse/90 via-kb-inverse/30 to-kb-inverse/55"></div>
           <div className="relative z-10 max-w-5xl mx-auto px-6 pt-28 text-center">
             <h1 className="font-space-grotesk text-6xl sm:text-7xl lg:text-8xl font-medium tracking-tight">The Spark.</h1>
@@ -114,7 +114,7 @@ export default function AboutPage() {
             <div className="mt-16 grid sm:grid-cols-2 gap-6">
               {people.map((item, index) => (
                 <button key={item.name} onClick={() => setPerson(index)} className={`group relative min-h-[540px] overflow-hidden rounded-3xl border text-left ${person === index ? 'border-kb-accent' : 'border-kb-line-strong'} transition-colors`}>
-                  <img src={item.image} alt={item.name} className="absolute inset-0 w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" />
+                  <img src={item.image} alt={item.name} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover grayscale transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-kb-inverse via-kb-inverse/10 to-transparent"></div>
                   <div className="absolute inset-x-0 bottom-0 p-8 text-kb-inverse-text sm:p-10"><h3 className="font-space-grotesk text-3xl font-medium">{item.name}</h3><p className="mt-1 text-kb-inverse-muted">{item.role}</p></div>
                 </button>
