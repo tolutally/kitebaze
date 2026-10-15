@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --force",
-    "prebuild": "node scripts/generate-crawl-files.mjs",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --max-warnings=0",
+    "prebuild": "npm run lint && node scripts/generate-crawl-files.mjs",
     "build": "vite build",
     "postbuild": "node scripts/generate-route-shells.mjs",
     "generate:crawl": "node scripts/generate-crawl-files.mjs",
@@ -24,6 +25,9 @@
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
     "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^10.12.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.13.0",
     "tailwindcss": "^4.3.3",
     "vite": "^7.1.3"
   }

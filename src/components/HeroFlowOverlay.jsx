@@ -208,14 +208,39 @@ function usePrefersReducedMotion() {
   return prefersReducedMotion;
 }
 
+function useDesktopOverlay() {
+  const [isDesktop, setIsDesktop] = useState(() => (
+    typeof window !== 'undefined'
+      && window.matchMedia('(min-width: 768px)').matches
+  ));
+
+  useEffect(() => {
+    const query = window.matchMedia('(min-width: 768px)');
+    const updateViewport = () => setIsDesktop(query.matches);
+
+    updateViewport();
+    query.addEventListener?.('change', updateViewport);
+    return () => query.removeEventListener?.('change', updateViewport);
+  }, []);
+
+  return isDesktop;
+}
+
 export default function HeroFlowOverlay({ className = '', style, askIndex = 0 }) {
   const prefersReducedMotion = usePrefersReducedMotion();
+  const isDesktop = useDesktopOverlay();
   const ASK = ASK_QUESTIONS[askIndex % ASK_QUESTIONS.length];
   const [typedQuestion, setTypedQuestion] = useState('');
   const [showCaret, setShowCaret] = useState(false);
   const titleId = `kb-hero-flow-title-${useId().replaceAll(':', '')}`;
 
   useEffect(() => {
+    if (!isDesktop) {
+      setTypedQuestion('');
+      setShowCaret(false);
+      return undefined;
+    }
+
     if (prefersReducedMotion) {
       setTypedQuestion(ASK);
       setShowCaret(false);
@@ -246,12 +271,16 @@ export default function HeroFlowOverlay({ className = '', style, askIndex = 0 })
         currentState === nextCaretState ? currentState : nextCaretState
       ));
 
-      animationFrame = window.requestAnimationFrame(typeQuestion);
+      if (elapsed < TIMING.typeEnd) {
+        animationFrame = window.requestAnimationFrame(typeQuestion);
+      }
     };
 
     animationFrame = window.requestAnimationFrame(typeQuestion);
     return () => window.cancelAnimationFrame(animationFrame);
-  }, [prefersReducedMotion]);
+  }, [ASK, isDesktop, prefersReducedMotion]);
+
+  if (!isDesktop) return null;
 
   const halfTile = ROW.tile / 2;
   const appY = (index) => ROW.top + index * ROW.gap;
