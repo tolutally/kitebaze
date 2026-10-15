@@ -4,8 +4,11 @@ export const SITE = Object.freeze({
   language: 'en-CA',
   locale: 'en_CA',
   description: 'Kitebaze designs and maintains practical AI and workflow automation around the tools a business already uses.',
-  socialImage: '/image-man-with-laptop.jpg',
-  socialImageAlt: 'A team reviewing work around a laptop',
+  socialImage: '/kitebaze-hero-social-2026-10.png',
+  socialImageWidth: 1200,
+  socialImageHeight: 630,
+  socialImageType: 'image/png',
+  socialImageAlt: 'Kitebaze hero showing connected business tools handling routine work around an operator.',
   email: 'support@kitebaze.com',
 });
 

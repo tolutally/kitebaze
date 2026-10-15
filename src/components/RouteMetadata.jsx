@@ -63,6 +63,9 @@ export default function RouteMetadata() {
         'meta[property="og:description"]',
         'meta[property="og:url"]',
         'meta[property="og:image"]',
+        'meta[property="og:image:width"]',
+        'meta[property="og:image:height"]',
+        'meta[property="og:image:type"]',
         'meta[property="og:image:alt"]',
         'meta[name="twitter:card"]',
         'meta[name="twitter:title"]',
@@ -91,6 +94,9 @@ export default function RouteMetadata() {
     upsertMeta('meta[property="og:description"]', { property: 'og:description', content: metadata.description });
     upsertMeta('meta[property="og:url"]', { property: 'og:url', content: canonicalUrl });
     upsertMeta('meta[property="og:image"]', { property: 'og:image', content: socialImageUrl });
+    upsertMeta('meta[property="og:image:width"]', { property: 'og:image:width', content: String(SITE.socialImageWidth) });
+    upsertMeta('meta[property="og:image:height"]', { property: 'og:image:height', content: String(SITE.socialImageHeight) });
+    upsertMeta('meta[property="og:image:type"]', { property: 'og:image:type', content: SITE.socialImageType });
     upsertMeta('meta[property="og:image:alt"]', { property: 'og:image:alt', content: SITE.socialImageAlt });
 
     upsertMeta('meta[name="twitter:card"]', { name: 'twitter:card', content: 'summary_large_image' });

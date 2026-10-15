@@ -4,6 +4,7 @@ import { dirname, join } from 'node:path';
 import {
   PUBLIC_ROUTES,
   ROUTE_ALIASES,
+  SITE,
   getCanonicalUrl,
   getRouteMarkdownPath,
   getRouteMarkdownUrl,
@@ -42,6 +43,10 @@ const vercel = JSON.parse(read(join(projectRoot, 'vercel.json')));
 const manifest = JSON.parse(read(join(publicDirectory, 'site.webmanifest')));
 const indexNowPublicKeyPath = join(publicDirectory, INDEXNOW_KEY_FILENAME);
 const indexNowDistKeyPath = join(distDirectory, INDEXNOW_KEY_FILENAME);
+const socialImagePath = join(publicDirectory, SITE.socialImage.replace(/^\//, ''));
+const socialImageUrl = `${SITE.url}${SITE.socialImage}`;
+
+if (!existsSync(socialImagePath)) failures.push(`Missing social image: ${SITE.socialImage}`);
 
 for (const route of PUBLIC_ROUTES) {
   const filename = route.path === '/' ? 'index.html' : `${route.path.slice(1)}.html`;
@@ -64,6 +69,13 @@ for (const route of PUBLIC_ROUTES) {
   if (!html.includes(`<meta name="description" content="${escapeHtml(route.description)}">`)) failures.push(`Wrong description: ${route.path}`);
   if (!html.includes(`rel="canonical" href="${canonicalUrl}"`)) failures.push(`Wrong canonical: ${route.path}`);
   if (!html.includes(`rel="alternate" type="text/markdown" href="${markdownUrl}"`)) failures.push(`Missing Markdown alternate: ${route.path}`);
+  if (!html.includes(`<meta property="og:image" content="${socialImageUrl}">`)) failures.push(`Wrong Open Graph image: ${route.path}`);
+  if (!html.includes(`<meta property="og:image:width" content="${SITE.socialImageWidth}">`)) failures.push(`Wrong Open Graph image width: ${route.path}`);
+  if (!html.includes(`<meta property="og:image:height" content="${SITE.socialImageHeight}">`)) failures.push(`Wrong Open Graph image height: ${route.path}`);
+  if (!html.includes(`<meta property="og:image:type" content="${SITE.socialImageType}">`)) failures.push(`Wrong Open Graph image type: ${route.path}`);
+  if (!html.includes(`<meta property="og:image:alt" content="${escapeHtml(SITE.socialImageAlt)}">`)) failures.push(`Wrong Open Graph image alt text: ${route.path}`);
+  if (!html.includes(`<meta name="twitter:image" content="${socialImageUrl}">`)) failures.push(`Wrong Twitter image: ${route.path}`);
+  if (!html.includes(`<meta name="twitter:image:alt" content="${escapeHtml(SITE.socialImageAlt)}">`)) failures.push(`Wrong Twitter image alt text: ${route.path}`);
   if (!html.includes('id="kitebaze-route-jsonld"')) failures.push(`Missing page schema: ${route.path}`);
   if (!sitemap.includes(`<loc>${canonicalUrl}</loc>`)) failures.push(`Missing sitemap URL: ${route.path}`);
   if (!llms.includes(markdownUrl)) failures.push(`Missing llms.txt Markdown URL: ${route.path}`);
