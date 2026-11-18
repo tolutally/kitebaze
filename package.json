@@ -13,11 +13,13 @@
     "check:seo": "node scripts/validate-crawl.mjs",
     "indexnow:check": "node scripts/submit-indexnow.mjs --dry-run",
     "indexnow:submit": "node scripts/submit-indexnow.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "setup:appwrite": "node scripts/appwrite-setup-pipeline.mjs"
   },
   "dependencies": {
     "@botpress/webchat": "^5.5.3",
     "@calcom/embed-react": "^1.5.3",
+    "appwrite": "29.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.18.3"
@@ -28,6 +30,7 @@
     "eslint": "^10.12.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.13.0",
+    "node-appwrite": "31.1.0",
     "tailwindcss": "^4.3.3",
     "vite": "^7.1.3"
   }

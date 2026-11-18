@@ -2,6 +2,9 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/pipeline", "destination": "/404.html" }
+  ],
   "redirects": [
     { "source": "/home", "destination": "/", "permanent": true },
     { "source": "/about", "destination": "/about-us", "permanent": true },
@@ -12,6 +15,13 @@
     { "source": "/terms-of-use", "destination": "/terms-of-service", "permanent": true }
   ],
   "headers": [
+    {
+      "source": "/pipeline",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    },
     {
       "source": "/llms.txt",
       "headers": [

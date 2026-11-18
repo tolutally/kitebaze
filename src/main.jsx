@@ -19,6 +19,7 @@ const TermsOfUse = lazy(() => import('./pages/TermsOfUse.jsx'));
 const VulnerabilityDisclosure = lazy(() => import('./pages/VulnerabilityDisclosure.jsx'));
 const ResponsibleAutomation = lazy(() => import('./pages/ResponsibleAutomation.jsx'));
 const NotFound = lazy(() => import('./pages/NotFound.jsx'));
+const PipelinePage = lazy(() => import('./pipeline/PipelinePage.jsx'));
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -27,6 +28,8 @@ createRoot(document.getElementById('root')).render(
         <RouteMetadata />
         <Suspense fallback={<PageLoadingFallback />}>
           <Routes>
+            {/* Internal tool: not in the sitemap or nav, served with noindex (see vercel.json). */}
+            <Route path="pipeline" element={<PipelinePage />} />
             <Route element={<App />}>
               <Route index element={<Home />} />
               <Route path="home" element={<Navigate to="/" replace />} />
