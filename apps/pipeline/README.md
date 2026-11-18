@@ -34,7 +34,7 @@ The board uses Kitebaze's Appwrite project (Toronto region, project `6afdd34c000
 
 - **Login:** email one-time code. Anyone can request a code, but the tables only allow the Appwrite team **`pipeline`**, and users outside it see a "No access yet" screen.
 - **Add a person:** Appwrite console → Auth → Teams → Pipeline → add member (or `npx appwrite-cli@28.10.2 teams create-membership --team-id pipeline --email <email> --roles member`).
-- **Allowed domains:** `localhost`, `kitebaze.com` and `pipeline.kitebaze.com` are registered as web platforms (the plan allows 3). Vercel preview URLs are not, so the board can't load data there.
+- **Allowed domains:** `localhost`, `pipeline.kitebaze.com` and `kitebaze-pipeline.vercel.app` are registered as web platforms (the plan allows 3). Per-branch Vercel preview URLs are not, so the board can't load data there.
 - **Schema changes:** edit `scripts/setup-appwrite.mjs` and re-run it. It is idempotent and re-applies table permissions:
   ```bash
   APPWRITE_ENDPOINT=https://tor.cloud.appwrite.io/v1 APPWRITE_PROJECT_ID=6afdd34c0009ec87e52f APPWRITE_API_KEY=<key> APPWRITE_TEAM_ID=pipeline npm run setup:appwrite   # from apps/pipeline
