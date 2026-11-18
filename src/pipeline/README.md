@@ -18,7 +18,7 @@ An internal kanban board for deals, modelled on Pipedrive's pipeline view (see `
 The board uses Kitebaze's Appwrite project (Toronto region, project `6afdd34c0009ec87e52f`, database `crm`). These IDs are built in as defaults in `store/index.js`, so no Vercel variables are needed. Set `VITE_PIPELINE_DEMO=true` to run on browser-only sample data instead.
 
 - **Login:** email one-time code. Anyone can request a code, but the tables only allow the Appwrite team **`pipeline`**, and users outside it see a "No access yet" screen.
-- **Add a person:** Appwrite console → Auth → Teams → Pipeline → add member (or `npx appwrite teams create-membership --team-id pipeline --email <email> --roles member`).
+- **Add a person:** Appwrite console → Auth → Teams → Pipeline → add member (or `npx appwrite-cli@28.10.2 teams create-membership --team-id pipeline --email <email> --roles member`).
 - **Allowed domains:** `localhost`, `kitebaze.com`, `www.kitebaze.com` are registered as web platforms. Vercel preview URLs are not, so the board only works on those domains.
 - **Schema changes:** edit `scripts/appwrite-setup-pipeline.mjs` and re-run it. It is idempotent and re-applies table permissions:
   ```bash
