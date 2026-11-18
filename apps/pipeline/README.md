@@ -34,11 +34,21 @@ The board uses Kitebaze's Appwrite project (Toronto region, project `6afdd34c000
 
 - **Login:** email one-time code. Anyone can request a code, but the tables only allow the Appwrite team **`pipeline`**, and users outside it see a "No access yet" screen.
 - **Add a person:** Appwrite console → Auth → Teams → Pipeline → add member (or `npx appwrite-cli@28.10.2 teams create-membership --team-id pipeline --email <email> --roles member`).
-- **Allowed domains:** `localhost`, `kitebaze.com` and `pipeline.kitebaze.com` are registered as web platforms (the plan allows 3). Vercel preview URLs are not, so the board can't load data there.
+- **Allowed domains:** `localhost`, `pipeline.kitebaze.com` and `kitebaze-pipeline.vercel.app` are registered as web platforms (the plan allows 3). Per-branch Vercel preview URLs are not, so the board can't load data there.
 - **Schema changes:** edit `scripts/setup-appwrite.mjs` and re-run it. It is idempotent and re-applies table permissions:
   ```bash
   APPWRITE_ENDPOINT=https://tor.cloud.appwrite.io/v1 APPWRITE_PROJECT_ID=6afdd34c0009ec87e52f APPWRITE_API_KEY=<key> APPWRITE_TEAM_ID=pipeline npm run setup:appwrite   # from apps/pipeline
   ```
+
+## Updating the pipeline from Claude chat
+Claude can read and update the board through Appwrite's official connector, guided by the skill in `claude-skill/kitebaze-pipeline/SKILL.md`. The skill holds the table layout and the rules: stage moves are logged, activities reset rotting, Won/Lost are statuses, nothing is hard-deleted.
+
+1. claude.ai → Customize → Connectors → **+ Add → Add custom connector**: name `Appwrite`, URL `https://mcp.appwrite.io/`. Sign in to Appwrite when asked and approve access to the Pipeline project.
+2. Settings → Capabilities: turn on **Code execution and file creation** (needed for skills).
+3. Zip the skill folder (`cd claude-skill && zip -r kitebaze-pipeline.zip kitebaze-pipeline`), then Customize → Skills → **+ → Upload a skill** and choose the zip.
+4. In a chat, turn on the Appwrite connector (+ → Connectors) and ask, e.g. "Log a call with Alex at Radex and move the deal to Price proposed."
+
+Changes made from chat land in Appwrite's audit log (project → Activity) with Claude's stated reason.
 
 ## Seed data
 `scripts/seed-appwrite.mjs` loads stages, companies, contacts, deals and activity history from a JSON file. It is re-runnable (rows keep the seed's IDs) and treats stages with IDs `stage_won` / `stage_lost` as deal statuses, not columns. Stage probabilities and rotting days the seed doesn't give are set in the script's `STAGE_DEFAULTS`. Keep seed files out of the repo: they hold client contact details.
