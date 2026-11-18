@@ -1,6 +1,10 @@
-# Deal pipeline board (`/pipeline`)
+# Deal pipeline board (`pipeline.kitebaze.com`)
 
-An internal kanban board for deals, modelled on Pipedrive's pipeline view (see `reverse-engineering/pipedrive/deal-pipeline/`). It is not linked from the site, not in the sitemap, and served with `noindex`.
+An internal kanban board for deals, modelled on Pipedrive's pipeline view (see `reverse-engineering/pipedrive/deal-pipeline/`). It ships in the same Vercel project as the website:
+
+- **On `pipeline.kitebaze.com`** every path renders the board only (`src/main.jsx` checks the hostname), with `X-Robots-Tag: noindex` on every response (`vercel.json`).
+- **On `kitebaze.com` / `www.kitebaze.com`**, `/pipeline` redirects (307) to the subdomain. The marketing pages never load the board's code.
+- **Locally and on Vercel previews** the board is at `/pipeline`.
 
 ## What it does
 - One board per pipeline. Stages are columns; switch pipelines from the dropdown or create a new one.
@@ -19,7 +23,7 @@ The board uses Kitebaze's Appwrite project (Toronto region, project `6afdd34c000
 
 - **Login:** email one-time code. Anyone can request a code, but the tables only allow the Appwrite team **`pipeline`**, and users outside it see a "No access yet" screen.
 - **Add a person:** Appwrite console → Auth → Teams → Pipeline → add member (or `npx appwrite-cli@28.10.2 teams create-membership --team-id pipeline --email <email> --roles member`).
-- **Allowed domains:** `localhost`, `kitebaze.com`, `www.kitebaze.com` are registered as web platforms. Vercel preview URLs are not, so the board only works on those domains.
+- **Allowed domains:** `localhost`, `kitebaze.com` and `pipeline.kitebaze.com` are registered as web platforms (the plan allows 3). Vercel preview URLs are not, so the board can't load data there.
 - **Schema changes:** edit `scripts/appwrite-setup-pipeline.mjs` and re-run it. It is idempotent and re-applies table permissions:
   ```bash
   APPWRITE_ENDPOINT=https://tor.cloud.appwrite.io/v1 APPWRITE_PROJECT_ID=6afdd34c0009ec87e52f APPWRITE_API_KEY=<key> APPWRITE_TEAM_ID=pipeline npm run setup:appwrite

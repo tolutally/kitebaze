@@ -298,7 +298,7 @@ export default function Board({ user, onLogout }) {
   return (
     <div className="flex h-dvh flex-col bg-kb-canvas text-kb-ink">
       <header className="flex flex-wrap items-center gap-2 border-b border-kb-line bg-kb-surface px-4 py-3">
-        <a href="/" className="mr-1 flex items-center" aria-label="Kitebaze home">
+        <a href="https://kitebaze.com/" className="mr-1 flex items-center" aria-label="Kitebaze website">
           <img src="/kitebaze-icon-black.png" alt="" className="h-7 w-7" />
         </a>
         <label className="sr-only" htmlFor="pipeline-select">Pipeline</label>

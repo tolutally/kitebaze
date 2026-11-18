@@ -21,7 +21,23 @@ const ResponsibleAutomation = lazy(() => import('./pages/ResponsibleAutomation.j
 const NotFound = lazy(() => import('./pages/NotFound.jsx'));
 const PipelinePage = lazy(() => import('./pipeline/PipelinePage.jsx'));
 
+// pipeline.kitebaze.com serves only the deal pipeline board, on every path. The marketing site never renders there.
+const isPipelineHost = window.location.hostname === 'pipeline.kitebaze.com';
+
 createRoot(document.getElementById('root')).render(
+  isPipelineHost ? (
+    <StrictMode>
+      <AppErrorBoundary>
+        <BrowserRouter>
+          <Suspense fallback={<PageLoadingFallback />}>
+            <Routes>
+              <Route path="*" element={<PipelinePage />} />
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </AppErrorBoundary>
+    </StrictMode>
+  ) : (
   <StrictMode>
     <AppErrorBoundary>
       <BrowserRouter>
@@ -56,5 +72,6 @@ createRoot(document.getElementById('root')).render(
         </Suspense>
       </BrowserRouter>
     </AppErrorBoundary>
-  </StrictMode>,
+  </StrictMode>
+  ),
 );
