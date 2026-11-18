@@ -1,5 +1,5 @@
 // Appwrite (TablesDB) store. Table and column names must match scripts/appwrite-setup-pipeline.mjs.
-import { Account, Client, ID, Query, TablesDB } from 'appwrite';
+import { Account, Client, ID, Query, TablesDB, Teams } from 'appwrite';
 import { DEFAULT_STAGES } from '../logic.js';
 
 export const TABLES = Object.freeze({
@@ -32,10 +32,11 @@ function fromRow(row) {
   return { ...rest, id: $id, created_at: $createdAt, updated_at: $updatedAt };
 }
 
-export function createAppwriteStore({ endpoint, projectId, databaseId }) {
+export function createAppwriteStore({ endpoint, projectId, databaseId, teamId }) {
   const client = new Client().setEndpoint(endpoint).setProject(projectId);
   const account = new Account(client);
   const tables = new TablesDB(client);
+  const teams = new Teams(client);
 
   async function listAll(tableId, queries) {
     const rows = [];
@@ -60,16 +61,29 @@ export function createAppwriteStore({ endpoint, projectId, databaseId }) {
   const store = {
     mode: 'appwrite',
 
+    // Returns null when logged out. `hasAccess` is false for users outside the pipeline team:
+    // the tables only allow that team, so anyone else would see an empty, read-only board.
     async getUser() {
+      let user;
       try {
-        const user = await account.get();
-        return { name: user.name || user.email, email: user.email };
+        user = await account.get();
       } catch {
         return null;
       }
+      let hasAccess = true;
+      if (teamId) {
+        const list = await teams.list({ queries: [Query.equal('$id', teamId)] }).catch(() => ({ teams: [] }));
+        hasAccess = list.teams.length > 0;
+      }
+      return { name: user.name || user.email, email: user.email, hasAccess };
     },
-    async login(email, password) {
-      await account.createEmailPasswordSession({ email, password });
+    // Email one-time code login: step 1 sends the code, step 2 exchanges it for a session.
+    async sendLoginCode(email) {
+      const token = await account.createEmailToken({ userId: ID.unique(), email });
+      return token.userId;
+    },
+    async verifyLoginCode(userId, code) {
+      await account.createSession({ userId, secret: code.trim() });
       return store.getUser();
     },
     async logout() {

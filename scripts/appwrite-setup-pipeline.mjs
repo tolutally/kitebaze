@@ -104,10 +104,18 @@ async function waitForColumns(tableId) {
   throw new Error(`Timed out waiting for ${tableId} columns to become available.`);
 }
 
-await ignoreExisting(`database ${databaseId}`, () => db.create({ databaseId, name: 'Kitebaze CRM' }));
+// Look before creating: on a plan's database limit Appwrite reports the limit, not "already exists".
+const databaseExists = await db.get({ databaseId }).then(() => true, (err) => {
+  if (err instanceof AppwriteException && err.code === 404) return false;
+  throw err;
+});
+if (databaseExists) console.log(`exists   database ${databaseId}`);
+else await ignoreExisting(`database ${databaseId}`, () => db.create({ databaseId, name: 'Kitebaze CRM' }));
 
 for (const table of SCHEMA) {
   await ignoreExisting(`table ${table.tableId}`, () => db.createTable({ databaseId, tableId: table.tableId, name: table.name, permissions, rowSecurity: false }));
+  // Re-apply access on every run so changing APPWRITE_TEAM_ID takes effect on existing tables.
+  await db.updateTable({ databaseId, tableId: table.tableId, name: table.name, permissions, rowSecurity: false });
   for (const column of table.columns) {
     await ignoreExisting(`  column ${table.tableId}.${column.key}`, () => createColumn(table.tableId, column));
   }

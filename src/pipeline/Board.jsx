@@ -341,7 +341,7 @@ export default function Board({ user, onLogout }) {
 
       {store.mode === 'demo' && (
         <p className="border-b border-amber-200 bg-amber-50 px-4 py-1.5 text-xs text-amber-900">
-          Demo mode: data is saved in this browser only. Set the Appwrite variables to use the shared database.
+          Demo mode: sample data saved in this browser only. Unset VITE_PIPELINE_DEMO to use the shared Appwrite database.
         </p>
       )}
 

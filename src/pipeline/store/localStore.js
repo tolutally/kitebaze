@@ -101,7 +101,7 @@ export const localStore = {
   mode: 'demo',
 
   async getUser() {
-    return { name: 'Demo user', email: null };
+    return { name: 'Demo user', email: null, hasAccess: true };
   },
   async login() {
     return this.getUser();

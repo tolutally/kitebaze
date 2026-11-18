@@ -14,17 +14,15 @@ An internal kanban board for deals, modelled on Pipedrive's pipeline view (see `
 - Every stage change is logged to `deal_stage_events` for future conversion and time-in-stage reports.
 
 ## Data
-Without Appwrite settings the board runs in **demo mode** on sample data saved in the browser.
+The board uses Kitebaze's Appwrite project (Toronto region, project `6afdd34c0009ec87e52f`, database `crm`). These IDs are built in as defaults in `store/index.js`, so no Vercel variables are needed. Set `VITE_PIPELINE_DEMO=true` to run on browser-only sample data instead.
 
-To use Appwrite:
-1. In the Appwrite console, create a project, a server API key with the `databases.read` and `databases.write` scopes, and (optionally) a team for the people who should see the pipeline.
-2. Create the schema:
-   ```bash
-   APPWRITE_ENDPOINT=https://<region>.cloud.appwrite.io/v1 APPWRITE_PROJECT_ID=<id> APPWRITE_API_KEY=<key> APPWRITE_TEAM_ID=<optional team id> npm run setup:appwrite
-   ```
-3. Add the site's domains (e.g. `kitebaze.com`, `localhost`) as **Web platforms** in the Appwrite project.
-4. Set `VITE_APPWRITE_ENDPOINT`, `VITE_APPWRITE_PROJECT_ID` and `VITE_APPWRITE_DATABASE_ID` in Vercel and in `.env.local` (see `.env.example`), then redeploy.
-5. Create users in the Appwrite console (Auth). They log in on `/pipeline` with email and password.
+- **Login:** email one-time code. Anyone can request a code, but the tables only allow the Appwrite team **`pipeline`**, and users outside it see a "No access yet" screen.
+- **Add a person:** Appwrite console → Auth → Teams → Pipeline → add member (or `npx appwrite teams create-membership --team-id pipeline --email <email> --roles member`).
+- **Allowed domains:** `localhost`, `kitebaze.com`, `www.kitebaze.com` are registered as web platforms. Vercel preview URLs are not, so the board only works on those domains.
+- **Schema changes:** edit `scripts/appwrite-setup-pipeline.mjs` and re-run it. It is idempotent and re-applies table permissions:
+  ```bash
+  APPWRITE_ENDPOINT=https://tor.cloud.appwrite.io/v1 APPWRITE_PROJECT_ID=6afdd34c0009ec87e52f APPWRITE_API_KEY=<key> APPWRITE_TEAM_ID=pipeline npm run setup:appwrite
+  ```
 
 ## Code
 - `logic.js`: pure board rules (probability, rotting, sorting, totals).
