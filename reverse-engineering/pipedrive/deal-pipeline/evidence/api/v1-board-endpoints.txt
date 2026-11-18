@@ -1,0 +1,355 @@
+
+### GET /pipelines/{id}/deals — Get deals in a pipeline
+Lists deals in a specific pipeline across all its stages. If no parameters are provided open deals owned by the authorized user will be returned. <br>This endpoint has been deprecated. Please use <a href="https://developers.pipedrive.com/docs/api/v1/Deals#getDeals" target="_blank" rel="noopener noreferrer">GET /api/v2/deals?pipeline_id={id}</a> instead.
+  param path:id integer  req — The ID of the pipeline
+  param query:filter_id integer   — If supplied, only deals matching the given filter will be returned
+  param query:user_id integer   — If supplied, `filter_id` will not be considered and only deals owned by the given user will be returned. If omitted, deals owned by the authorized user will be returned.
+  param query:everyone number [0, 1]  — If supplied, `filter_id` and `user_id` will not be considered – instead, deals owned by everyone will be returned
+  param query:stage_id integer   — If supplied, only deals within the given stage will be returned
+  param query:start integer   — Pagination start
+  param query:limit integer   — Items shown per page
+  param query:get_summary number [0, 1]  — Whether to include a summary of the pipeline in the `additional_data` or not
+  param query:totals_convert_currency string   — The 3-letter currency code of any of the supported currencies. When supplied, `per_stages_converted` is returned inside `deals_summary` inside `additional_data` which contains the currency-converted t
+  RESPONSE data:
+  []id: integer — The ID of the deal
+  []creator_user_id: integer — The ID of the deal creator
+  []user_id: integer — The ID of the user
+  []person_id: integer nullable — The ID of the person associated with the deal
+  []org_id: integer nullable — The ID of the organization associated with the deal
+  []stage_id: integer — The ID of the deal stage
+  []title: string — The title of the deal
+  []value: number — The value of the deal
+  []currency: string — The currency associated with the deal
+  []add_time: string — The creation date and time of the deal
+  []update_time: string nullable — The last updated date and time of the deal
+  []stage_change_time: string nullable — The last updated date and time of the deal stage
+  []active: boolean — Whether the deal is active or not
+  []deleted: boolean — Whether the deal is deleted or not
+  []is_archived: boolean — Whether the deal is archived or not
+  []status: string — The status of the deal
+  []probability: number nullable — The success probability percentage of the deal
+  []next_activity_date: string nullable — The date of the next activity associated with the deal
+  []next_activity_time: string nullable — The time of the next activity associated with the deal
+  []next_activity_id: integer nullable — The ID of the next activity associated with the deal
+  []last_activity_id: integer nullable — The ID of the last activity associated with the deal
+  []last_activity_date: string nullable — The date of the last activity associated with the deal
+  []lost_reason: string nullable — The reason for losing the deal
+  []visible_to: string — The visibility of the deal
+  []close_time: string nullable — The date and time of closing the deal
+  []pipeline_id: integer — The ID of the pipeline associated with the deal
+  []won_time: string nullable — The date and time of changing the deal status as won
+  []first_won_time: string nullable — The date and time of the first time changing the deal status as won
+  []lost_time: string nullable — The date and time of changing the deal status as lost
+  []products_count: integer — The number of products associated with the deal
+  []files_count: integer — The number of files associated with the deal
+  []notes_count: integer — The number of notes associated with the deal
+  []followers_count: integer — The number of followers associated with the deal
+  []email_messages_count: integer — The number of emails associated with the deal
+  []activities_count: integer — The number of activities associated with the deal
+  []done_activities_count: integer — The number of completed activities associated with the deal
+  []undone_activities_count: integer — The number of incomplete activities associated with the deal
+  []participants_count: integer — The number of participants associated with the deal
+  []expected_close_date: string nullable — The expected close date of the deal
+  []last_incoming_mail_time: string nullable — The date and time of the last incoming email associated with the deal
+  []last_outgoing_mail_time: string nullable — The date and time of the last outgoing email associated with the deal
+  []label: string nullable — The label or multiple labels assigned to the deal
+  []stage_order_nr: integer — The order number of the deal stage associated with the deal
+  []person_name: string nullable — The name of the person associated with the deal
+  []org_name: string nullable — The name of the organization associated with the deal
+  []next_activity_subject: string nullable — The subject of the next activity associated with the deal
+  []next_activity_type: string nullable — The type of the next activity associated with the deal
+  []next_activity_duration: string nullable — The duration of the next activity associated with the deal
+  []next_activity_note: string nullable — The note of the next activity associated with the deal
+  []formatted_value: string — The deal value formatted with selected currency. E.g. US$500
+  []weighted_value: number — Probability times deal value. Probability can either be deal probability or if not set, then stage probability.
+  []formatted_weighted_value: string — The weighted_value formatted with selected currency. E.g. US$500
+  []weighted_value_currency: string — The currency associated with the deal
+  []rotten_time: string nullable — The date and time of changing the deal status as rotten
+  []owner_name: string — The name of the deal owner
+  []cc_email: string — The BCC email of the deal
+  []org_hidden: boolean — If the organization that is associated with the deal is hidden or not
+  []person_hidden: boolean — If the person that is associated with the deal is hidden or not
+  []origin: string — The way this Deal was created. `origin` field is set by Pipedrive when Deal is created and cannot be changed.
+  []origin_id: string nullable — The optional ID to further distinguish the origin of the deal - e.g. Which API integration created this Deal.
+  []channel: integer nullable — The ID of your Marketing channel this Deal was created from. Recognized Marketing channels can be configured in your <a href="https://app.pipedrive.com/settings/fields" target="_blank" rel="noopener noreferrer">Company s
+  []channel_id: string nullable — The optional ID to further distinguish the Marketing channel.
+  []arr: number nullable — Only available in Growth and above plans  The Annual Recurring Revenue of the deal  Null if there are no products attached to the deal 
+  []mrr: number nullable — Only available in Growth and above plans  The Monthly Recurring Revenue of the deal  Null if there are no products attached to the deal 
+  []acv: number nullable — Only available in Growth and above plans  The Annual Contract Value of the deal  Null if there are no products attached to the deal 
+  []arr_currency: string nullable — Only available in Growth and above plans  The Currency for Annual Recurring Revenue of the deal  If the `arr` is null, this will also be null 
+  []mrr_currency: string nullable — Only available in Growth and above plans  The Currency for Monthly Recurring Revenue of the deal  If the `mrr` is null, this will also be null 
+  []acv_currency: string nullable — Only available in Growth and above plans  The Currency for Annual Contract Value of the deal  If the `acv` is null, this will also be null 
+
+### GET /stages/{id}/deals — Get deals in a stage
+Lists deals in a specific stage. If no parameters are provided open deals owned by the authorized user will be returned. <br>This endpoint has been deprecated. Please use <a href="https://developers.pipedrive.com/docs/api/v1/Deals#getDeals" target="_blank" rel="noopener noreferrer">GET /api/v2/deals?stage_id={id}</a> instead.
+  param path:id integer  req — The ID of the stage
+  param query:filter_id integer   — If supplied, only deals matching the given filter will be returned
+  param query:user_id integer   — If supplied, `filter_id` will not be considered and only deals owned by the given user will be returned. If omitted, deals owned by the authorized user will be returned.
+  param query:everyone number [0, 1]  — If supplied, `filter_id` and `user_id` will not be considered – instead, deals owned by everyone will be returned
+  param query:start integer   — Pagination start
+  param query:limit integer   — Items shown per page
+  RESPONSE data:
+  []id: integer — The ID of the deal
+  []creator_user_id: integer — The ID of the deal creator
+  []user_id: integer — The ID of the user
+  []person_id: integer nullable — The ID of the person associated with the deal
+  []org_id: integer nullable — The ID of the organization associated with the deal
+  []stage_id: integer — The ID of the deal stage
+  []title: string — The title of the deal
+  []value: number — The value of the deal
+  []currency: string — The currency associated with the deal
+  []add_time: string — The creation date and time of the deal
+  []update_time: string nullable — The last updated date and time of the deal
+  []stage_change_time: string nullable — The last updated date and time of the deal stage
+  []active: boolean — Whether the deal is active or not
+  []deleted: boolean — Whether the deal is deleted or not
+  []is_archived: boolean — Whether the deal is archived or not
+  []status: string — The status of the deal
+  []probability: number nullable — The success probability percentage of the deal
+  []next_activity_date: string nullable — The date of the next activity associated with the deal
+  []next_activity_time: string nullable — The time of the next activity associated with the deal
+  []next_activity_id: integer nullable — The ID of the next activity associated with the deal
+  []last_activity_id: integer nullable — The ID of the last activity associated with the deal
+  []last_activity_date: string nullable — The date of the last activity associated with the deal
+  []lost_reason: string nullable — The reason for losing the deal
+  []visible_to: string — The visibility of the deal
+  []close_time: string nullable — The date and time of closing the deal
+  []pipeline_id: integer — The ID of the pipeline associated with the deal
+  []won_time: string nullable — The date and time of changing the deal status as won
+  []first_won_time: string nullable — The date and time of the first time changing the deal status as won
+  []lost_time: string nullable — The date and time of changing the deal status as lost
+  []products_count: integer — The number of products associated with the deal
+  []files_count: integer — The number of files associated with the deal
+  []notes_count: integer — The number of notes associated with the deal
+  []followers_count: integer — The number of followers associated with the deal
+  []email_messages_count: integer — The number of emails associated with the deal
+  []activities_count: integer — The number of activities associated with the deal
+  []done_activities_count: integer — The number of completed activities associated with the deal
+  []undone_activities_count: integer — The number of incomplete activities associated with the deal
+  []participants_count: integer — The number of participants associated with the deal
+  []expected_close_date: string nullable — The expected close date of the deal
+  []last_incoming_mail_time: string nullable — The date and time of the last incoming email associated with the deal
+  []last_outgoing_mail_time: string nullable — The date and time of the last outgoing email associated with the deal
+  []label: string nullable — The label or multiple labels assigned to the deal
+  []stage_order_nr: integer — The order number of the deal stage associated with the deal
+  []person_name: string nullable — The name of the person associated with the deal
+  []org_name: string nullable — The name of the organization associated with the deal
+  []next_activity_subject: string nullable — The subject of the next activity associated with the deal
+  []next_activity_type: string nullable — The type of the next activity associated with the deal
+  []next_activity_duration: string nullable — The duration of the next activity associated with the deal
+  []next_activity_note: string nullable — The note of the next activity associated with the deal
+  []formatted_value: string — The deal value formatted with selected currency. E.g. US$500
+  []weighted_value: number — Probability times deal value. Probability can either be deal probability or if not set, then stage probability.
+  []formatted_weighted_value: string — The weighted_value formatted with selected currency. E.g. US$500
+  []weighted_value_currency: string — The currency associated with the deal
+  []rotten_time: string nullable — The date and time of changing the deal status as rotten
+  []owner_name: string — The name of the deal owner
+  []cc_email: string — The BCC email of the deal
+  []org_hidden: boolean — If the organization that is associated with the deal is hidden or not
+  []person_hidden: boolean — If the person that is associated with the deal is hidden or not
+  []origin: string — The way this Deal was created. `origin` field is set by Pipedrive when Deal is created and cannot be changed.
+  []origin_id: string nullable — The optional ID to further distinguish the origin of the deal - e.g. Which API integration created this Deal.
+  []channel: integer nullable — The ID of your Marketing channel this Deal was created from. Recognized Marketing channels can be configured in your <a href="https://app.pipedrive.com/settings/fields" target="_blank" rel="noopener noreferrer">Company s
+  []channel_id: string nullable — The optional ID to further distinguish the Marketing channel.
+  []arr: number nullable — Only available in Growth and above plans  The Annual Recurring Revenue of the deal  Null if there are no products attached to the deal 
+  []mrr: number nullable — Only available in Growth and above plans  The Monthly Recurring Revenue of the deal  Null if there are no products attached to the deal 
+  []acv: number nullable — Only available in Growth and above plans  The Annual Contract Value of the deal  Null if there are no products attached to the deal 
+  []arr_currency: string nullable — Only available in Growth and above plans  The Currency for Annual Recurring Revenue of the deal  If the `arr` is null, this will also be null 
+  []mrr_currency: string nullable — Only available in Growth and above plans  The Currency for Monthly Recurring Revenue of the deal  If the `mrr` is null, this will also be null 
+  []acv_currency: string nullable — Only available in Growth and above plans  The Currency for Annual Contract Value of the deal  If the `acv` is null, this will also be null 
+
+### GET /deals/summary — Get deals summary
+Returns a summary of all not archived deals.
+  param query:status string ['open', 'won', 'lost']  — Only fetch deals with a specific status. open = Open, won = Won, lost = Lost.
+  param query:filter_id integer   — <code>user_id</code> will not be considered. Only deals matching the given filter will be returned.
+  param query:user_id integer   — Only deals matching the given user will be returned. `user_id` will not be considered if you use `filter_id`.
+  param query:pipeline_id integer   — Only deals within the given pipeline will be returned
+  param query:stage_id integer   — Only deals within the given stage will be returned
+  RESPONSE data:
+  values_total: object — The total values of the deals grouped by deal currency
+  values_total.value: number — The total value of deals in the deal currency group
+  values_total.count: integer — The number of deals in the deal currency group
+  values_total.value_converted: number — The total value of deals converted into the company default currency
+  values_total.value_formatted: string — The total value of deals formatted with deal currency. E.g. €50
+  values_total.value_converted_formatted: string — The value_converted formatted with deal currency. E.g. US$50.10
+  weighted_values_total: object — The total weighted values of the deals grouped by deal currency. The weighted value is calculated as probability times deal value.
+  weighted_values_total.value: number — The total weighted value of the deals in the deal currency group
+  weighted_values_total.count: integer — The number of deals in the deal currency group
+  weighted_values_total.value_formatted: string — The total weighted value of the deals formatted with deal currency. E.g. €50
+  total_count: integer — The total number of deals
+  total_currency_converted_value: number — The total value of deals converted into the company default currency
+  total_weighted_currency_converted_value: number — The total weighted value of deals converted into the company default currency
+  total_currency_converted_value_formatted: string — The total converted value of deals formatted with the company default currency. E.g. US$5,100.96
+  total_weighted_currency_converted_value_formatted: string — The total weighted value of deals formatted with the company default currency. E.g. US$5,100.96
+
+### GET /deals/timeline — Get deals timeline
+Returns not archived open and won deals, grouped by a defined interval of time set in a date-type dealField (`field_key`) — e.g. when month is the chosen interval, and 3 months are asked starting from January 1st, 2012, deals are returned grouped into 3 groups — January, February and March — based on the value of the given `field_key`.
+  param query:start_date string  req — The date when the first interval starts. Format: YYYY-MM-DD.
+  param query:interval string ['day', 'week', 'month', 'quarter'] req — The type of the interval<table><tr><th>Value</th><th>Description</th></tr><tr><td>`day`</td><td>Day</td></tr><tr><td>`week`</td><td>A full week (7 days) starting from `start_date`</td></tr><tr><td>`mo
+  param query:amount integer  req — The number of given intervals, starting from `start_date`, to fetch. E.g. 3 (months).
+  param query:field_key string  req — The date field key which deals will be retrieved from
+  param query:user_id integer   — If supplied, only deals matching the given user will be returned
+  param query:pipeline_id integer   — If supplied, only deals matching the given pipeline will be returned
+  param query:filter_id integer   — If supplied, only deals matching the given filter will be returned
+  param query:exclude_deals number [0, 1]  — Whether to exclude deals list (1) or not (0). Note that when deals are excluded, the timeline summary (counts and values) is still returned.
+  param query:totals_convert_currency string   — The 3-letter currency code of any of the supported currencies. When supplied, `totals_converted` is returned per each interval which contains the currency-converted total amounts in the given currency
+  RESPONSE data:
+  period_start: string — The start date and time of the period
+  period_end: string — The end date and time of the period
+  deals: array — 
+  deals.[]id: integer — The ID of the deal
+  deals.[]creator_user_id: integer — The ID of the deal creator
+  deals.[]user_id: integer — The ID of the user
+  deals.[]person_id: integer nullable — The ID of the person associated with the deal
+  deals.[]org_id: integer nullable — The ID of the organization associated with the deal
+  deals.[]stage_id: integer — The ID of the deal stage
+  deals.[]title: string — The title of the deal
+  deals.[]value: number — The value of the deal
+  deals.[]currency: string — The currency associated with the deal
+  deals.[]add_time: string — The creation date and time of the deal
+  deals.[]update_time: string nullable — The last updated date and time of the deal
+  deals.[]stage_change_time: string nullable — The last updated date and time of the deal stage
+  deals.[]active: boolean — Whether the deal is active or not
+  deals.[]deleted: boolean — Whether the deal is deleted or not
+  deals.[]is_archived: boolean — Whether the deal is archived or not
+  deals.[]status: string — The status of the deal
+  deals.[]probability: number nullable — The success probability percentage of the deal
+  deals.[]next_activity_date: string nullable — The date of the next activity associated with the deal
+  deals.[]next_activity_time: string nullable — The time of the next activity associated with the deal
+  deals.[]next_activity_id: integer nullable — The ID of the next activity associated with the deal
+  deals.[]last_activity_id: integer nullable — The ID of the last activity associated with the deal
+  deals.[]last_activity_date: string nullable — The date of the last activity associated with the deal
+  deals.[]lost_reason: string nullable — The reason for losing the deal
+  deals.[]visible_to: string — The visibility of the deal
+  deals.[]close_time: string nullable — The date and time of closing the deal
+  deals.[]pipeline_id: integer — The ID of the pipeline associated with the deal
+  deals.[]won_time: string nullable — The date and time of changing the deal status as won
+  deals.[]first_won_time: string nullable — The date and time of the first time changing the deal status as won
+  deals.[]lost_time: string nullable — The date and time of changing the deal status as lost
+  deals.[]products_count: integer — The number of products associated with the deal
+  deals.[]files_count: integer — The number of files associated with the deal
+  deals.[]notes_count: integer — The number of notes associated with the deal
+  deals.[]followers_count: integer — The number of followers associated with the deal
+  deals.[]email_messages_count: integer — The number of emails associated with the deal
+  deals.[]activities_count: integer — The number of activities associated with the deal
+  deals.[]done_activities_count: integer — The number of completed activities associated with the deal
+  deals.[]undone_activities_count: integer — The number of incomplete activities associated with the deal
+  deals.[]participants_count: integer — The number of participants associated with the deal
+  deals.[]expected_close_date: string nullable — The expected close date of the deal
+  deals.[]last_incoming_mail_time: string nullable — The date and time of the last incoming email associated with the deal
+  deals.[]last_outgoing_mail_time: string nullable — The date and time of the last outgoing email associated with the deal
+  deals.[]label: string nullable — The label or multiple labels assigned to the deal
+  deals.[]stage_order_nr: integer — The order number of the deal stage associated with the deal
+  deals.[]person_name: string nullable — The name of the person associated with the deal
+  deals.[]org_name: string nullable — The name of the organization associated with the deal
+  deals.[]next_activity_subject: string nullable — The subject of the next activity associated with the deal
+  deals.[]next_activity_type: string nullable — The type of the next activity associated with the deal
+  deals.[]next_activity_duration: string nullable — The duration of the next activity associated with the deal
+  deals.[]next_activity_note: string nullable — The note of the next activity associated with the deal
+  deals.[]formatted_value: string — The deal value formatted with selected currency. E.g. US$500
+  deals.[]weighted_value: number — Probability times deal value. Probability can either be deal probability or if not set, then stage probability.
+  deals.[]formatted_weighted_value: string — The weighted_value formatted with selected currency. E.g. US$500
+  deals.[]weighted_value_currency: string — The currency associated with the deal
+  deals.[]rotten_time: string nullable — The date and time of changing the deal status as rotten
+  deals.[]owner_name: string — The name of the deal owner
+  deals.[]cc_email: string — The BCC email of the deal
+  deals.[]org_hidden: boolean — If the organization that is associated with the deal is hidden or not
+  deals.[]person_hidden: boolean — If the person that is associated with the deal is hidden or not
+  deals.[]origin: string — The way this Deal was created. `origin` field is set by Pipedrive when Deal is created and cannot be changed.
+  deals.[]origin_id: string nullable — The optional ID to further distinguish the origin of the deal - e.g. Which API integration created this Deal.
+  deals.[]channel: integer nullable — The ID of your Marketing channel this Deal was created from. Recognized Marketing channels can be configured in your <a href="https://app.pipedrive.com/settings/fields" target="_blank" rel="noopener noreferrer">Company s
+  deals.[]channel_id: string nullable — The optional ID to further distinguish the Marketing channel.
+  deals.[]arr: number nullable — Only available in Growth and above plans  The Annual Recurring Revenue of the deal  Null if there are no products attached to the deal 
+  deals.[]mrr: number nullable — Only available in Growth and above plans  The Monthly Recurring Revenue of the deal  Null if there are no products attached to the deal 
+  deals.[]acv: number nullable — Only available in Growth and above plans  The Annual Contract Value of the deal  Null if there are no products attached to the deal 
+  deals.[]arr_currency: string nullable — Only available in Growth and above plans  The Currency for Annual Recurring Revenue of the deal  If the `arr` is null, this will also be null 
+  deals.[]mrr_currency: string nullable — Only available in Growth and above plans  The Currency for Monthly Recurring Revenue of the deal  If the `mrr` is null, this will also be null 
+  deals.[]acv_currency: string nullable — Only available in Growth and above plans  The Currency for Annual Contract Value of the deal  If the `acv` is null, this will also be null 
+  totals: object — The total values of deals for the given period
+  totals.count: integer — The number of deals for the given period
+  totals.values: object — The total values of deals grouped by deal currency
+  totals.weighted_values: object — The total weighted values of deals for the given period grouped by deal currency. The weighted value of a deal is calculated as probability times deal value.
+  totals.open_count: integer — The number of open deals for the given period
+  totals.open_values: object — The total values of open deals for the given period grouped by deal currency
+  totals.weighted_open_values: object — The total weighted values of open deals for the given period grouped by deal currency. The weighted value of a deal is calculated as probability times deal value.
+  totals.won_count: integer — The number of won deals for the given period
+  totals.won_values: object — The total values of won deals for the given period grouped by deal currency
+
+### GET /deals/{id}/flow — List updates about a deal
+Lists updates about a deal.
+  param path:id integer  req — The ID of the deal
+  param query:start integer   — Pagination start
+  param query:limit integer   — Items shown per page
+  param query:all_changes string   — Whether to show custom field updates or not. 1 = Include custom field changes. If omitted returns changes without custom field updates.
+  param query:items array   — A comma-separated string for filtering out item specific updates. (Possible values - call, activity, plannedActivity, change, note, deal, file, dealChange, personChange, organizationChange, follower, 
+  RESPONSE data:
+  []object: string — The type of the deal update. (Possible object types - dealChange, note, activity, mailMessage, invoice, document, file)
+  []timestamp: string — The creation date and time of the update
+  []data: object — The data related to the update
+
+### GET /pipelines/{id}/conversion_statistics — Get deals conversion rates in pipeline
+Returns all stage-to-stage conversion and pipeline-to-close rates for the given time period.
+  param path:id integer  req — The ID of the pipeline
+  param query:start_date string  req — The start of the period. Date in format of YYYY-MM-DD.
+  param query:end_date string  req — The end of the period. Date in format of YYYY-MM-DD.
+  param query:user_id integer   — The ID of the user who's pipeline metrics statistics to fetch. If omitted, the authorized user will be used.
+  RESPONSE data:
+  stage_conversions: array — The stage conversions
+  stage_conversions.[]from_stage_id: integer — The stage ID from where conversion starts
+  stage_conversions.[]to_stage_id: integer — The stage ID to where conversion ends
+  stage_conversions.[]conversion_rate: integer — The conversion rate
+  won_conversion: integer — The won conversion
+  lost_conversion: integer — The lost conversion
+
+### GET /pipelines/{id}/movement_statistics — Get deals movements in pipeline
+Returns statistics for deals movements for the given time period.
+  param path:id integer  req — The ID of the pipeline
+  param query:start_date string  req — The start of the period. Date in format of YYYY-MM-DD.
+  param query:end_date string  req — The end of the period. Date in format of YYYY-MM-DD.
+  param query:user_id integer   — The ID of the user who's pipeline statistics to fetch. If omitted, the authorized user will be used.
+  RESPONSE data:
+  movements_between_stages: object — Movements between stages
+  movements_between_stages.count: integer — The count of the deals that have been moved between stages
+  new_deals: object — Deals summary
+  new_deals.count: integer — The count of the deals
+  new_deals.deals_ids: array — The IDs of the deals that have been moved
+  new_deals.values: object — The values of the deals
+  new_deals.values.CURRENCY_ID: integer — The value of the deals
+  new_deals.formatted_values: object — The formatted values of the deals
+  new_deals.formatted_values.CURRENCY_ID: string — The formatted values of the deals
+  deals_left_open: object — Deals summary
+  deals_left_open.count: integer — The count of the deals
+  deals_left_open.deals_ids: array — The IDs of the deals that have been moved
+  deals_left_open.values: object — The values of the deals
+  deals_left_open.values.CURRENCY_ID: integer — The value of the deals
+  deals_left_open.formatted_values: object — The formatted values of the deals
+  deals_left_open.formatted_values.CURRENCY_ID: string — The formatted values of the deals
+  won_deals: object — Deals summary
+  won_deals.count: integer — The count of the deals
+  won_deals.deals_ids: array — The IDs of the deals that have been moved
+  won_deals.values: object — The values of the deals
+  won_deals.values.CURRENCY_ID: integer — The value of the deals
+  won_deals.formatted_values: object — The formatted values of the deals
+  won_deals.formatted_values.CURRENCY_ID: string — The formatted values of the deals
+  lost_deals: object — Deals summary
+  lost_deals.count: integer — The count of the deals
+  lost_deals.deals_ids: array — The IDs of the deals that have been moved
+  lost_deals.values: object — The values of the deals
+  lost_deals.values.CURRENCY_ID: integer — The value of the deals
+  lost_deals.formatted_values: object — The formatted values of the deals
+  lost_deals.formatted_values.CURRENCY_ID: string — The formatted values of the deals
+  average_age_in_days: object — The moved deals average age in days
+  average_age_in_days.across_all_stages: integer — The moved deals average age across all stages
+  average_age_in_days.by_stages: array — The moved deals average age by stages
+  average_age_in_days.by_stages.[]stage_id: integer — The stage ID
+  average_age_in_days.by_stages.[]value: integer — The average deals age in specific stage
+
+### POST /deals/{id}/duplicate — Duplicate deal
+Duplicates a deal.
+  param path:id integer  req — The ID of the deal
+
+### PUT /deals/{id}/merge — Merge two deals
+Merges a deal with another deal. For more information, see the tutorial for <a href="https://pipedrive.readme.io/docs/merging-two-deals" target="_blank" rel="noopener noreferrer">merging two deals</a>.
+  param path:id integer  req — The ID of the deal
+  BODY:
+  merge_with_id: integer — The ID of the deal that the deal will be merged with

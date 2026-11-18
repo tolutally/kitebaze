@@ -1,0 +1,17 @@
+Source: https://support.pipedrive.com/en/article/pipeline-visibility
+Fetched: 2026-11-18
+
+Last updated: September 3, 2026 With the pipeline visibility feature, you can decide which pipelines your users can see and, by extension, which data they have access to.
+Setting up pipeline visibility
+Note: Users with deals admin or account settings admin permissions still have access to all pipelines, regardless of restriction.
+Go to Manage users > Visibility groups and select the grid under Deals .
+You can choose which pipelines your visibility group can access by checking or unchecking their corresponding boxes, then clicking “Save.”
+Note: If you’re on an essential or advanced plan, you only have one default visibility group, so these changes will apply to every non-admin user.
+After confirming your choice, you’ll see a preview of the changes:
+If you have your pipeline visibility limited, the blocked pipelines will disappear from the drop-down view when viewing pipelines.
+You won’t be able to access deals from these pipelines, and they won’t appear in list views or search and filter results.
+Note: All users must have at least one pipeline visible.
+Filtering
+A new filter condition will appear in the deals app when using the pipeline visibility feature, showing whether a user has a deal they own in a pipeline they can no longer access.
+To see these deals, select Deal > Owner > is restricted from pipeline .
+Note: This filter won’t make these deals visible to users without pipeline visibility. 
