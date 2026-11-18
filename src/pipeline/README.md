@@ -12,6 +12,7 @@ An internal kanban board for deals, modelled on Pipedrive's pipeline view (see `
 - The pipeline editor (pencil button) renames the pipeline, adds, reorders and deletes stages, and sets probability and rotting. A stage with open deals can't be deleted.
 - Clicking a card opens the full deal form, which also works on touch screens where drag-and-drop doesn't.
 - Every stage change is logged to `deal_stage_events` for future conversion and time-in-stage reports.
+- The deal dialog shows the linked company and contact, notes, the monthly fee and the activity history, and logs new calls, emails, meetings and WhatsApp messages. Logging an activity (or marking the next step done) resets rotting.
 
 ## Data
 The board uses Kitebaze's Appwrite project (Toronto region, project `6afdd34c0009ec87e52f`, database `crm`). These IDs are built in as defaults in `store/index.js`, so no Vercel variables are needed. Set `VITE_PIPELINE_DEMO=true` to run on browser-only sample data instead.
@@ -23,6 +24,13 @@ The board uses Kitebaze's Appwrite project (Toronto region, project `6afdd34c000
   ```bash
   APPWRITE_ENDPOINT=https://tor.cloud.appwrite.io/v1 APPWRITE_PROJECT_ID=6afdd34c0009ec87e52f APPWRITE_API_KEY=<key> APPWRITE_TEAM_ID=pipeline npm run setup:appwrite
   ```
+
+## Seed data
+`scripts/appwrite-seed-pipeline.mjs` loads stages, companies, contacts, deals and activity history from a JSON file. It is re-runnable (rows keep the seed's IDs) and treats stages with IDs `stage_won` / `stage_lost` as deal statuses, not columns. Stage probabilities and rotting days the seed doesn't give are set in the script's `STAGE_DEFAULTS`. Keep seed files out of the repo: they hold client contact details.
+
+```bash
+APPWRITE_ENDPOINT=https://tor.cloud.appwrite.io/v1 APPWRITE_PROJECT_ID=6afdd34c0009ec87e52f APPWRITE_API_KEY=<key> node scripts/appwrite-seed-pipeline.mjs /path/to/seed.json
+```
 
 ## Code
 - `logic.js`: pure board rules (probability, rotting, sorting, totals).

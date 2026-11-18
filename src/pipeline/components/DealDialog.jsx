@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Dialog, { inputClass, labelClass, primaryButton, secondaryButton } from './Dialog.jsx';
+import DealDetails from './DealDetails.jsx';
 
 export const CURRENCIES = ['CAD', 'USD', 'EUR', 'GBP'];
 const LABELS = ['', 'hot', 'warm', 'cold'];
@@ -14,21 +15,22 @@ function toLocalInput(iso) {
 
 function blankDeal(pipeline, stageId) {
   return {
-    title: '', value: '', currency: 'CAD', probability: '', org_name: '', person_name: '', owner_name: '', label: '',
+    title: '', value: '', monthly_value: '', notes: '', currency: 'CAD', probability: '', org_name: '', person_name: '', owner_name: '', label: '',
     expected_close_date: '', next_activity_subject: '', next_activity_at: '', pipeline_id: pipeline.id, stage_id: stageId,
   };
 }
 
-export default function DealDialog({ deal, pipeline, pipelines, stages, defaultStageId, loadStages, onSave, onClose, onWon, onLost, onDelete }) {
+export default function DealDialog({ deal, pipeline, pipelines, stages, defaultStageId, loadStages, onSave, onClose, onWon, onLost, onDelete, onActivityLogged }) {
   const isNew = !deal;
   const [form, setForm] = useState(() =>
     isNew
       ? blankDeal(pipeline, defaultStageId || stages[0]?.id)
-      : { ...deal, value: deal.value ?? '', probability: deal.probability ?? '', next_activity_at: toLocalInput(deal.next_activity_at), expected_close_date: deal.expected_close_date || '' },
+      : { ...deal, value: deal.value ?? '', monthly_value: deal.monthly_value ?? '', notes: deal.notes || '', probability: deal.probability ?? '', next_activity_at: toLocalInput(deal.next_activity_at), expected_close_date: deal.expected_close_date || '' },
   );
   const [stageOptions, setStageOptions] = useState(stages);
   const [error, setError] = useState('');
   const [saving, setSaving] = useState(false);
+  const [completed, setCompleted] = useState(null); // next step marked done in this edit
   const targetPipeline = pipelines.find((p) => p.id === form.pipeline_id) || pipeline;
 
   useEffect(() => {
@@ -60,6 +62,8 @@ export default function DealDialog({ deal, pipeline, pipelines, stages, defaultS
       await onSave({
         title: form.title.trim(),
         value: form.value === '' ? 0 : Number(form.value),
+        monthly_value: form.monthly_value === '' ? null : Number(form.monthly_value),
+        notes: form.notes.trim() || null,
         currency: form.currency,
         probability: targetPipeline.deal_probability_enabled && form.probability !== '' ? Math.min(100, Math.max(0, Number(form.probability))) : null,
         org_name: form.org_name.trim() || null,
@@ -71,19 +75,23 @@ export default function DealDialog({ deal, pipeline, pipelines, stages, defaultS
         next_activity_at: form.next_activity_at ? new Date(form.next_activity_at).toISOString() : null,
         pipeline_id: form.pipeline_id,
         stage_id: form.stage_id,
-      });
+      }, completed);
     } catch (err) {
       setError(err.message || 'Could not save the deal.');
       setSaving(false);
     }
   };
 
-  const markActivityDone = () => setForm((f) => ({ ...f, next_activity_subject: '', next_activity_at: '' }));
+  const markActivityDone = () => {
+    if (form.next_activity_subject) setCompleted({ type: 'task', summary: `Done: ${form.next_activity_subject}` });
+    setForm((f) => ({ ...f, next_activity_subject: '', next_activity_at: '' }));
+  };
 
   return (
     <Dialog
       title={isNew ? 'New deal' : 'Edit deal'}
       onClose={onClose}
+      width={isNew ? 'max-w-lg' : 'max-w-2xl'}
       footer={
         <>
           {!isNew && (
@@ -123,6 +131,11 @@ export default function DealDialog({ deal, pipeline, pipelines, stages, defaultS
             </select>
           </div>
         </div>
+        <div>
+          <label className={labelClass} htmlFor="deal-monthly">Monthly fee</label>
+          <input id="deal-monthly" type="number" min="0" step="any" className={inputClass} value={form.monthly_value} onChange={set('monthly_value')} />
+        </div>
+        {!isNew && deal.value_note && <p className="-mt-1 text-xs text-kb-ink-muted sm:col-span-2">Value note: {deal.value_note}</p>}
         {targetPipeline.deal_probability_enabled ? (
           <div>
             <label className={labelClass} htmlFor="deal-probability">Probability % (blank = stage’s)</label>
@@ -172,8 +185,17 @@ export default function DealDialog({ deal, pipeline, pipelines, stages, defaultS
             )}
           </div>
         </fieldset>
+        <div className="sm:col-span-2">
+          <label className={labelClass} htmlFor="deal-notes">Notes</label>
+          <textarea id="deal-notes" rows={3} className={inputClass} value={form.notes} onChange={set('notes')} />
+        </div>
         {error && <p role="alert" className="text-sm text-red-700 sm:col-span-2">{error}</p>}
       </form>
+      {!isNew && (
+        <div className="mt-5 border-t border-kb-line pt-4">
+          <DealDetails deal={deal} onActivityLogged={onActivityLogged} />
+        </div>
+      )}
     </Dialog>
   );
 }

@@ -7,6 +7,9 @@ export const TABLES = Object.freeze({
   stages: 'stages',
   deals: 'deals',
   events: 'deal_stage_events',
+  companies: 'companies',
+  contacts: 'contacts',
+  activities: 'activities',
 });
 
 const PIPELINE_FIELDS = ['name', 'order_nr', 'deal_probability_enabled', 'deleted_at'];
@@ -15,6 +18,7 @@ const DEAL_FIELDS = [
   'pipeline_id', 'stage_id', 'title', 'value', 'currency', 'probability', 'status', 'lost_reason',
   'owner_name', 'person_name', 'org_name', 'label', 'expected_close_date', 'next_activity_at',
   'next_activity_subject', 'last_touched_at', 'stage_changed_at', 'won_at', 'lost_at', 'deleted_at',
+  'company_id', 'contact_id', 'monthly_value', 'value_note', 'notes',
 ];
 
 function pick(source, fields) {
@@ -156,6 +160,25 @@ export function createAppwriteStore({ endpoint, projectId, databaseId, teamId })
       const deal = await create(TABLES.deals, { ...pick(fields, DEAL_FIELDS), status: 'open', last_touched_at: at, stage_changed_at: at });
       await create(TABLES.events, { deal_id: deal.id, pipeline_id: deal.pipeline_id, from_stage_id: null, to_stage_id: deal.stage_id, at });
       return deal;
+    },
+
+    // Company, contact and activity history shown in the deal dialog.
+    async getDealDetails(deal) {
+      const get = (tableId, rowId) => (rowId ? tables.getRow({ databaseId, tableId, rowId }).then(fromRow, () => null) : Promise.resolve(null));
+      const [company, contact, activities] = await Promise.all([
+        get(TABLES.companies, deal.company_id),
+        get(TABLES.contacts, deal.contact_id),
+        listAll(TABLES.activities, [Query.equal('deal_id', deal.id), Query.orderDesc('occurred_at')]),
+      ]);
+      return { company, contact, activities };
+    },
+
+    // Logging an activity counts as touching the deal, which resets rotting.
+    async addActivity(deal, { type, summary, occurred_at }) {
+      const at = occurred_at || now();
+      const activity = await create(TABLES.activities, { deal_id: deal.id, type, summary, occurred_at: at });
+      await update(TABLES.deals, deal.id, { last_touched_at: now() });
+      return activity;
     },
 
     // `previous` is the deal as the board last saw it, used to log stage moves without an extra read.

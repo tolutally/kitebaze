@@ -57,8 +57,33 @@ const SCHEMA = [
       text('owner_name', 128), text('person_name', 128), text('org_name', 128), text('label', 32),
       datetime('expected_close_date'), datetime('next_activity_at'), text('next_activity_subject', 255),
       datetime('last_touched_at'), datetime('stage_changed_at'), datetime('won_at'), datetime('lost_at'), datetime('deleted_at'),
+      id('company_id'), id('contact_id'), { type: 'float', key: 'monthly_value', min: 0 }, text('value_note', 255), text('notes', 2000),
     ],
     indexes: [['board_idx', ['pipeline_id', 'status']], ['stage_idx', ['stage_id']]],
+  },
+  {
+    tableId: 'companies',
+    name: 'Companies',
+    columns: [text('name', 128, true), text('industry', 255), text('location', 128), text('website', 512), text('size', 64), text('source', 255), datetime('deleted_at')],
+    indexes: [['name_idx', ['name']]],
+  },
+  {
+    tableId: 'contacts',
+    name: 'Contacts',
+    columns: [
+      id('company_id'), text('first_name', 128, true), text('last_name', 128), text('role', 255), text('email', 255), text('alt_email', 255),
+      text('phone', 64), text('notes', 2000), datetime('deleted_at'),
+    ],
+    indexes: [['company_idx', ['company_id']]],
+  },
+  {
+    tableId: 'activities',
+    name: 'Activities',
+    columns: [
+      { ...id('deal_id'), required: true }, { type: 'enum', key: 'type', elements: ['call', 'email', 'meeting', 'whatsapp', 'task', 'note'], xdefault: 'note' },
+      { ...datetime('occurred_at'), required: true }, text('summary', 500, true),
+    ],
+    indexes: [['deal_at_idx', ['deal_id', 'occurred_at']]],
   },
   {
     tableId: 'deal_stage_events',

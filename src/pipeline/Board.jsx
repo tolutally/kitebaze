@@ -126,13 +126,15 @@ export default function Board({ user, onLogout }) {
   const boardTotals = useMemo(() => {
     const byCurrency = {};
     let weighted = 0;
+    let monthly = 0;
     for (const { stage, deals: list } of columns) {
       for (const d of list) {
-        byCurrency[d.currency || 'USD'] = (byCurrency[d.currency || 'USD'] || 0) + (Number(d.value) || 0);
+        monthly += Number(d.monthly_value) || 0;
+        byCurrency[d.currency || 'CAD'] = (byCurrency[d.currency || 'CAD'] || 0) + (Number(d.value) || 0);
         weighted += weightedValue(d, stage, pipeline);
       }
     }
-    return { count: visibleDeals.length, byCurrency, weighted };
+    return { count: visibleDeals.length, byCurrency, weighted, monthly };
   }, [columns, visibleDeals.length, pipeline]);
 
   // ---- deal mutations (optimistic, reverted on failure) ----
@@ -193,7 +195,7 @@ export default function Board({ user, onLogout }) {
     patchDeal(deal, target, { removeFromBoard: true, message: `“${deal.title}” moved to ${name}`, undoPatch: { pipeline_id: deal.pipeline_id, stage_id: deal.stage_id } }).catch(() => {});
   };
 
-  const saveDeal = async (fields) => {
+  const saveDeal = async (fields, completedActivity) => {
     const existing = dialog.deal;
     if (!existing) {
       const created = await store.createDeal(fields);
@@ -204,6 +206,7 @@ export default function Board({ user, onLogout }) {
     }
     const leaves = fields.pipeline_id !== pipelineId;
     await patchDeal(existing, fields, { removeFromBoard: leaves, message: leaves ? `“${fields.title}” moved to another pipeline` : undefined });
+    if (completedActivity) await store.addActivity(existing, completedActivity).catch(fail);
     setDialog(null);
   };
 
@@ -313,7 +316,8 @@ export default function Board({ user, onLogout }) {
         </button>
         <button type="button" className={primaryButton} onClick={() => setDialog({ type: 'deal', stageId: stages[0]?.id })} disabled={!stages.length}>+ Deal</button>
         <p className="text-sm text-kb-ink-soft" aria-live="polite">
-          <span className="font-medium text-kb-ink">{formatTotals(boardTotals.byCurrency)}</span> · {boardTotals.count} deal{boardTotals.count === 1 ? '' : 's'}
+          <span className="font-medium text-kb-ink">{formatTotals(boardTotals.byCurrency)}</span>
+          {boardTotals.monthly > 0 && <span> + {formatMoney(boardTotals.monthly, Object.keys(boardTotals.byCurrency)[0] || 'CAD')}/mo</span>} · {boardTotals.count} deal{boardTotals.count === 1 ? '' : 's'}
           <span className="hidden md:inline"> · weighted {formatMoney(boardTotals.weighted, Object.keys(boardTotals.byCurrency)[0] || 'CAD')}</span>
         </p>
         <div className="ml-auto flex flex-wrap items-center gap-2">
@@ -418,6 +422,7 @@ export default function Board({ user, onLogout }) {
           onWon={markWon}
           onLost={(deal) => setDialog({ type: 'lost', deal })}
           onDelete={softDelete}
+          onActivityLogged={() => setDeals((list) => list.map((d) => (d.id === dialog.deal?.id ? { ...d, last_touched_at: new Date().toISOString() } : d)))}
         />
       )}
       {dialog?.type === 'lost' && <LostDialog deal={dialog.deal} onConfirm={(reason) => markLost(dialog.deal, reason)} onClose={() => setDialog(null)} />}

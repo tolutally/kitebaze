@@ -120,14 +120,15 @@ export function stageTotals(deals, stage, pipeline) {
   const byCurrency = {};
   let weighted = 0;
   for (const deal of deals) {
-    const currency = deal.currency || 'USD';
+    const currency = deal.currency || 'CAD';
     byCurrency[currency] = (byCurrency[currency] || 0) + (Number(deal.value) || 0);
     weighted += weightedValue(deal, stage, pipeline);
   }
   return { count: deals.length, byCurrency, weighted };
 }
 
-export function formatMoney(amount, currency = 'USD') {
+// Kitebaze is Canadian, so CAD is the default currency.
+export function formatMoney(amount, currency = 'CAD') {
   try {
     return new Intl.NumberFormat(undefined, { style: 'currency', currency, maximumFractionDigits: 0 }).format(amount || 0);
   } catch {

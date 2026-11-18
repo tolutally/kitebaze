@@ -58,7 +58,12 @@ export default function DealCard({ deal, stage, now, onOpen, onDragStart, onDrag
       </div>
       {contact && <p className="mt-1 truncate text-xs text-kb-ink-soft">{contact}</p>}
       <div className="mt-2 flex items-center gap-2 text-xs">
-        <span className="font-medium text-kb-ink">{formatMoney(deal.value, deal.currency)}</span>
+        <span className="font-medium text-kb-ink">
+          {deal.value > 0 ? formatMoney(deal.value, deal.currency) : !deal.monthly_value && (
+            <span className="font-normal italic text-kb-ink-muted" title={deal.value_note || 'No value set'}>Value TBD</span>
+          )}
+          {deal.monthly_value > 0 && <span className="font-normal text-kb-ink-soft">{deal.value > 0 ? ' + ' : ''}{formatMoney(deal.monthly_value, deal.currency)}/mo</span>}
+        </span>
         {deal.label && <span className={`rounded px-1.5 py-0.5 text-[11px] font-medium capitalize ${LABEL_STYLES[deal.label] || 'bg-kb-surface-soft text-kb-ink-soft'}`}>{deal.label}</span>}
         {deal.owner_name && (
           <span className="ml-auto flex h-6 w-6 items-center justify-center rounded-full bg-kb-surface-raised text-[10px] font-semibold text-kb-ink-soft" title={`Owner: ${deal.owner_name}`}>

@@ -183,6 +183,21 @@ export const localStore = {
     return clone(deal);
   },
 
+  async getDealDetails(deal) {
+    const activities = (db().activities || []).filter((a) => a.deal_id === deal.id).sort((a, b) => b.occurred_at.localeCompare(a.occurred_at));
+    return { company: null, contact: null, activities: clone(activities) };
+  },
+
+  async addActivity(deal, { type, summary, occurred_at }) {
+    const data = db();
+    data.activities = data.activities || [];
+    const activity = { id: uid(), deal_id: deal.id, type, summary, occurred_at: occurred_at || nowIso() };
+    data.activities.push(activity);
+    data.deals.find((d) => d.id === deal.id).last_touched_at = nowIso();
+    write();
+    return clone(activity);
+  },
+
   async updateDeal(id, patch) {
     const data = db();
     const deal = data.deals.find((d) => d.id === id);
