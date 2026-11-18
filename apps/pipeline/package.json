@@ -1,0 +1,31 @@
+{
+  "name": "kitebaze-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Kitebaze deal pipeline board (pipeline.kitebaze.com). Deployed as its own Vercel project with Root Directory apps/pipeline.",
+  "scripts": {
+    "dev": "vite",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --max-warnings=0",
+    "prebuild": "npm run lint",
+    "build": "vite build",
+    "preview": "vite preview",
+    "setup:appwrite": "node scripts/setup-appwrite.mjs",
+    "seed:appwrite": "node scripts/seed-appwrite.mjs"
+  },
+  "dependencies": {
+    "appwrite": "29.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^10.12.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.13.0",
+    "node-appwrite": "31.1.0",
+    "tailwindcss": "^4.3.3",
+    "vite": "^7.1.3"
+  }
+}

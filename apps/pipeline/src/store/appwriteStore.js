@@ -1,4 +1,4 @@
-// Appwrite (TablesDB) store. Table and column names must match scripts/appwrite-setup-pipeline.mjs.
+// Appwrite (TablesDB) store. Table and column names must match scripts/setup-appwrite.mjs.
 import { Account, Client, ID, Query, TablesDB, Teams } from 'appwrite';
 import { DEFAULT_STAGES } from '../logic.js';
 

@@ -19,33 +19,14 @@ const TermsOfUse = lazy(() => import('./pages/TermsOfUse.jsx'));
 const VulnerabilityDisclosure = lazy(() => import('./pages/VulnerabilityDisclosure.jsx'));
 const ResponsibleAutomation = lazy(() => import('./pages/ResponsibleAutomation.jsx'));
 const NotFound = lazy(() => import('./pages/NotFound.jsx'));
-const PipelinePage = lazy(() => import('./pipeline/PipelinePage.jsx'));
-
-// pipeline.kitebaze.com serves only the deal pipeline board, on every path. The marketing site never renders there.
-const isPipelineHost = window.location.hostname === 'pipeline.kitebaze.com';
 
 createRoot(document.getElementById('root')).render(
-  isPipelineHost ? (
-    <StrictMode>
-      <AppErrorBoundary>
-        <BrowserRouter>
-          <Suspense fallback={<PageLoadingFallback />}>
-            <Routes>
-              <Route path="*" element={<PipelinePage />} />
-            </Routes>
-          </Suspense>
-        </BrowserRouter>
-      </AppErrorBoundary>
-    </StrictMode>
-  ) : (
   <StrictMode>
     <AppErrorBoundary>
       <BrowserRouter>
         <RouteMetadata />
         <Suspense fallback={<PageLoadingFallback />}>
           <Routes>
-            {/* Internal tool: not in the sitemap or nav, served with noindex (see vercel.json). */}
-            <Route path="pipeline" element={<PipelinePage />} />
             <Route element={<App />}>
               <Route index element={<Home />} />
               <Route path="home" element={<Navigate to="/" replace />} />
@@ -72,6 +53,5 @@ createRoot(document.getElementById('root')).render(
         </Suspense>
       </BrowserRouter>
     </AppErrorBoundary>
-  </StrictMode>
-  ),
+  </StrictMode>,
 );

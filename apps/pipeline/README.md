@@ -1,10 +1,21 @@
 # Deal pipeline board (`pipeline.kitebaze.com`)
 
-An internal kanban board for deals, modelled on Pipedrive's pipeline view (see `reverse-engineering/pipedrive/deal-pipeline/`). It ships in the same Vercel project as the website:
+An internal kanban board for deals, modelled on Pipedrive's pipeline view (see `reverse-engineering/pipedrive/deal-pipeline/` at the repo root).
 
-- **On `pipeline.kitebaze.com`** every path renders the board only (`src/main.jsx` checks the hostname), with `X-Robots-Tag: noindex` on every response (`vercel.json`).
-- **On `kitebaze.com` / `www.kitebaze.com`**, `/pipeline` redirects (307) to the subdomain. The marketing pages never load the board's code.
-- **Locally and on Vercel previews** the board is at `/pipeline`.
+This is a standalone Vite app, separate from the Kitebaze website at the repo root. It has its own dependencies, build and Vercel project, and shares no code or config with the website.
+
+## Deploy (Vercel)
+- **Project:** a separate Vercel project, imported from this repo with **Root Directory** set to `apps/pipeline`. Vercel picks up `vercel.json` here (Vite preset, SPA rewrite, `noindex` on every response).
+- **Domain:** `pipeline.kitebaze.com`, added to that project. The website's Vercel project is not involved.
+- **Skipped builds:** `ignoreCommand` skips a deployment when nothing under `apps/pipeline/` changed, so website-only commits don't redeploy the board.
+- **Env vars:** none needed. The Appwrite project IDs are built in (see `src/store/index.js`).
+
+## Develop
+```bash
+cd apps/pipeline
+npm install
+npm run dev
+```
 
 ## What it does
 - One board per pipeline. Stages are columns; switch pipelines from the dropdown or create a new one.
@@ -24,20 +35,20 @@ The board uses Kitebaze's Appwrite project (Toronto region, project `6afdd34c000
 - **Login:** email one-time code. Anyone can request a code, but the tables only allow the Appwrite team **`pipeline`**, and users outside it see a "No access yet" screen.
 - **Add a person:** Appwrite console → Auth → Teams → Pipeline → add member (or `npx appwrite-cli@28.10.2 teams create-membership --team-id pipeline --email <email> --roles member`).
 - **Allowed domains:** `localhost`, `kitebaze.com` and `pipeline.kitebaze.com` are registered as web platforms (the plan allows 3). Vercel preview URLs are not, so the board can't load data there.
-- **Schema changes:** edit `scripts/appwrite-setup-pipeline.mjs` and re-run it. It is idempotent and re-applies table permissions:
+- **Schema changes:** edit `scripts/setup-appwrite.mjs` and re-run it. It is idempotent and re-applies table permissions:
   ```bash
-  APPWRITE_ENDPOINT=https://tor.cloud.appwrite.io/v1 APPWRITE_PROJECT_ID=6afdd34c0009ec87e52f APPWRITE_API_KEY=<key> APPWRITE_TEAM_ID=pipeline npm run setup:appwrite
+  APPWRITE_ENDPOINT=https://tor.cloud.appwrite.io/v1 APPWRITE_PROJECT_ID=6afdd34c0009ec87e52f APPWRITE_API_KEY=<key> APPWRITE_TEAM_ID=pipeline npm run setup:appwrite   # from apps/pipeline
   ```
 
 ## Seed data
-`scripts/appwrite-seed-pipeline.mjs` loads stages, companies, contacts, deals and activity history from a JSON file. It is re-runnable (rows keep the seed's IDs) and treats stages with IDs `stage_won` / `stage_lost` as deal statuses, not columns. Stage probabilities and rotting days the seed doesn't give are set in the script's `STAGE_DEFAULTS`. Keep seed files out of the repo: they hold client contact details.
+`scripts/seed-appwrite.mjs` loads stages, companies, contacts, deals and activity history from a JSON file. It is re-runnable (rows keep the seed's IDs) and treats stages with IDs `stage_won` / `stage_lost` as deal statuses, not columns. Stage probabilities and rotting days the seed doesn't give are set in the script's `STAGE_DEFAULTS`. Keep seed files out of the repo: they hold client contact details.
 
 ```bash
-APPWRITE_ENDPOINT=https://tor.cloud.appwrite.io/v1 APPWRITE_PROJECT_ID=6afdd34c0009ec87e52f APPWRITE_API_KEY=<key> node scripts/appwrite-seed-pipeline.mjs /path/to/seed.json
+APPWRITE_ENDPOINT=https://tor.cloud.appwrite.io/v1 APPWRITE_PROJECT_ID=6afdd34c0009ec87e52f APPWRITE_API_KEY=<key> node scripts/seed-appwrite.mjs /path/to/seed.json
 ```
 
 ## Code
-- `logic.js`: pure board rules (probability, rotting, sorting, totals).
-- `store/`: `appwriteStore.js` (TablesDB) and `localStore.js` (demo) share one interface; `store/index.js` picks one.
-- `Board.jsx`, `components/`: UI. `PipelinePage.jsx`: login gate.
-- `scripts/appwrite-setup-pipeline.mjs`: idempotent schema setup.
+- `src/logic.js`: pure board rules (probability, rotting, sorting, totals).
+- `src/store/`: `appwriteStore.js` (TablesDB) and `localStore.js` (demo) share one interface; `store/index.js` picks one.
+- `src/Board.jsx`, `src/components/`: UI. `src/PipelinePage.jsx`: login gate. `src/main.jsx`: entry.
+- `scripts/setup-appwrite.mjs`: idempotent schema setup.

@@ -6,7 +6,7 @@
 //   APPWRITE_PROJECT_ID=<project id> \
 //   APPWRITE_API_KEY=<server API key> \
 //   [APPWRITE_DATABASE_ID=crm] [APPWRITE_TEAM_ID=<team id>] \
-//   node scripts/appwrite-setup-pipeline.mjs
+//   node scripts/setup-appwrite.mjs
 //
 // Access: with APPWRITE_TEAM_ID set, only members of that team can read and write pipeline data.
 // Without it, any logged-in user of the project can. Create users in the Appwrite console.

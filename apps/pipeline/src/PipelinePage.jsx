@@ -88,18 +88,6 @@ export default function PipelinePage() {
   const [user, setUser] = useState(undefined);
 
   useEffect(() => {
-    document.title = 'Pipeline | Kitebaze';
-    // The HTML shell carries the marketing site's metadata; this page must never be indexed.
-    for (const name of ['robots', 'googlebot']) {
-      let meta = document.head.querySelector(`meta[name="${name}"]`);
-      if (!meta) {
-        meta = document.createElement('meta');
-        meta.setAttribute('name', name);
-        document.head.appendChild(meta);
-      }
-      meta.setAttribute('content', 'noindex, nofollow');
-    }
-    document.head.querySelectorAll('link[rel="canonical"], link[rel="alternate"], script[type="application/ld+json"]').forEach((el) => el.remove());
     let cancelled = false;
     store.getUser().then((u) => !cancelled && setUser(u));
     return () => {

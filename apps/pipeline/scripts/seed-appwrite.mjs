@@ -3,7 +3,7 @@
 //
 // The seed file holds client contact details, so keep it out of the repo. Usage:
 //   APPWRITE_ENDPOINT=https://tor.cloud.appwrite.io/v1 APPWRITE_PROJECT_ID=<id> APPWRITE_API_KEY=<key> \
-//   node scripts/appwrite-seed-pipeline.mjs /path/to/seed.json
+//   node scripts/seed-appwrite.mjs /path/to/seed.json
 //
 // Seed format: see the `pipeline_stages`, `companies`, `contacts`, `deals` and `activities` arrays below.
 // Stages named Won/Lost (ids stage_won / stage_lost) become deal statuses, not board columns.

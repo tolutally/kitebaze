@@ -2,13 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/pipeline", "destination": "/404.html" },
-    { "source": "/:path*", "has": [{ "type": "host", "value": "pipeline.kitebaze.com" }], "destination": "/404.html" }
-  ],
   "redirects": [
-    { "source": "/pipeline", "has": [{ "type": "host", "value": "kitebaze.com" }], "destination": "https://pipeline.kitebaze.com/", "permanent": false },
-    { "source": "/pipeline", "has": [{ "type": "host", "value": "www.kitebaze.com" }], "destination": "https://pipeline.kitebaze.com/", "permanent": false },
     { "source": "/home", "destination": "/", "permanent": true },
     { "source": "/about", "destination": "/about-us", "permanent": true },
     { "source": "/workflow", "destination": "/workflow-build", "permanent": true },
@@ -18,18 +12,6 @@
     { "source": "/terms-of-use", "destination": "/terms-of-service", "permanent": true }
   ],
   "headers": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "pipeline.kitebaze.com" }],
-      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
-    },
-    {
-      "source": "/pipeline",
-      "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
-        { "key": "Cache-Control", "value": "no-store" }
-      ]
-    },
     {
       "source": "/llms.txt",
       "headers": [
