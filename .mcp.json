@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "appwrite": {
+      "command": "uvx",
+      "args": ["mcp-server-appwrite==2.3.0"],
+      "env": {
+        "APPWRITE_ENDPOINT": "${APPWRITE_ENDPOINT:-https://tor.cloud.appwrite.io/v1}",
+        "APPWRITE_PROJECT_ID": "${APPWRITE_PROJECT_ID:-6afdd34c0009ec87e52f}",
+        "APPWRITE_API_KEY": "${APPWRITE_API_KEY:-proxy-injected}"
+      }
+    }
+  }
+}

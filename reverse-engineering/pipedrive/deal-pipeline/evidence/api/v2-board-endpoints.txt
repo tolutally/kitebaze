@@ -1,0 +1,307 @@
+
+### GET /pipelines — Get all pipelines
+Returns data about all pipelines.
+  param query:sort_by string ['id', 'update_time', 'add_time']  — The field to sort by. Supported fields: `id`, `update_time`, `add_time`.
+  param query:sort_direction string ['asc', 'desc']  — The sorting direction. Supported values: `asc`, `desc`.
+  param query:limit integer   — For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  param query:cursor string   — For pagination, the marker (an opaque string value) representing the first item on the next page
+  RESPONSE data:
+  []id: integer — The ID of the pipeline
+  []name: string — The name of the pipeline
+  []order_nr: integer — Defines the order of pipelines. The pipeline with the lowest `order_nr` is considered the default.
+  []is_deleted: boolean — Whether this pipeline is marked as deleted or not
+  []is_deal_probability_enabled: boolean — Whether deal probability is disabled or enabled for this pipeline
+  []add_time: string — The pipeline creation time
+  []update_time: string — The pipeline update time
+
+### POST /pipelines — Add a new pipeline
+Adds a new pipeline.
+  BODY:
+  name: string — The name of the pipeline
+  is_deal_probability_enabled: boolean — Whether deal probability is disabled or enabled for this pipeline
+
+### DELETE /pipelines/{id} — Delete a pipeline
+Marks a pipeline as deleted.
+  param path:id integer  req — The ID of the pipeline
+
+### GET /pipelines/{id} — Get one pipeline
+Returns data about a specific pipeline.
+  param path:id integer  req — The ID of the pipeline
+  RESPONSE data:
+  id: integer — The ID of the pipeline
+  name: string — The name of the pipeline
+  order_nr: integer — Defines the order of pipelines. The pipeline with the lowest `order_nr` is considered the default.
+  is_deleted: boolean — Whether this pipeline is marked as deleted or not
+  is_deal_probability_enabled: boolean — Whether deal probability is disabled or enabled for this pipeline
+  add_time: string — The pipeline creation time
+  update_time: string — The pipeline update time
+
+### PATCH /pipelines/{id} — Update a pipeline
+Updates the properties of a pipeline.
+  param path:id integer  req — The ID of the pipeline
+  BODY:
+  name: string — The name of the pipeline
+  is_deal_probability_enabled: boolean — Whether deal probability is disabled or enabled for this pipeline
+
+### GET /stages — Get all stages
+Returns data about all stages.
+  param query:pipeline_id integer   — The ID of the pipeline to fetch stages for. If omitted, stages for all pipelines will be fetched.
+  param query:sort_by string ['id', 'update_time', 'add_time', 'order_nr']  — The field to sort by. Supported fields: `id`, `update_time`, `add_time`, `order_nr`.
+  param query:sort_direction string ['asc', 'desc']  — The sorting direction. Supported values: `asc`, `desc`.
+  param query:limit integer   — For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  param query:cursor string   — For pagination, the marker (an opaque string value) representing the first item on the next page
+  RESPONSE data:
+  []id: integer — The ID of the stage
+  []order_nr: integer — Defines the order of the stage
+  []name: string — The name of the stage
+  []is_deleted: boolean — Whether the stage is marked as deleted or not
+  []deal_probability: integer — The success probability percentage of the deal. Used/shown when the deal weighted values are used.
+  []pipeline_id: integer — The ID of the pipeline to add the stage to
+  []is_deal_rot_enabled: boolean — Whether deals in this stage can become rotten
+  []days_to_rotten: integer nullable — The number of days the deals not updated in this stage would become rotten. Applies only if the `is_deal_rot_enabled` is set.
+  []add_time: string — The stage creation time
+  []update_time: string nullable — The stage update time
+
+### POST /stages — Add a new stage
+Adds a new stage, returns the ID upon success.
+  BODY:
+  name: string — The name of the stage
+  pipeline_id: integer — The ID of the pipeline to add stage to
+  deal_probability: integer — The success probability percentage of the deal. Used/shown when deal weighted values are used.
+  is_deal_rot_enabled: boolean — Whether deals in this stage can become rotten
+  days_to_rotten: integer nullable — The number of days the deals not updated in this stage would become rotten. Applies only if the `is_deal_rot_enabled` is set.
+
+### DELETE /stages/{id} — Delete a stage
+Marks a stage as deleted.
+  param path:id integer  req — The ID of the stage
+
+### GET /stages/{id} — Get one stage
+Returns data about a specific stage.
+  param path:id integer  req — The ID of the stage
+  RESPONSE data:
+  id: integer — The ID of the stage
+  order_nr: integer — Defines the order of the stage
+  name: string — The name of the stage
+  is_deleted: boolean — Whether the stage is marked as deleted or not
+  deal_probability: integer — The success probability percentage of the deal. Used/shown when the deal weighted values are used.
+  pipeline_id: integer — The ID of the pipeline to add the stage to
+  is_deal_rot_enabled: boolean — Whether deals in this stage can become rotten
+  days_to_rotten: integer nullable — The number of days the deals not updated in this stage would become rotten. Applies only if the `is_deal_rot_enabled` is set.
+  add_time: string — The stage creation time
+  update_time: string nullable — The stage update time
+
+### PATCH /stages/{id} — Update stage details
+Updates the properties of a stage.
+  param path:id integer  req — The ID of the stage
+  BODY:
+  name: string — The name of the stage
+  pipeline_id: integer — The ID of the pipeline to add stage to
+  deal_probability: integer — The success probability percentage of the deal. Used/shown when deal weighted values are used.
+  is_deal_rot_enabled: boolean — Whether deals in this stage can become rotten
+  days_to_rotten: integer nullable — The number of days the deals not updated in this stage would become rotten. Applies only if the `is_deal_rot_enabled` is set.
+
+### GET /deals — Get all deals
+Returns data about all not archived deals.
+  param query:filter_id integer   — If supplied, only deals matching the specified filter are returned
+  param query:ids array   — Optional comma separated array of up to 100 entity ids to fetch. If filter_id is provided, this is ignored. If any of the requested entities do not exist or are not visible, they are not included in t
+  param query:owner_id integer   — If supplied, only deals owned by the specified user are returned. If filter_id is provided, this is ignored.
+  param query:person_id integer   — If supplied, only deals linked to the specified person are returned. If filter_id is provided, this is ignored.
+  param query:org_id integer   — If supplied, only deals linked to the specified organization are returned. If filter_id is provided, this is ignored.
+  param query:pipeline_id integer   — If supplied, only deals in the specified pipeline are returned. If filter_id is provided, this is ignored.
+  param query:stage_id integer   — If supplied, only deals in the specified stage are returned. If filter_id is provided, this is ignored.
+  param query:status array   — Only fetch deals with a specific status. If omitted, all not deleted deals are returned. If set to deleted, deals that have been deleted up to 30 days ago will be included. Multiple statuses can be in
+  param query:updated_since string   — If set, only deals with an `update_time` later than or equal to this time are returned. In RFC3339 format, e.g. 2025-01-01T10:20:00Z.
+  param query:updated_until string   — If set, only deals with an `update_time` earlier than this time are returned. In RFC3339 format, e.g. 2025-01-01T10:20:00Z.
+  param query:sort_by string ['id', 'update_time', 'add_time']  — The field to sort by. Supported fields: `id`, `update_time`, `add_time`.
+  param query:sort_direction string ['asc', 'desc']  — The sorting direction. Supported values: `asc`, `desc`.
+  param query:include_fields array   — Optional comma separated string array of additional fields to include
+  param query:custom_fields array   — Optional comma separated string array of custom fields keys to include. If you are only interested in a particular set of custom fields, please use this parameter for faster results and smaller respon
+  param query:include_option_labels boolean   — When provided with a 'true' value, single option and multiple option custom fields values contain objects in the form of '{ id: number, label: string }' instead of plain id
+  param query:include_labels boolean   — When provided with 'true' value, response will include an array of label objects in the form of '{ id: number, label: string }'
+  param query:limit integer   — For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  param query:cursor string   — For pagination, the marker (an opaque string value) representing the first item on the next page
+  RESPONSE data:
+  []id: integer — The ID of the deal
+  []title: string — The title of the deal
+  []owner_id: integer — The ID of the user who owns the deal
+  []person_id: integer nullable — The ID of the person linked to the deal
+  []org_id: integer nullable — The ID of the organization linked to the deal
+  []pipeline_id: integer — The ID of the pipeline associated with the deal
+  []stage_id: integer — The ID of the deal stage
+  []value: number — The value of the deal
+  []currency: string — The currency associated with the deal
+  []add_time: string — The creation date and time of the deal
+  []update_time: string nullable — The last updated date and time of the deal
+  []stage_change_time: string nullable — The last updated date and time of the deal stage
+  []is_deleted: boolean — Whether the deal is deleted or not
+  []is_archived: boolean — Whether the deal is archived or not
+  []status: string — The status of the deal
+  []probability: number nullable — The success probability percentage of the deal
+  []lost_reason: string nullable — The reason for losing the deal
+  []visible_to: integer — The visibility of the deal
+  []close_time: string nullable — The date and time of closing the deal
+  []won_time: string nullable — The date and time of changing the deal status as won
+  []lost_time: string nullable — The date and time of changing the deal status as lost
+  []expected_close_date: string nullable — The expected close date of the deal
+  []label_ids: array — The IDs of labels assigned to the deal
+  []origin: string — The way this Deal was created. `origin` field is set by Pipedrive when Deal is created and cannot be changed.
+  []origin_id: string nullable — The optional ID to further distinguish the origin of the deal - e.g. Which API integration created this Deal.
+  []channel: integer nullable — The ID of your Marketing channel this Deal was created from. Recognized Marketing channels can be configured in your <a href="https://app.pipedrive.com/settings/fields" target="_blank" rel="noopener noreferrer">Company s
+  []channel_id: string nullable — The optional ID to further distinguish the Marketing channel.
+  []source_lead_id: string nullable — The ID of the lead if the deal was converted from a lead. Only included when requested via include_fields parameter.
+  []arr: number nullable — Only available in Growth and above plans  The Annual Recurring Revenue of the deal  Null if there are no products attached to the deal 
+  []mrr: number nullable — Only available in Growth and above plans  The Monthly Recurring Revenue of the deal  Null if there are no products attached to the deal 
+  []acv: number nullable — Only available in Growth and above plans  The Annual Contract Value of the deal  Null if there are no products attached to the deal 
+  []custom_fields: object — An object where each key represents a custom field. All custom fields are referenced as randomly generated 40-character hashes. To clear a custom field value, set it to `null`. For multi-option fields (field type `set`),
+
+### POST /deals — Add a new deal
+Adds a new deal.
+  BODY:
+  title: string — The title of the deal
+  owner_id: integer — The ID of the user who owns the deal
+  person_id: integer nullable — The ID of the person linked to the deal
+  org_id: integer nullable — The ID of the organization linked to the deal
+  pipeline_id: integer — The ID of the pipeline associated with the deal
+  stage_id: integer — The ID of the deal stage
+  value: number — The value of the deal
+  currency: string — The currency associated with the deal
+  is_archived: boolean — Whether the deal is archived or not
+  archive_time: string nullable — The optional date and time of archiving the deal in UTC. Format: YYYY-MM-DD HH:MM:SS. If omitted and `is_archived` is true, it will be set to the current date and time.
+  status: string — The status of the deal
+  probability: number — The success probability percentage of the deal
+  lost_reason: string — The reason for losing the deal. Can only be set if deal status is lost.
+  visible_to: integer — The visibility of the deal
+  close_time: string — The date and time of closing the deal. Can only be set if deal status is won or lost.
+  won_time: string — The date and time of changing the deal status as won. Can only be set if deal status is won.
+  lost_time: string — The date and time of changing the deal status as lost. Can only be set if deal status is lost.
+  expected_close_date: string — The expected close date of the deal
+  label_ids: array — The IDs of labels assigned to the deal
+  channel: integer nullable — The ID of Marketing channel this deal was created from. Provided value must be one of the channels configured for your company. You can fetch allowed values with <a href="https://developers.pipedrive.com/docs/api/v1/Deal
+  channel_id: string nullable — The optional ID to further distinguish the Marketing channel.
+  origin_id: string nullable — The optional ID to further distinguish the origin of the deal - e.g. Which API integration created this deal. If omitted, `origin_id` will be set to null.
+  custom_fields: object — An object where each key represents a custom field. All custom fields are referenced as randomly generated 40-character hashes. To clear a custom field value, set it to `null`. For multi-option fields (field type `set`),
+
+### DELETE /deals/{id} — Delete a deal
+Marks a deal as deleted. After 30 days, the deal will be permanently deleted.
+  param path:id integer  req — The ID of the deal
+
+### GET /deals/{id} — Get details of a deal
+Returns the details of a specific deal.
+  param path:id integer  req — The ID of the deal
+  param query:include_fields array   — Optional comma separated string array of additional fields to include
+  param query:custom_fields array   — Optional comma separated string array of custom fields keys to include. If you are only interested in a particular set of custom fields, please use this parameter for faster results and smaller respon
+  param query:include_option_labels boolean   — When provided with a 'true' value, single option and multiple option custom fields values contain objects in the form of '{ id: number, label: string }' instead of plain id
+  param query:include_labels boolean   — When provided with 'true' value, response will include an array of label objects in the form of '{ id: number, label: string }'
+  RESPONSE data:
+  id: integer — The ID of the deal
+  title: string — The title of the deal
+  owner_id: integer — The ID of the user who owns the deal
+  person_id: integer nullable — The ID of the person linked to the deal
+  org_id: integer nullable — The ID of the organization linked to the deal
+  pipeline_id: integer — The ID of the pipeline associated with the deal
+  stage_id: integer — The ID of the deal stage
+  value: number — The value of the deal
+  currency: string — The currency associated with the deal
+  add_time: string — The creation date and time of the deal
+  update_time: string nullable — The last updated date and time of the deal
+  stage_change_time: string nullable — The last updated date and time of the deal stage
+  is_deleted: boolean — Whether the deal is deleted or not
+  is_archived: boolean — Whether the deal is archived or not
+  status: string — The status of the deal
+  probability: number nullable — The success probability percentage of the deal
+  lost_reason: string nullable — The reason for losing the deal
+  visible_to: integer — The visibility of the deal
+  close_time: string nullable — The date and time of closing the deal
+  won_time: string nullable — The date and time of changing the deal status as won
+  lost_time: string nullable — The date and time of changing the deal status as lost
+  expected_close_date: string nullable — The expected close date of the deal
+  label_ids: array — The IDs of labels assigned to the deal
+  origin: string — The way this Deal was created. `origin` field is set by Pipedrive when Deal is created and cannot be changed.
+  origin_id: string nullable — The optional ID to further distinguish the origin of the deal - e.g. Which API integration created this Deal.
+  channel: integer nullable — The ID of your Marketing channel this Deal was created from. Recognized Marketing channels can be configured in your <a href="https://app.pipedrive.com/settings/fields" target="_blank" rel="noopener noreferrer">Company s
+  channel_id: string nullable — The optional ID to further distinguish the Marketing channel.
+  source_lead_id: string nullable — The ID of the lead if the deal was converted from a lead. Only included when requested via include_fields parameter.
+  arr: number nullable — Only available in Growth and above plans  The Annual Recurring Revenue of the deal  Null if there are no products attached to the deal 
+  mrr: number nullable — Only available in Growth and above plans  The Monthly Recurring Revenue of the deal  Null if there are no products attached to the deal 
+  acv: number nullable — Only available in Growth and above plans  The Annual Contract Value of the deal  Null if there are no products attached to the deal 
+  custom_fields: object — An object where each key represents a custom field. All custom fields are referenced as randomly generated 40-character hashes. To clear a custom field value, set it to `null`. For multi-option fields (field type `set`),
+
+### PATCH /deals/{id} — Update a deal
+Updates the properties of a deal.
+  param path:id integer  req — The ID of the deal
+  BODY:
+  title: string — The title of the deal
+  owner_id: integer — The ID of the user who owns the deal
+  person_id: integer nullable — The ID of the person linked to the deal
+  org_id: integer nullable — The ID of the organization linked to the deal
+  pipeline_id: integer — The ID of the pipeline associated with the deal
+  stage_id: integer — The ID of the deal stage
+  value: number — The value of the deal
+  currency: string — The currency associated with the deal
+  is_deleted: boolean — Only used to restore a previously deleted deal. The only accepted value is `false`; omit the field otherwise.
+  is_archived: boolean — Whether the deal is archived or not
+  archive_time: string nullable — The optional date and time of archiving the deal in UTC. Format: YYYY-MM-DD HH:MM:SS. If omitted and `is_archived` is true, it will be set to the current date and time.
+  status: string — The status of the deal
+  probability: number — The success probability percentage of the deal
+  lost_reason: string — The reason for losing the deal. Can only be set if deal status is lost.
+  visible_to: integer — The visibility of the deal
+  close_time: string — The date and time of closing the deal. Can only be set if deal status is won or lost.
+  won_time: string — The date and time of changing the deal status as won. Can only be set if deal status is won.
+  lost_time: string — The date and time of changing the deal status as lost. Can only be set if deal status is lost.
+  expected_close_date: string — The expected close date of the deal
+  label_ids: array — The IDs of labels assigned to the deal
+  channel: integer nullable — The ID of Marketing channel this deal was created from. Provided value must be one of the channels configured for your company. You can fetch allowed values with <a href="https://developers.pipedrive.com/docs/api/v1/Deal
+  channel_id: string nullable — The optional ID to further distinguish the Marketing channel.
+  custom_fields: object — An object where each key represents a custom field. All custom fields are referenced as randomly generated 40-character hashes. To clear a custom field value, set it to `null`. For multi-option fields (field type `set`),
+
+### GET /deals/archived — Get all archived deals
+Returns data about all archived deals.
+  param query:filter_id integer   — If supplied, only deals matching the specified filter are returned
+  param query:ids array   — Optional comma separated array of up to 100 entity ids to fetch. If filter_id is provided, this is ignored. If any of the requested entities do not exist or are not visible, they are not included in t
+  param query:owner_id integer   — If supplied, only deals owned by the specified user are returned. If filter_id is provided, this is ignored.
+  param query:person_id integer   — If supplied, only deals linked to the specified person are returned. If filter_id is provided, this is ignored.
+  param query:org_id integer   — If supplied, only deals linked to the specified organization are returned. If filter_id is provided, this is ignored.
+  param query:pipeline_id integer   — If supplied, only deals in the specified pipeline are returned. If filter_id is provided, this is ignored.
+  param query:stage_id integer   — If supplied, only deals in the specified stage are returned. If filter_id is provided, this is ignored.
+  param query:status array   — Only fetch deals with a specific status. If omitted, all not deleted deals are returned. If set to deleted, deals that have been deleted up to 30 days ago will be included. Multiple statuses can be in
+  param query:updated_since string   — If set, only deals with an `update_time` later than or equal to this time are returned. In RFC3339 format, e.g. 2025-01-01T10:20:00Z.
+  param query:updated_until string   — If set, only deals with an `update_time` earlier than this time are returned. In RFC3339 format, e.g. 2025-01-01T10:20:00Z.
+  param query:sort_by string ['id', 'update_time', 'add_time']  — The field to sort by. Supported fields: `id`, `update_time`, `add_time`.
+  param query:sort_direction string ['asc', 'desc']  — The sorting direction. Supported values: `asc`, `desc`.
+  param query:include_fields array   — Optional comma separated string array of additional fields to include
+  param query:custom_fields array   — Optional comma separated string array of custom fields keys to include. If you are only interested in a particular set of custom fields, please use this parameter for faster results and smaller respon
+  param query:limit integer   — For pagination, the limit of entries to be returned. If not provided, 100 items will be returned. Please note that a maximum value of 500 is allowed.
+  param query:cursor string   — For pagination, the marker (an opaque string value) representing the first item on the next page
+  RESPONSE data:
+  []id: integer — The ID of the deal
+  []title: string — The title of the deal
+  []owner_id: integer — The ID of the user who owns the deal
+  []person_id: integer nullable — The ID of the person linked to the deal
+  []org_id: integer nullable — The ID of the organization linked to the deal
+  []pipeline_id: integer — The ID of the pipeline associated with the deal
+  []stage_id: integer — The ID of the deal stage
+  []value: number — The value of the deal
+  []currency: string — The currency associated with the deal
+  []add_time: string — The creation date and time of the deal
+  []update_time: string nullable — The last updated date and time of the deal
+  []stage_change_time: string nullable — The last updated date and time of the deal stage
+  []is_deleted: boolean — Whether the deal is deleted or not
+  []is_archived: boolean — Whether the deal is archived or not
+  []status: string — The status of the deal
+  []probability: number nullable — The success probability percentage of the deal
+  []lost_reason: string nullable — The reason for losing the deal
+  []visible_to: integer — The visibility of the deal
+  []close_time: string nullable — The date and time of closing the deal
+  []won_time: string nullable — The date and time of changing the deal status as won
+  []lost_time: string nullable — The date and time of changing the deal status as lost
+  []expected_close_date: string nullable — The expected close date of the deal
+  []label_ids: array — The IDs of labels assigned to the deal
+  []origin: string — The way this Deal was created. `origin` field is set by Pipedrive when Deal is created and cannot be changed.
+  []origin_id: string nullable — The optional ID to further distinguish the origin of the deal - e.g. Which API integration created this Deal.
+  []channel: integer nullable — The ID of your Marketing channel this Deal was created from. Recognized Marketing channels can be configured in your <a href="https://app.pipedrive.com/settings/fields" target="_blank" rel="noopener noreferrer">Company s
+  []channel_id: string nullable — The optional ID to further distinguish the Marketing channel.
+  []source_lead_id: string nullable — The ID of the lead if the deal was converted from a lead. Only included when requested via include_fields parameter.
+  []arr: number nullable — Only available in Growth and above plans  The Annual Recurring Revenue of the deal  Null if there are no products attached to the deal 
+  []mrr: number nullable — Only available in Growth and above plans  The Monthly Recurring Revenue of the deal  Null if there are no products attached to the deal 
+  []acv: number nullable — Only available in Growth and above plans  The Annual Contract Value of the deal  Null if there are no products attached to the deal 
+  []custom_fields: object — An object where each key represents a custom field. All custom fields are referenced as randomly generated 40-character hashes. To clear a custom field value, set it to `null`. For multi-option fields (field type `set`),

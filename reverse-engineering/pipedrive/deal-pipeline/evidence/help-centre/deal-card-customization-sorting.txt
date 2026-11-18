@@ -1,0 +1,22 @@
+Source: https://support.pipedrive.com/en/article/deal-card-customization-sorting
+Fetched: 2026-11-18
+
+Last updated: September 3, 2026 What makes Pipedrive different from other CRMs is the ability to help you track your activities by organizing your deals based on the priority of those deals’ next-scheduled activity.
+Nonetheless, every business has different needs, so we allow an extra level of customization for your deals and pipeline.
+Card customization
+A deal card is a visual representation of the ongoing opportunity you are pursuing with a person or organization, which is processed through the stages of your pipeline until it is either won or lost .
+By default, deal cards already contain the following information:
+Deal title The linked contact person and organization Deal value Deal label Deal owner
+Note: The deal title field is mandatory.
+To customize the information shown on the deal cards, click on the pipeline selection dropdown and then select ”Customize deal cards” .
+Here you’ll be able to select the default or custom fields you want to see displayed on every deal card.
+Note: Large text , multiple options and date range fields are not supported.
+You can add up to seven deal, person or organization fields. Click on the desired field to add or remove it from the deal card and save the changes.
+Note: Deal card customization is applied per user and pipeline.
+Deal sorting in the pipeline view
+We’ve seen that users close an average of 28% more deals with activity-based selling and that’s why, by default, deals that require immediate attention are moved to the top of your pipeline stages.
+If you need to change the order of your deals, you can sort them by the following criteria:
+Activity-based (default) Deal title Deal value Linked person name Linked organization name Expected close date Deal creation time Done activities count Activities to do Product count Owner name
+To change the deals’ order, click ”Sort by” below the pipeline and filter buttons.
+To flip the sort order for the selected criteria, click on ”Change order” next to the dropdown.
+

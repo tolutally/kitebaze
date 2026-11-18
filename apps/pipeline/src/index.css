@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* Kitebaze brand tokens, copied from the website's src/index.css (light theme). */
+@theme inline {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --color-kb-canvas: var(--kb-canvas);
+  --color-kb-surface: var(--kb-surface);
+  --color-kb-surface-soft: var(--kb-surface-soft);
+  --color-kb-surface-raised: var(--kb-surface-raised);
+  --color-kb-ink: var(--kb-ink);
+  --color-kb-ink-soft: var(--kb-ink-soft);
+  --color-kb-ink-muted: var(--kb-ink-muted);
+  --color-kb-line: var(--kb-line);
+  --color-kb-line-strong: var(--kb-line-strong);
+  --color-kb-accent: var(--kb-accent);
+  --color-kb-accent-ink: var(--kb-accent-ink);
+  --color-kb-accent-hover: var(--kb-accent-hover);
+  --color-kb-accent-soft: var(--kb-accent-soft);
+  --color-kb-accent-light: var(--kb-accent-light);
+  --color-kb-on-accent: var(--kb-on-accent);
+  --color-kb-inverse: var(--kb-inverse);
+  --color-kb-inverse-soft: var(--kb-inverse-soft);
+  --color-kb-inverse-text: var(--kb-inverse-text);
+  --color-kb-inverse-muted: var(--kb-inverse-muted);
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: light;
+  --kb-canvas: #faf8f1;
+  --kb-surface: #ffffff;
+  --kb-surface-soft: #e9eadf;
+  --kb-surface-raised: #ded8cc;
+  --kb-ink: #17191f;
+  --kb-ink-soft: #55575d;
+  --kb-ink-muted: #66686e;
+  --kb-line: #e5e3dd;
+  --kb-line-strong: #c8c6c1;
+  --kb-accent: #9f6b4e;
+  --kb-accent-ink: #87553d;
+  --kb-accent-hover: #87583f;
+  --kb-accent-soft: #fbf0e6;
+  --kb-accent-light: #b98668;
+  --kb-on-accent: #ffffff;
+  --kb-inverse: #191b22;
+  --kb-inverse-soft: #262830;
+  --kb-inverse-text: #ffffff;
+  --kb-inverse-muted: #aeb0b5;
+}
+
+body {
+  margin: 0;
+  background: var(--kb-canvas);
+  color: var(--kb-ink);
+  font-family: var(--font-sans);
+}

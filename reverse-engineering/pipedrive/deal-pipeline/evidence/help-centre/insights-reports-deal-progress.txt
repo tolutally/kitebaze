@@ -1,0 +1,39 @@
+Source: https://support.pipedrive.com/en/article/insights-reports-deal-progress
+Fetched: 2026-11-18
+
+Last updated: September 3, 2026 Note: The number of Insights reports you can have depends on which plan you‘re on. You can learn more about usage limits in this article .
+The Insights deal progress report allows you to view the movement of your deals through stages within a specified time frame, showing how well your deals are progressing through your sales cycle.
+Creating your progress report
+To create a deal progress report, go to Insights , then click “+ Create” > Report > Deal > Progress.
+Note: With the introduction of the option to archive deals and leads, both archived and non-archived data are included by default in the reports. If you’d like to exclude either type, use the available filtering options to customize your view.
+Viewing your progress report
+Note: Progress reports use the most recent updates to deal stages, meaning if a deal is moved from Stage 2 back to Stage 1, the deal is represented in Stage 1.
+The progress report by default shows the following filters:
+Date of entering stage > is > this year
+Pipeline > is > [your default pipeline]
+You can always adjust or add filters according to the data you want to see, but the d ate of entering stage filter is locked in since it‘s needed to assess deal progress.
+How is deal progress measured?
+Note: Winning a deal doesn’t affect deal progress results in the stages that were skipped.
+If you measure by the number of deals , you’ll see the number of deals that have entered each stage in the timeframe selected.
+Hovering over each column will show the breakdown of the field you have chosen to segment by.
+Note: The entered stage deal count also includes deals that have skipped that stage while moving on to a future stage. For example, if a deal has moved from stage two directly to stage five in the time frame selected, it will show as having entered stages three, four and five.
+Customizing your progress report
+Insights reports offer three metrics you can use to display your data in charts: measure by, view by and segment by.
+Measure by (Y-axis)
+You can choose the field you want to measure your deals by on the left-hand side of the chart.
+Deal value
+Deal weighted value
+Number of deals
+Any numerical or monetary custom fields
+View by (X-axis)
+The v iew by tab lets you group your data by a specific field, including default, date and specific custom field types:
+User
+Date
+Single option
+Multiple option
+Organization
+Person
+Segment by
+Note: If you choose to view by s tage entered , no segment is applied.
+This tab is locked into s tage entered to show the breakdown by stage.
+Once you’ve finished creating your activity report, you can add it to your dashboard or share it with your team . 

@@ -1,0 +1,45 @@
+name: Validate pipeline board build
+
+on:
+  pull_request:
+    paths:
+      - 'apps/pipeline/**'
+      - '.github/workflows/pipeline.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'apps/pipeline/**'
+      - '.github/workflows/pipeline.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pipeline-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: apps/pipeline
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/pipeline/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint and build
+        run: npm run build
